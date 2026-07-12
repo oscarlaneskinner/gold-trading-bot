@@ -1,5 +1,5 @@
 name: Train AI Trading Model v2
-
+# AI training workflow
 on:
   workflow_dispatch:
 
