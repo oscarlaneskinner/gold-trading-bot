@@ -1,10 +1,43 @@
 {
-  "average_trade_return": 0.021142033410716975,
-  "completed_trades": 7,
-  "final_value": 10148.871362813647,
-  "maximum_drawdown": -0.0013673936270331977,
-  "starting_capital": 10000.0,
-  "symbol": "GLD",
-  "total_return": 0.014887136281364732,
-  "win_rate": 1.0
+  "average_buy_hold_return_pct": 113.6,
+  "average_strategy_return_pct": 72.3,
+  "config_snapshot": {
+    "enable_trailing_stop": false,
+    "hold_days": 20,
+    "max_hold_days": 20,
+    "min_buy_confidence": 0.5,
+    "stop_loss_percent": 0.1,
+    "take_profit_percent": 0.2,
+    "use_rsi_filter": false,
+    "use_trend_filter": false,
+    "use_volatility_filter": false
+  },
+  "per_split": [
+    {
+      "buy_hold_return_pct": 106.8,
+      "exit_reasons": {
+        "max_hold_days": 50,
+        "stop_loss": 1,
+        "take_profit": 0,
+        "trailing_stop": 0
+      },
+      "split_date": "2021-01-01",
+      "strategy_return_pct": 54.9,
+      "trades": 51,
+      "win_rate_pct": 60.8
+    },
+    {
+      "buy_hold_return_pct": 120.4,
+      "exit_reasons": {
+        "max_hold_days": 25,
+        "stop_loss": 1,
+        "take_profit": 0,
+        "trailing_stop": 0
+      },
+      "split_date": "2023-01-01",
+      "strategy_return_pct": 89.7,
+      "trades": 26,
+      "win_rate_pct": 73.1
+    }
+  ]
 }
