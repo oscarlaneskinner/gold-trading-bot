@@ -30,7 +30,7 @@ PAPER_TRADING = True
 
 SYMBOL = "GLD"
 DOLLAR_AMOUNT = 1000       # position size per trade - adjust to your comfort level
-HOLD_DAYS = 5              # matches the model's training window
+HOLD_DAYS = 20             # matches the model's training window (updated from 5->20 after testing showed better results)
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "model.pkl")
 
 FEATURE_COLS = ['return_1d','return_5d','return_10d','return_20d',
