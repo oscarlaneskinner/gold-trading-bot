@@ -1,7 +1,4 @@
-flask
-gunicorn
-python-dotenv
 alpaca-py
 pandas
 numpy
-scikit-learn
+scikit-learn==1.8.0
