@@ -24,7 +24,7 @@ PAPER_TRADING = True
 
 SYMBOL = "GLD"
 DATA_LOOKBACK_DAYS = 500
-TRAINING_LOOKBACK_DAYS = 2500
+TRAINING_LOOKBACK_DAYS = 7500
 
 # --- VALIDATED VALUES (from today's walk-forward testing) ---
 # The model predicts direction 20 trading days out, and is held for up to 20
