@@ -24,11 +24,12 @@ jobs:
         with:
           python-version: "3.13"
           cache: pip
+          cache-dependency-path: requirements_legacy.txt
 
-      - name: Install dependencies
+      - name: Install legacy dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements_legacy.txt
 
       - name: Run legacy comparison
         env:
