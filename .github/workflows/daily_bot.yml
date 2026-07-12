@@ -2,21 +2,41 @@ name: Daily AI Trading Bot
 
 on:
   schedule:
-    - cron: '35 13 * * 1-5'
+    # Runs once per day
+    - cron: "30 14 * * 1-5"
+
   workflow_dispatch:
 
+
 jobs:
+
   run-bot:
+
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: "3.13"
+
+
       - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run daily bot
+        run: |
+          pip install -r requirements.txt
+
+
+      - name: Run AI trading bot
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: python daily_bot.py
+        run: |
+          python daily_bot.py

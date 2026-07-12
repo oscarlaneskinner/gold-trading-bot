@@ -5,14 +5,12 @@ on:
 
 jobs:
   train-model:
-
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -31,3 +29,11 @@ jobs:
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
         run: |
           python train_model.py
+
+      - name: Save trained model
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add models/model.pkl
+          git commit -m "Update trained AI model" || echo "No model changes to commit"
+          git push
