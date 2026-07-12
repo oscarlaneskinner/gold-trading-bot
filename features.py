@@ -1,4 +1,12 @@
-"""Feature engineering shared by training, backtesting, and daily inference."""
+"""Feature engineering shared by training, backtesting, and daily inference.
+
+NOTE: This file was reverted to the 13 features actually validated via
+walk-forward testing. The original v3 version added macd_pct,
+macd_signal_pct, and bollinger_position (16 features total) - when tested,
+this produced a candidate model with 30.7% accuracy and 0.41 ROC-AUC
+(worse than random guessing), which correctly failed train_model.py's
+promotion gate. Reverting to the validated 13-feature set below.
+"""
 
 from __future__ import annotations
 import numpy as np
@@ -8,8 +16,7 @@ MODEL_FEATURES = [
     "return_1d", "return_5d", "return_10d", "return_20d",
     "price_vs_ema200", "ema9_vs_ema21", "ema21_vs_ema50",
     "rsi_14", "rsi_7", "atr_pct", "volatility_20d",
-    "volume_change", "volume_ma_ratio", "macd_pct",
-    "macd_signal_pct", "bollinger_position",
+    "volume_change", "volume_ma_ratio",
 ]
 
 def calculate_rsi(series: pd.Series, length: int = 14) -> pd.Series:
@@ -52,18 +59,6 @@ def add_features(df: pd.DataFrame) -> pd.DataFrame:
     result["volatility_20d"] = result["return_1d"].rolling(20).std()
     result["volume_change"] = result["volume"].pct_change()
     result["volume_ma_ratio"] = result["volume"] / result["volume"].rolling(20).mean()
-
-    ema_12 = result["close"].ewm(span=12, adjust=False).mean()
-    ema_26 = result["close"].ewm(span=26, adjust=False).mean()
-    result["macd"] = ema_12 - ema_26
-    result["macd_signal"] = result["macd"].ewm(span=9, adjust=False).mean()
-    result["macd_pct"] = result["macd"] / result["close"]
-    result["macd_signal_pct"] = result["macd_signal"] / result["close"]
-
-    middle = result["close"].rolling(20).mean()
-    std = result["close"].rolling(20).std()
-    upper, lower = middle + 2 * std, middle - 2 * std
-    result["bollinger_position"] = (result["close"] - lower) / (upper - lower).replace(0, np.nan)
 
     result[MODEL_FEATURES] = result[MODEL_FEATURES].replace([np.inf, -np.inf], np.nan)
     return result
