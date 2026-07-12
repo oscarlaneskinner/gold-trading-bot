@@ -1,4 +1,4 @@
-name: Train AI Trading Model
+name: Train AI Trading Model v2
 
 on:
   workflow_dispatch:
