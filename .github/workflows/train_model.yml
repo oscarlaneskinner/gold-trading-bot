@@ -39,7 +39,7 @@ jobs:
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: python backtest.py
+        run: python walk_forward_backtest.py
 
       - name: Commit model and reports
         run: |

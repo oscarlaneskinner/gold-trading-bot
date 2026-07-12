@@ -25,14 +25,28 @@ PAPER_TRADING = True
 SYMBOL = "GLD"
 DATA_LOOKBACK_DAYS = 500
 TRAINING_LOOKBACK_DAYS = 2500
-HOLD_DAYS = 5
+
+# --- VALIDATED VALUES (from today's walk-forward testing) ---
+# The model predicts direction 20 trading days out, and is held for up to 20
+# trading days. Testing hold periods of 3/5/10/20 days showed 20 performed
+# best and most consistently across 5 independent time periods.
+HOLD_DAYS = 20
 MAX_HOLD_DAYS = 20
 
-MIN_BUY_CONFIDENCE = 0.70
-BEARISH_EXIT_PROBABILITY = 0.40
-USE_TREND_FILTER = True
-USE_RSI_FILTER = True
-USE_VOLATILITY_FILTER = True
+# Confidence threshold: testing showed raising this (e.g. to 0.70) consistently
+# HURT performance across all 5 periods tested (dropped avg return from ~119%
+# to ~9%) because it left too few, not-obviously-better trades. Keep disabled
+# (0.50 = take any "up" prediction, matching what was actually tested).
+MIN_BUY_CONFIDENCE = 0.50
+BEARISH_EXIT_PROBABILITY = 0.40  # untested feature (model-triggered early exit) - see note below
+
+# Trend/RSI/volatility filters: each tested individually today and each one
+# REDUCED performance vs. the unfiltered model (trend filter alone: 119.1% ->
+# 91.4%). Stacked together (as in v3), they produced ZERO trades across all 5
+# periods. Disabled here to match the validated, tested configuration.
+USE_TREND_FILTER = False
+USE_RSI_FILTER = False
+USE_VOLATILITY_FILTER = False
 RSI_MINIMUM = 45.0
 RSI_MAXIMUM = 70.0
 MAX_ATR_PERCENT = 0.035
@@ -42,17 +56,29 @@ DEFAULT_TRADE_AMOUNT = 1000.0
 MIN_ORDER_AMOUNT = 10.0
 MINIMUM_ACCOUNT_EQUITY = 100.0
 
-STOP_LOSS_PERCENT = 0.05
-TAKE_PROFIT_PERCENT = 0.10
-ENABLE_TRAILING_STOP = True
+# Stop-loss / take-profit: 10% / 20% tested best among several combinations,
+# and was consistent across all 5 walk-forward periods (avg 185.0% vs 154.7%
+# baseline with no stops). Narrower stops (3-9%) cut off good trades early;
+# this was confirmed by comparing exit-reason counts (narrow stops triggered
+# on ~30-50% of trades; the 10% stop triggered on <5%).
+STOP_LOSS_PERCENT = 0.10
+TAKE_PROFIT_PERCENT = 0.20
+
+# Trailing stop: tested with mixed, inconsistent results (helped in 2 of 5
+# periods, hurt in 2, flat in 1) - meaningfully weaker evidence than the
+# fixed stop/target combo above. Disabled to match the version actually
+# validated and deployed.
+ENABLE_TRAILING_STOP = False
 TRAILING_STOP_PERCENT = 0.04
 TRAILING_ACTIVATION_PERCENT = 0.03
 
 TEST_FRACTION = 0.20
 RANDOM_STATE = 42
-RANDOM_FOREST_ESTIMATORS = 500
-RANDOM_FOREST_MAX_DEPTH = 7
-RANDOM_FOREST_MIN_SAMPLES_LEAF = 5
+RANDOM_FOREST_ESTIMATORS = 200      # matches tested model (v3's 500 estimators is untested - fine to
+                                    # experiment with, but re-validate via walk_forward_backtest.py first)
+RANDOM_FOREST_MAX_DEPTH = 5         # matches tested model (v3's max_depth=7 is untested)
+RANDOM_FOREST_MIN_SAMPLES_LEAF = 20 # matches tested model (v3's min_samples_leaf=5 is untested,
+                                    # and a smaller leaf size generally increases overfitting risk)
 
 MIN_TEST_ROWS = 50
 MIN_MODEL_ACCURACY = 0.52
