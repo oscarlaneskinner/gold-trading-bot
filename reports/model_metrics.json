@@ -1,13 +1,19 @@
 {
   "candidate_metrics": {
-    "accuracy": 0.528023598820059,
-    "f1": 0.5238095238095238,
-    "precision": 0.6717557251908397,
-    "recall": 0.4292682926829268,
-    "roc_auc": 0.5510374954495814
+    "accuracy": 0.30654761904761907,
+    "f1": 0.12734082397003746,
+    "precision": 0.34,
+    "recall": 0.07834101382488479,
+    "roc_auc": 0.41159044262866434
   },
-  "created_at_utc": "2026-07-12T16:54:44.867197+00:00",
-  "current_metrics": null,
+  "created_at_utc": "2026-07-12T18:29:41.117333+00:00",
+  "current_metrics": {
+    "accuracy": 0.4732142857142857,
+    "f1": 0.4778761061946903,
+    "precision": 0.6639344262295082,
+    "recall": 0.37327188940092165,
+    "roc_auc": 0.5384734538976881
+  },
   "features": [
     "return_1d",
     "return_5d",
@@ -26,14 +32,14 @@
     "macd_signal_pct",
     "bollinger_position"
   ],
-  "hold_days": 5,
+  "hold_days": 20,
   "scikit_learn_version": "1.9.0",
-  "status": "promoted",
+  "status": "rejected",
   "symbol": "GLD",
-  "testing_rows": 339,
+  "testing_rows": 336,
   "thresholds": {
     "minimum_accuracy": 0.52,
     "minimum_roc_auc": 0.52
   },
-  "training_rows": 1354
+  "training_rows": 1342
 }
