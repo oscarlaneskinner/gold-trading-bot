@@ -1,0 +1,29 @@
+{
+  "created_at_utc": "2026-07-12T16:54:44.867197+00:00",
+  "features": [
+    "return_1d",
+    "return_5d",
+    "return_10d",
+    "return_20d",
+    "price_vs_ema200",
+    "ema9_vs_ema21",
+    "ema21_vs_ema50",
+    "rsi_14",
+    "rsi_7",
+    "atr_pct",
+    "volatility_20d",
+    "volume_change",
+    "volume_ma_ratio",
+    "macd_pct",
+    "macd_signal_pct",
+    "bollinger_position"
+  ],
+  "metrics": {
+    "accuracy": 0.528023598820059,
+    "f1": 0.5238095238095238,
+    "precision": 0.6717557251908397,
+    "recall": 0.4292682926829268,
+    "roc_auc": 0.5510374954495814
+  },
+  "scikit_learn_version": "1.9.0"
+}
