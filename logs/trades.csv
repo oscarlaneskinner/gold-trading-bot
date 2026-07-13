@@ -1,0 +1,2 @@
+timestamp_utc,symbol,action,price,notional,probability_up,order_id,paper_trading
+2026-07-13T22:03:34.354378+00:00,GLD,BUY,367.13,8589.13,0.8589134016272387,481d9011-1a11-499e-9212-f887d2d67802,True
