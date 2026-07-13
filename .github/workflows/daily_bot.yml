@@ -1,7 +1,6 @@
 name: Daily AI Trading Bot v4
 
 on:
-  on:
   workflow_dispatch:
 
 permissions:
@@ -22,11 +21,15 @@ jobs:
         with:
           python-version: "3.13"
           cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements_models.txt
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install -r requirements_models.txt
 
       - name: Run paper-trading bot
         env:
@@ -36,6 +39,7 @@ jobs:
           python daily_bot.py
 
       - name: Save decision and trade logs
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
