@@ -1,0 +1,50 @@
+{
+  "created_at_utc": "2026-07-13T18:14:20.528609+00:00",
+  "feature_count": 13,
+  "features": [
+    "return_1d",
+    "return_5d",
+    "return_10d",
+    "return_20d",
+    "price_vs_ema200",
+    "ema9_vs_ema21",
+    "ema21_vs_ema50",
+    "rsi_14",
+    "rsi_7",
+    "atr_pct",
+    "volatility_20d",
+    "volume_change",
+    "volume_ma_ratio"
+  ],
+  "hold_days": 20,
+  "model_type": "LGBMClassifier",
+  "model_version": "lgbm_d",
+  "parameters": {
+    "class_weight": "balanced",
+    "colsample_bytree": 0.8,
+    "learning_rate": 0.02,
+    "max_depth": 5,
+    "min_child_samples": 40,
+    "n_estimators": 300,
+    "num_leaves": 31,
+    "random_state": 42,
+    "reg_alpha": 0.1,
+    "reg_lambda": 2.0,
+    "subsample": 0.8
+  },
+  "scikit_learn_version": "1.9.0",
+  "symbol": "GLD",
+  "testing_end": "2026-06-11 04:00:00+00:00",
+  "testing_rows": 521,
+  "testing_start": "2024-05-14 04:00:00+00:00",
+  "training_end": "2024-05-13 04:00:00+00:00",
+  "training_rows": 2084,
+  "training_start": "2016-02-02 05:00:00+00:00",
+  "validation_metrics": {
+    "accuracy": 0.39539347408829173,
+    "f1": 0.3835616438356164,
+    "precision": 0.620253164556962,
+    "recall": 0.2776203966005666,
+    "roc_auc": 0.4528952515850533
+  }
+}
