@@ -1,11 +1,8 @@
 name: Daily AI Trading Bot v4
 
 on:
+  on:
   workflow_dispatch:
-
-  schedule:
-    # Weekdays at 10:05 AM Eastern during daylight-saving time.
-    - cron: "5 14 * * 1-5"
 
 permissions:
   contents: write
