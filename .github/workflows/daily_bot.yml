@@ -1,9 +1,14 @@
-name: Daily AI Trading Bot v3
+name: Daily AI Trading Bot v4
 
 on:
   workflow_dispatch:
+
   schedule:
+    # Weekdays at 10:05 AM Eastern during daylight-saving time.
     - cron: "5 14 * * 1-5"
+
+permissions:
+  contents: write
 
 jobs:
   run-bot:
@@ -12,6 +17,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -28,4 +35,25 @@ jobs:
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: python daily_bot.py
+        run: |
+          python daily_bot.py
+
+      - name: Save decision and trade logs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -f logs/decisions.csv ]; then
+            git add logs/decisions.csv
+          fi
+
+          if [ -f logs/trades.csv ]; then
+            git add logs/trades.csv
+          fi
+
+          if git diff --cached --quiet; then
+            echo "No new bot logs to commit."
+          else
+            git commit -m "Update daily bot logs"
+            git push
+          fi
