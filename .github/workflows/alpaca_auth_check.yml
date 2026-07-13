@@ -1,0 +1,52 @@
+name: Check Alpaca Credentials
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-credentials:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check secret formatting
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+
+          for name in ("ALPACA_API_KEY", "ALPACA_SECRET_KEY"):
+              value = os.getenv(name)
+
+              print(f"{name}:")
+              print(f"  present: {bool(value)}")
+              print(f"  length: {len(value) if value else 0}")
+              print(f"  leading_or_trailing_spaces: {value != value.strip() if value else False}")
+              print(f"  wrapped_in_double_quotes: {value.startswith(chr(34)) and value.endswith(chr(34)) if value else False}")
+              print(f"  wrapped_in_single_quotes: {value.startswith(chr(39)) and value.endswith(chr(39)) if value else False}")
+          PY
+
+      - name: Test paper and live endpoints
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: |
+          PAPER_STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
+            --header "APCA-API-KEY-ID: $ALPACA_API_KEY" \
+            --header "APCA-API-SECRET-KEY: $ALPACA_SECRET_KEY" \
+            https://paper-api.alpaca.markets/v2/account)
+
+          LIVE_STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
+            --header "APCA-API-KEY-ID: $ALPACA_API_KEY" \
+            --header "APCA-API-SECRET-KEY: $ALPACA_SECRET_KEY" \
+            https://api.alpaca.markets/v2/account)
+
+          echo "Paper endpoint status: $PAPER_STATUS"
+          echo "Live endpoint status: $LIVE_STATUS"
+
+          echo ""
+          echo "Interpretation:"
+          echo "Paper 200 / Live 401 = valid paper credentials"
+          echo "Paper 401 / Live 200 = live credentials were stored"
+          echo "Paper 401 / Live 401 = invalid or incorrectly pasted credentials"
