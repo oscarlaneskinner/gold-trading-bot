@@ -1,0 +1,54 @@
+name: Tune GLD LightGBM
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tune-lightgbm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements_models.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements_models.txt
+
+      - name: Tune LightGBM
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python tune_lightgbm.py
+
+      - name: Commit tuning reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add reports/lightgbm_tuning.json
+          git add reports/lightgbm_tuning_folds.csv
+
+          if git diff --cached --quiet; then
+            echo "No tuning changes to commit."
+          else
+            git commit -m "Update LightGBM tuning report"
+            git push
+          fi
