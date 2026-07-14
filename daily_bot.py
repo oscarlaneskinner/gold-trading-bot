@@ -1,9 +1,12 @@
-"""Run one paper-trading decision for GLD."""
+"""Run one controlled paper-trading decision for GLD."""
 
 from __future__ import annotations
 
 import json
 from datetime import datetime, timezone
+
+from alpaca.trading.enums import OrderSide, QueryOrderStatus
+from alpaca.trading.requests import GetOrdersRequest
 
 from broker import (
     close_position,
@@ -16,6 +19,7 @@ from broker import (
 from config import (
     MINIMUM_ACCOUNT_EQUITY,
     PAPER_TRADING,
+    POSITION_PERCENT,
     SYMBOL,
     create_project_directories,
 )
@@ -23,14 +27,42 @@ from data import get_market_data
 from features import MODEL_FEATURES, add_features
 from logger import log_decision, log_trade
 from model_loader import load_active_model
-from risk_manager import calculate_notional, check_exit_conditions
-from strategy import evaluate_entry, model_exit_signal
+from risk_manager import (
+    calculate_notional,
+    check_exit_conditions,
+)
+from strategy import (
+    evaluate_entry,
+    model_exit_signal,
+)
+
+
+def get_open_buy_orders(
+    client,
+    symbol: str,
+):
+    request = GetOrdersRequest(
+        status=QueryOrderStatus.OPEN,
+        symbols=[symbol],
+    )
+
+    orders = client.get_orders(
+        filter=request,
+    )
+
+    return [
+        order
+        for order in orders
+        if order.symbol == symbol
+        and order.side == OrderSide.BUY
+    ]
 
 
 def latest_entry_information(client):
-    """Return the latest filled buy order date and average fill price."""
-
-    orders = get_filled_buy_orders(client, SYMBOL)
+    orders = get_filled_buy_orders(
+        client,
+        SYMBOL,
+    )
 
     if not orders:
         return None, None
@@ -47,15 +79,24 @@ def latest_entry_information(client):
 
 
 def run():
-    """Run one GLD paper-trading decision."""
-
     create_project_directories()
 
+    if not PAPER_TRADING:
+        raise RuntimeError(
+            "This bot is restricted to paper trading."
+        )
+
     print(
-        f"=== GLD AI bot: "
+        "=== GLD AI bot: "
         f"{datetime.now(timezone.utc).isoformat()} ==="
     )
-    print(f"Paper trading: {PAPER_TRADING}")
+    print(
+        f"Paper trading: {PAPER_TRADING}"
+    )
+    print(
+        "Configured fixed position size: "
+        f"{POSITION_PERCENT:.1%}"
+    )
 
     frame = add_features(
         get_market_data()
@@ -71,19 +112,24 @@ def run():
         )
 
     latest = usable.iloc[-1]
-
     model_input = usable[
         MODEL_FEATURES
     ].iloc[[-1]]
 
-    model, model_info = load_active_model()
-
-    prediction = int(
-        model.predict(model_input)[0]
+    model, model_info = (
+        load_active_model()
     )
 
-    probabilities = model.predict_proba(
-        model_input
+    prediction = int(
+        model.predict(
+            model_input
+        )[0]
+    )
+
+    probabilities = (
+        model.predict_proba(
+            model_input
+        )
     )
 
     positive_class_index = list(
@@ -102,72 +148,103 @@ def run():
     )
 
     print(
-        f"Using model: "
+        "Using model: "
         f"{model_info['model_name']}"
     )
     print(
-        f"Version: "
+        "Version: "
         f"{model_info.get('model_version')}"
     )
 
     client = create_trading_client()
+    clock = client.get_clock()
 
     position = get_position(
         client,
         SYMBOL,
     )
 
+    open_buy_orders = (
+        get_open_buy_orders(
+            client,
+            SYMBOL,
+        )
+    )
+
     action = "HOLD"
     reason = "No action."
     order_id = None
+    notional = None
 
     if position is None:
-        decision = evaluate_entry(
-            prediction,
-            probability_up,
-            latest,
-        )
-
-        action = decision.action
-        reason = decision.reason
-
-        if action == "BUY":
-            equity = get_account_equity(
-                client
+        if open_buy_orders:
+            reason = (
+                "An open GLD buy order already exists."
             )
 
-            if equity < MINIMUM_ACCOUNT_EQUITY:
-                action = "HOLD"
-                reason = (
-                    f"Account equity ${equity:.2f} "
-                    "is below the configured minimum."
-                )
+        else:
+            decision = evaluate_entry(
+                prediction,
+                probability_up,
+                latest,
+            )
 
-            else:
-                notional = calculate_notional(
-                    equity,
-                    probability_up,
-                )
+            action = decision.action
+            reason = decision.reason
 
-                order = submit_market_buy(
-                    client,
-                    SYMBOL,
-                    notional,
-                )
+            if action == "BUY":
+                if not clock.is_open:
+                    action = "HOLD"
+                    reason = (
+                        "Bullish signal detected, "
+                        "but the market is closed."
+                    )
 
-                order_id = str(
-                    order.id
-                )
+                else:
+                    equity = get_account_equity(
+                        client
+                    )
 
-                log_trade(
-                    symbol=SYMBOL,
-                    action="BUY",
-                    price=price,
-                    notional=notional,
-                    probability_up=probability_up,
-                    order_id=order_id,
-                    paper_trading=PAPER_TRADING,
-                )
+                    if (
+                        equity
+                        < MINIMUM_ACCOUNT_EQUITY
+                    ):
+                        action = "HOLD"
+                        reason = (
+                            f"Account equity "
+                            f"${equity:.2f} is below "
+                            "the configured minimum."
+                        )
+
+                    else:
+                        notional = (
+                            calculate_notional(
+                                equity,
+                                probability_up,
+                            )
+                        )
+
+                        order = (
+                            submit_market_buy(
+                                client,
+                                SYMBOL,
+                                notional,
+                            )
+                        )
+
+                        order_id = str(
+                            order.id
+                        )
+
+                        log_trade(
+                            symbol=SYMBOL,
+                            action="BUY",
+                            price=price,
+                            notional=notional,
+                            probability_up=probability_up,
+                            order_id=order_id,
+                            paper_trading=PAPER_TRADING,
+                        )
 
     else:
         entry_date, entry_price = (
@@ -214,8 +291,10 @@ def run():
                 )
             )
 
-            model_exit = model_exit_signal(
-                probability_up
+            model_exit = (
+                model_exit_signal(
+                    probability_up
+                )
             )
 
             if risk_exit.should_exit:
@@ -225,9 +304,14 @@ def run():
                     or "risk_exit"
                 )
 
-            elif model_exit.action == "SELL":
+            elif (
+                model_exit.action
+                == "SELL"
+            ):
                 action = "SELL"
-                reason = model_exit.reason
+                reason = (
+                    model_exit.reason
+                )
 
             else:
                 action = "HOLD"
@@ -237,24 +321,32 @@ def run():
                 )
 
             if action == "SELL":
-                order = close_position(
-                    client,
-                    SYMBOL,
-                )
+                if not clock.is_open:
+                    action = "HOLD"
+                    reason = (
+                        "Exit condition detected, "
+                        "but the market is closed."
+                    )
 
-                order_id = str(
-                    order.id
-                )
+                else:
+                    order = close_position(
+                        client,
+                        SYMBOL,
+                    )
 
-                log_trade(
-                    symbol=SYMBOL,
-                    action="SELL",
-                    price=price,
-                    probability_up=probability_up,
-                    reason=reason,
-                    order_id=order_id,
-                    paper_trading=PAPER_TRADING,
-                )
+                    order_id = str(
+                        order.id
+                    )
+
+                    log_trade(
+                        symbol=SYMBOL,
+                        action="SELL",
+                        price=price,
+                        probability_up=probability_up,
+                        reason=reason,
+                        order_id=order_id,
+                        paper_trading=PAPER_TRADING,
+                    )
 
     log_decision(
         symbol=SYMBOL,
@@ -285,10 +377,20 @@ def run():
         ),
         "probability_up": probability_up,
         "price": price,
+        "position_percent":
+            POSITION_PERCENT,
+        "notional": notional,
+        "market_open":
+            bool(clock.is_open),
+        "existing_position":
+            position is not None,
+        "open_buy_order_count":
+            len(open_buy_orders),
         "action": action,
         "reason": reason,
         "order_id": order_id,
-        "paper_trading": PAPER_TRADING,
+        "paper_trading":
+            PAPER_TRADING,
     }
 
     print(

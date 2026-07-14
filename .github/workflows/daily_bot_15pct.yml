@@ -1,0 +1,64 @@
+name: GLD 15 Percent Paper Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-15-percent-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout paper-15-percent branch
+        uses: actions/checkout@v4
+        with:
+          ref: paper-15-percent
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements_models.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements_models.txt
+
+      - name: Run fixed 15 percent paper bot
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          POSITION_PERCENT: "0.15"
+          TRADE_LOG_FILENAME: "trades_15pct.csv"
+          DECISION_LOG_FILENAME: "decisions_15pct.csv"
+        run: python daily_bot.py
+
+      - name: Save separate 15 percent logs
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -f logs/decisions_15pct.csv ]; then
+            git add logs/decisions_15pct.csv
+          fi
+
+          if [ -f logs/trades_15pct.csv ]; then
+            git add logs/trades_15pct.csv
+          fi
+
+          if git diff --cached --quiet; then
+            echo "No new 15 percent logs to commit."
+          else
+            git commit -m "Update GLD 15 percent paper logs"
+            git push origin HEAD:paper-15-percent
+          fi
