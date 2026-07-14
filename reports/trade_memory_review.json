@@ -1,0 +1,63 @@
+{
+  "current_price": 372.31,
+  "database_summary": {
+    "closed_trade_count": 0,
+    "database_path": "/home/runner/work/gold-trading-bot/gold-trading-bot/data/trade_memory.sqlite3",
+    "decision_count": 2,
+    "open_trade_count": 1,
+    "realized_profit_loss": 0.0,
+    "trade_count": 1
+  },
+  "order_submitted": false,
+  "paper_trading": true,
+  "performance_summary": {
+    "average_holding_days": 0.0,
+    "average_realized_return": 0.0,
+    "closed_trades": 0,
+    "grade_counts": {
+      "A": 0,
+      "A+": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "F": 0,
+      "PENDING": 1
+    },
+    "largest_loss": 0.0,
+    "largest_win": 0.0,
+    "median_realized_return": 0.0,
+    "open_trades": 1,
+    "open_unrealized_profit_loss": -24.51611899317062,
+    "profit_factor": 0.0,
+    "realized_profit_loss": 0.0,
+    "total_trades": 1,
+    "win_rate": 0.0
+  },
+  "symbol": "GLD",
+  "trades": [
+    {
+      "classification": "OPEN",
+      "current_price": 372.31,
+      "entry_order_id": "c84b5c49-7a15-4ad7-896c-4abe35b9b472",
+      "entry_price": 372.919503,
+      "entry_probability_up": null,
+      "entry_timestamp_utc": "2026-07-14T16:17:38.628770+00:00",
+      "exit_order_id": null,
+      "exit_price": null,
+      "exit_reason": null,
+      "exit_timestamp_utc": null,
+      "grade": "PENDING",
+      "holding_days": null,
+      "notional": 14999.990008944631,
+      "position_percent": null,
+      "quantity": 40.223130966,
+      "realized_profit_loss": null,
+      "realized_return": null,
+      "status": "OPEN",
+      "symbol": "GLD",
+      "trade_id": 1,
+      "unrealized_profit_loss": -24.51611899317062,
+      "unrealized_return": -0.0016344090215094642
+    }
+  ]
+}
