@@ -1,0 +1,45 @@
+name: Audit GLD Research Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 14 * * 6"
+
+permissions:
+  contents: write
+
+jobs:
+  audit-research-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run research-data audit
+        run: python generate_research_data_audit.py
+
+      - name: Save audit report
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -f reports/research_data_audit.json ]; then
+            git add reports/research_data_audit.json
+          fi
+
+          if git diff --cached --quiet; then
+            echo "No research-audit changes to commit."
+          else
+            git commit -m "Update GLD research-data audit"
+            git push
+          fi
