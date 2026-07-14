@@ -1,0 +1,42 @@
+name: Test GLD Experiment Registry
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-registry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run offline registry test
+        run: python test_experiment_registry.py
+
+      - name: Save experiment registry
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -f reports/strategy_experiments.json ]; then
+            git add reports/strategy_experiments.json
+          fi
+
+          if git diff --cached --quiet; then
+            echo "No experiment-registry changes to commit."
+          else
+            git commit -m "Initialize GLD experiment registry"
+            git push
+          fi
