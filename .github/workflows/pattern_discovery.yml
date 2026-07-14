@@ -1,0 +1,42 @@
+name: Discover GLD Trading Patterns
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  discover-patterns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Generate pattern-discovery report
+        run: python generate_pattern_report.py
+
+      - name: Save pattern report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -f reports/pattern_discovery.json ]; then
+            git add reports/pattern_discovery.json
+          fi
+
+          if git diff --cached --quiet; then
+            echo "No pattern-report changes to commit."
+          else
+            git commit -m "Update GLD pattern-discovery report"
+            git push
+          fi
