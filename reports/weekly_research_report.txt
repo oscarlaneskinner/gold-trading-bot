@@ -1,0 +1,36 @@
+GLD WEEKLY RESEARCH REPORT
+==============================
+
+Generated: 2026-07-14T19:30:23.883832+00:00
+Status: INSUFFICIENT_DATA
+
+TRADE MEMORY
+- Decisions: 4
+- Trades: 1
+- Open trades: 1
+- Closed trades: 0
+- Realized P/L: $0.00
+
+PERFORMANCE
+- Win rate: 0.00%
+- Average realized return: 0.00%
+- Profit factor: 0.00
+- Open unrealized P/L: $0.00
+
+INTELLIGENCE
+- Intelligence records: 2
+- Market regimes: {"bear_trend": 1, "bull_trend": 1}
+- Confidence buckets: {"85_to_90": 2}
+
+OBSERVATIONS
+- 1 trade(s) are still open, so their final outcomes are not yet available for pattern analysis.
+- No completed trades are available yet. Current results describe exposure and market conditions only.
+- The completed-trade sample remains too small for dependable strategy conclusions.
+
+RECOMMENDATIONS
+- [INSUFFICIENT_DATA] Keep the current production strategy unchanged. Reason: Only 0 completed trade(s) are available. At least 10 completed trades are required before the research engine will suggest a strategy change.
+
+SAFETY
+- Production strategy changed: No
+- Market request made: No
+- Order submitted: No
