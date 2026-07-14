@@ -1,0 +1,176 @@
+{
+  "generated_at_utc": "2026-07-14T19:30:23.883832+00:00",
+  "intelligence_summary": {
+    "confidence_bucket_counts": {
+      "85_to_90": 2
+    },
+    "intelligence_record_count": 2,
+    "market_regime_counts": {
+      "bear_trend": 1,
+      "bull_trend": 1
+    }
+  },
+  "memory_summary": {
+    "closed_trade_count": 0,
+    "database_path": "/home/runner/work/gold-trading-bot/gold-trading-bot/data/trade_memory.sqlite3",
+    "decision_count": 4,
+    "open_trade_count": 1,
+    "realized_profit_loss": 0.0,
+    "trade_count": 1
+  },
+  "pattern_summary": {
+    "groups": {
+      "confidence_bucket": {
+        "unknown": {
+          "average_return": 0.0,
+          "closed_trades": 0,
+          "grade_counts": {
+            "A": 0,
+            "A+": 0,
+            "B": 0,
+            "C": 0,
+            "D": 0,
+            "F": 0
+          },
+          "largest_loss": 0.0,
+          "largest_win": 0.0,
+          "median_return": 0.0,
+          "open_trades": 1,
+          "profit_factor": 0.0,
+          "realized_profit_loss": 0.0,
+          "total_trades": 1,
+          "win_rate": 0.0
+        }
+      },
+      "market_regime": {
+        "unknown": {
+          "average_return": 0.0,
+          "closed_trades": 0,
+          "grade_counts": {
+            "A": 0,
+            "A+": 0,
+            "B": 0,
+            "C": 0,
+            "D": 0,
+            "F": 0
+          },
+          "largest_loss": 0.0,
+          "largest_win": 0.0,
+          "median_return": 0.0,
+          "open_trades": 1,
+          "profit_factor": 0.0,
+          "realized_profit_loss": 0.0,
+          "total_trades": 1,
+          "win_rate": 0.0
+        }
+      },
+      "momentum_state": {
+        "unknown": {
+          "average_return": 0.0,
+          "closed_trades": 0,
+          "grade_counts": {
+            "A": 0,
+            "A+": 0,
+            "B": 0,
+            "C": 0,
+            "D": 0,
+            "F": 0
+          },
+          "largest_loss": 0.0,
+          "largest_win": 0.0,
+          "median_return": 0.0,
+          "open_trades": 1,
+          "profit_factor": 0.0,
+          "realized_profit_loss": 0.0,
+          "total_trades": 1,
+          "win_rate": 0.0
+        }
+      },
+      "trend_state": {
+        "unknown": {
+          "average_return": 0.0,
+          "closed_trades": 0,
+          "grade_counts": {
+            "A": 0,
+            "A+": 0,
+            "B": 0,
+            "C": 0,
+            "D": 0,
+            "F": 0
+          },
+          "largest_loss": 0.0,
+          "largest_win": 0.0,
+          "median_return": 0.0,
+          "open_trades": 1,
+          "profit_factor": 0.0,
+          "realized_profit_loss": 0.0,
+          "total_trades": 1,
+          "win_rate": 0.0
+        }
+      },
+      "volatility_state": {
+        "unknown": {
+          "average_return": 0.0,
+          "closed_trades": 0,
+          "grade_counts": {
+            "A": 0,
+            "A+": 0,
+            "B": 0,
+            "C": 0,
+            "D": 0,
+            "F": 0
+          },
+          "largest_loss": 0.0,
+          "largest_win": 0.0,
+          "median_return": 0.0,
+          "open_trades": 1,
+          "profit_factor": 0.0,
+          "realized_profit_loss": 0.0,
+          "total_trades": 1,
+          "win_rate": 0.0
+        }
+      }
+    },
+    "observations": [
+      "1 trade(s) are still open, so their final outcomes are not yet available for pattern analysis.",
+      "No completed trades are available yet. Current results describe exposure and market conditions only.",
+      "The completed-trade sample remains too small for dependable strategy conclusions."
+    ]
+  },
+  "performance_summary": {
+    "average_holding_days": 0.0,
+    "average_realized_return": 0.0,
+    "closed_trades": 0,
+    "grade_counts": {
+      "A": 0,
+      "A+": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "F": 0,
+      "PENDING": 1
+    },
+    "largest_loss": 0.0,
+    "largest_win": 0.0,
+    "median_realized_return": 0.0,
+    "open_trades": 1,
+    "open_unrealized_profit_loss": 0.0,
+    "profit_factor": 0.0,
+    "realized_profit_loss": 0.0,
+    "total_trades": 1,
+    "win_rate": 0.0
+  },
+  "recommendations": [
+    {
+      "reason": "Only 0 completed trade(s) are available. At least 10 completed trades are required before the research engine will suggest a strategy change.",
+      "recommendation": "Keep the current production strategy unchanged.",
+      "status": "INSUFFICIENT_DATA"
+    }
+  ],
+  "safety": {
+    "market_request_made": false,
+    "order_submitted": false,
+    "production_strategy_changed": false
+  },
+  "status": "INSUFFICIENT_DATA"
+}
