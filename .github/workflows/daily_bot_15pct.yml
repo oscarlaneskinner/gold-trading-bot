@@ -41,7 +41,7 @@ jobs:
           DECISION_LOG_FILENAME: "decisions_15pct.csv"
         run: python daily_bot.py
 
-      - name: Save separate 15 percent logs
+      - name: Save separate logs and trade memory
         if: always()
         run: |
           git config user.name "github-actions[bot]"
@@ -55,9 +55,13 @@ jobs:
             git add logs/trades_15pct.csv
           fi
 
+          if [ -f data/trade_memory.sqlite3 ]; then
+            git add data/trade_memory.sqlite3
+          fi
+
           if git diff --cached --quiet; then
-            echo "No new 15 percent logs to commit."
+            echo "No new 15 percent logs or memory changes to commit."
           else
-            git commit -m "Update GLD 15 percent paper logs"
+            git commit -m "Update GLD 15 percent logs and trade memory"
             git push origin HEAD:main
           fi

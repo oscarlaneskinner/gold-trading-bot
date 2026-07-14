@@ -35,10 +35,10 @@ jobs:
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: |
-          python daily_bot.py
+          POSITION_PERCENT: "0.10"
+        run: python daily_bot.py
 
-      - name: Save decision and trade logs
+      - name: Save logs and trade memory
         if: always()
         run: |
           git config user.name "github-actions[bot]"
@@ -52,9 +52,13 @@ jobs:
             git add logs/trades.csv
           fi
 
+          if [ -f data/trade_memory.sqlite3 ]; then
+            git add data/trade_memory.sqlite3
+          fi
+
           if git diff --cached --quiet; then
-            echo "No new bot logs to commit."
+            echo "No new logs or trade-memory changes to commit."
           else
-            git commit -m "Update daily bot logs"
+            git commit -m "Update daily bot logs and trade memory"
             git push
           fi
