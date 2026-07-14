@@ -1,0 +1,42 @@
+name: Test GLD Trade Intelligence
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-intelligence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run read-only intelligence test
+        run: python test_trade_intelligence.py
+
+      - name: Save enriched database
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -f data/trade_memory.sqlite3 ]; then
+            git add data/trade_memory.sqlite3
+          fi
+
+          if git diff --cached --quiet; then
+            echo "No intelligence-database changes to commit."
+          else
+            git commit -m "Initialize GLD trade intelligence"
+            git push
+          fi

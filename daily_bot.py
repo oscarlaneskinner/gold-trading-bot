@@ -27,14 +27,9 @@ from data import get_market_data
 from features import MODEL_FEATURES, add_features
 from logger import log_decision, log_trade
 from model_loader import load_active_model
-from risk_manager import (
-    calculate_notional,
-    check_exit_conditions,
-)
-from strategy import (
-    evaluate_entry,
-    model_exit_signal,
-)
+from risk_manager import calculate_notional, check_exit_conditions
+from strategy import evaluate_entry, model_exit_signal
+from trade_intelligence import record_decision_intelligence
 from trade_memory import record_decision
 from trade_memory_sync import synchronize_filled_trades
 
@@ -44,7 +39,6 @@ def get_open_buy_orders(client, symbol: str):
         status=QueryOrderStatus.OPEN,
         symbols=[symbol],
     )
-
     orders = client.get_orders(filter=request)
 
     return [
@@ -93,9 +87,10 @@ def save_memory_safely(
     existing_position: bool,
     open_buy_order_count: int,
     order_id: str | None,
-) -> int | None:
+) -> tuple[int | None, dict | None]:
     try:
         market_timestamp = latest.get("timestamp")
+        features = feature_snapshot(latest)
 
         decision_id = record_decision(
             symbol=SYMBOL,
@@ -118,22 +113,31 @@ def save_memory_safely(
                 if market_timestamp is not None
                 else None
             ),
-            features=feature_snapshot(latest),
+            features=features,
+        )
+
+        intelligence = record_decision_intelligence(
+            decision_id=decision_id,
+            probability_up=probability_up,
+            features=features,
         )
 
         print(
-            f"Trade-memory decision saved with id "
-            f"{decision_id}."
+            f"Trade-memory decision saved with id {decision_id}."
+        )
+        print(
+            "Trade intelligence: "
+            f"{json.dumps(intelligence, sort_keys=True)}"
         )
 
-        return decision_id
+        return decision_id, intelligence
 
     except Exception as error:
         print(
             "WARNING: The trading decision completed, but "
             f"trade-memory storage failed: {error}"
         )
-        return None
+        return None, None
 
 
 def synchronize_safely(client, stage: str) -> dict | None:
@@ -175,10 +179,7 @@ def run():
     )
 
     frame = add_features(get_market_data())
-
-    usable = frame.dropna(
-        subset=MODEL_FEATURES
-    )
+    usable = frame.dropna(subset=MODEL_FEATURES)
 
     if usable.empty:
         raise RuntimeError(
@@ -186,41 +187,21 @@ def run():
         )
 
     latest = usable.iloc[-1]
-    model_input = usable[
-        MODEL_FEATURES
-    ].iloc[[-1]]
+    model_input = usable[MODEL_FEATURES].iloc[[-1]]
 
     model, model_info = load_active_model()
+    prediction = int(model.predict(model_input)[0])
+    probabilities = model.predict_proba(model_input)
 
-    prediction = int(
-        model.predict(model_input)[0]
-    )
-
-    probabilities = model.predict_proba(
-        model_input
-    )
-
-    positive_class_index = list(
-        model.classes_
-    ).index(1)
-
+    positive_class_index = list(model.classes_).index(1)
     probability_up = float(
-        probabilities[
-            0,
-            positive_class_index,
-        ]
+        probabilities[0, positive_class_index]
     )
 
     price = float(latest["close"])
 
-    print(
-        "Using model: "
-        f"{model_info['model_name']}"
-    )
-    print(
-        "Version: "
-        f"{model_info.get('model_version')}"
-    )
+    print(f"Using model: {model_info['model_name']}")
+    print(f"Version: {model_info.get('model_version')}")
 
     client = create_trading_client()
     synchronize_before = synchronize_safely(
@@ -229,16 +210,8 @@ def run():
     )
 
     clock = client.get_clock()
-
-    position = get_position(
-        client,
-        SYMBOL,
-    )
-
-    open_buy_orders = get_open_buy_orders(
-        client,
-        SYMBOL,
-    )
+    position = get_position(client, SYMBOL)
+    open_buy_orders = get_open_buy_orders(client, SYMBOL)
 
     action = "HOLD"
     reason = "No action."
@@ -247,17 +220,13 @@ def run():
 
     if position is None:
         if open_buy_orders:
-            reason = (
-                "An open GLD buy order already exists."
-            )
-
+            reason = "An open GLD buy order already exists."
         else:
             decision = evaluate_entry(
                 prediction,
                 probability_up,
                 latest,
             )
-
             action = decision.action
             reason = decision.reason
 
@@ -268,23 +237,15 @@ def run():
                         "Bullish signal detected, "
                         "but the market is closed."
                     )
-
                 else:
-                    equity = get_account_equity(
-                        client
-                    )
+                    equity = get_account_equity(client)
 
-                    if (
-                        equity
-                        < MINIMUM_ACCOUNT_EQUITY
-                    ):
+                    if equity < MINIMUM_ACCOUNT_EQUITY:
                         action = "HOLD"
                         reason = (
-                            f"Account equity "
-                            f"${equity:.2f} is below "
+                            f"Account equity ${equity:.2f} is below "
                             "the configured minimum."
                         )
-
                     else:
                         notional = calculate_notional(
                             equity,
@@ -296,7 +257,6 @@ def run():
                             SYMBOL,
                             notional,
                         )
-
                         order_id = str(order.id)
 
                         log_trade(
@@ -310,35 +270,24 @@ def run():
                         )
 
     else:
-        entry_date, entry_price = (
-            latest_entry_information(client)
+        entry_date, entry_price = latest_entry_information(
+            client
         )
 
-        if (
-            entry_date is None
-            or entry_price is None
-        ):
+        if entry_date is None or entry_price is None:
             reason = (
                 "Open position found, but entry "
                 "order could not be identified."
             )
-
         else:
             since_entry = usable[
-                usable["timestamp"]
-                >= entry_date
+                usable["timestamp"] >= entry_date
             ]
 
-            days_held = max(
-                0,
-                len(since_entry) - 1,
-            )
-
+            days_held = max(0, len(since_entry) - 1)
             peak_price = max(
                 entry_price,
-                float(
-                    since_entry["high"].max()
-                ),
+                float(since_entry["high"].max()),
             )
 
             risk_exit = check_exit_conditions(
@@ -347,27 +296,18 @@ def run():
                 peak_price,
                 days_held,
             )
-
-            model_exit = model_exit_signal(
-                probability_up
-            )
+            model_exit = model_exit_signal(probability_up)
 
             if risk_exit.should_exit:
                 action = "SELL"
-                reason = (
-                    risk_exit.reason
-                    or "risk_exit"
-                )
-
+                reason = risk_exit.reason or "risk_exit"
             elif model_exit.action == "SELL":
                 action = "SELL"
                 reason = model_exit.reason
-
             else:
                 action = "HOLD"
                 reason = (
-                    "Position remains within "
-                    "exit rules."
+                    "Position remains within exit rules."
                 )
 
             if action == "SELL":
@@ -377,13 +317,11 @@ def run():
                         "Exit condition detected, "
                         "but the market is closed."
                     )
-
                 else:
                     order = close_position(
                         client,
                         SYMBOL,
                     )
-
                     order_id = str(order.id)
 
                     log_trade(
@@ -399,10 +337,7 @@ def run():
     log_decision(
         symbol=SYMBOL,
         prediction=prediction,
-        probability_up=round(
-            probability_up,
-            6,
-        ),
+        probability_up=round(probability_up, 6),
         price=price,
         action=action,
         reason=reason,
@@ -410,7 +345,7 @@ def run():
         paper_trading=PAPER_TRADING,
     )
 
-    memory_decision_id = save_memory_safely(
+    memory_decision_id, intelligence = save_memory_safely(
         latest=latest,
         model_info=model_info,
         prediction=prediction,
@@ -432,17 +367,9 @@ def run():
 
     output = {
         "symbol": SYMBOL,
-        "model_name": model_info[
-            "model_name"
-        ],
-        "model_version": model_info.get(
-            "model_version"
-        ),
-        "prediction": (
-            "UP"
-            if prediction == 1
-            else "DOWN"
-        ),
+        "model_name": model_info["model_name"],
+        "model_version": model_info.get("model_version"),
+        "prediction": "UP" if prediction == 1 else "DOWN",
         "probability_up": probability_up,
         "price": price,
         "position_percent": POSITION_PERCENT,
@@ -453,12 +380,10 @@ def run():
         "action": action,
         "reason": reason,
         "order_id": order_id,
-        "trade_memory_decision_id":
-            memory_decision_id,
-        "trade_sync_before":
-            synchronize_before,
-        "trade_sync_after":
-            synchronize_after,
+        "trade_memory_decision_id": memory_decision_id,
+        "trade_intelligence": intelligence,
+        "trade_sync_before": synchronize_before,
+        "trade_sync_after": synchronize_after,
         "paper_trading": PAPER_TRADING,
     }
 
