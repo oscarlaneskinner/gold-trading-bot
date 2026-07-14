@@ -1,2 +1,3 @@
 timestamp_utc,symbol,prediction,probability_up,price,action,reason,order_id,paper_trading
 2026-07-13T22:03:34.354682+00:00,GLD,1,0.858913,367.13,BUY,Bullish AI signal at 85.9% confidence.,481d9011-1a11-499e-9212-f887d2d67802,True
+2026-07-14T19:00:54.466010+00:00,GLD,1,0.885637,371.96,HOLD,Position remains within exit rules.,,True
