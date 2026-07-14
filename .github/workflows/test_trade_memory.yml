@@ -1,0 +1,42 @@
+name: Test GLD Trade Memory
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-trade-memory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run read-only trade-memory test
+        run: python test_trade_memory.py
+
+      - name: Save trade-memory database
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -f data/trade_memory.sqlite3 ]; then
+            git add data/trade_memory.sqlite3
+          fi
+
+          if git diff --cached --quiet; then
+            echo "No trade-memory database changes to commit."
+          else
+            git commit -m "Initialize GLD trade memory"
+            git push
+          fi
