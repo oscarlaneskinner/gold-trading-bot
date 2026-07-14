@@ -1,0 +1,145 @@
+{
+  "features": [
+    "return_1d",
+    "return_5d",
+    "return_10d",
+    "return_20d",
+    "price_vs_ema200",
+    "ema9_vs_ema21",
+    "ema21_vs_ema50",
+    "rsi_14",
+    "rsi_7",
+    "atr_pct",
+    "volatility_20d",
+    "volume_change",
+    "volume_ma_ratio"
+  ],
+  "summaries": {
+    "lightgbm": {
+      "folds": 6,
+      "positive_folds": 5,
+      "median_fold_return": 0.023288569042796414,
+      "mean_fold_return": 0.017396944776533436,
+      "worst_fold_return": -0.012223303429823917,
+      "best_fold_return": 0.03444295595662017,
+      "total_trades": 77,
+      "mean_win_rate": 0.6073232323232324,
+      "mean_profit_factor": 3.8936171185201602,
+      "mean_exposure": 0.7893064690120749,
+      "mean_maximum_drawdown": -0.013436682832124033,
+      "worst_maximum_drawdown": -0.02238403017999413,
+      "mean_model_accuracy": 0.4830845251766016,
+      "mean_model_roc_auc": 0.5330299466971837,
+      "research_score": 0.2176751151239797,
+      "weights": {
+        "lightgbm": 1.0,
+        "xgboost": 0.0
+      }
+    },
+    "xgboost": {
+      "folds": 6,
+      "positive_folds": 5,
+      "median_fold_return": 0.01505702752361926,
+      "mean_fold_return": 0.014289258064041374,
+      "worst_fold_return": -0.012223303429823917,
+      "best_fold_return": 0.03147131651378632,
+      "total_trades": 77,
+      "mean_win_rate": 0.6008713508713509,
+      "mean_profit_factor": 3.7056570400859545,
+      "mean_exposure": 0.7925427149667676,
+      "mean_maximum_drawdown": -0.014447848611624311,
+      "worst_maximum_drawdown": -0.02238403017999413,
+      "mean_model_accuracy": 0.5030083168041202,
+      "mean_model_roc_auc": 0.5458916786743289,
+      "research_score": 0.17981974882000146,
+      "weights": {
+        "lightgbm": 0.0,
+        "xgboost": 1.0
+      }
+    },
+    "ensemble_50_50": {
+      "folds": 6,
+      "positive_folds": 5,
+      "median_fold_return": 0.016626520436758163,
+      "mean_fold_return": 0.014269612075053265,
+      "worst_fold_return": -0.012223303429823917,
+      "best_fold_return": 0.03351710914161554,
+      "total_trades": 78,
+      "mean_win_rate": 0.6074647574647575,
+      "mean_profit_factor": 3.176660021843181,
+      "mean_exposure": 0.795239586595678,
+      "mean_maximum_drawdown": -0.01426923507998675,
+      "worst_maximum_drawdown": -0.02238403017999413,
+      "mean_model_accuracy": 0.48954483766572715,
+      "mean_model_roc_auc": 0.5395318850648169,
+      "research_score": 0.18542244913362965,
+      "weights": {
+        "lightgbm": 0.5,
+        "xgboost": 0.5
+      }
+    },
+    "ensemble_60_40": {
+      "folds": 6,
+      "positive_folds": 5,
+      "median_fold_return": 0.018382148493787942,
+      "mean_fold_return": 0.014508091159652292,
+      "worst_fold_return": -0.012223303429823917,
+      "best_fold_return": 0.031436727535150144,
+      "total_trades": 78,
+      "mean_win_rate": 0.596933621933622,
+      "mean_profit_factor": 3.449407446072508,
+      "mean_exposure": 0.795239586595678,
+      "mean_maximum_drawdown": -0.014554687852736392,
+      "worst_maximum_drawdown": -0.02238403017999413,
+      "mean_model_accuracy": 0.48523158297665026,
+      "mean_model_roc_auc": 0.5383014821542288,
+      "research_score": 0.19279887923988803,
+      "weights": {
+        "lightgbm": 0.6,
+        "xgboost": 0.4
+      }
+    },
+    "ensemble_70_30": {
+      "folds": 6,
+      "positive_folds": 5,
+      "median_fold_return": 0.021359812670651013,
+      "mean_fold_return": 0.016029948589173226,
+      "worst_fold_return": -0.012223303429823917,
+      "best_fold_return": 0.031436727535150144,
+      "total_trades": 78,
+      "mean_win_rate": 0.6120851370851371,
+      "mean_profit_factor": 3.571990531015063,
+      "mean_exposure": 0.795239586595678,
+      "mean_maximum_drawdown": -0.014554687852736411,
+      "worst_maximum_drawdown": -0.02238403017999413,
+      "mean_model_accuracy": 0.4890072032571249,
+      "mean_model_roc_auc": 0.5368780577502591,
+      "research_score": 0.20761090836598523,
+      "weights": {
+        "lightgbm": 0.7,
+        "xgboost": 0.3
+      }
+    }
+  },
+  "recommendation": {
+    "research_winner": "lightgbm",
+    "ranking": [
+      "lightgbm",
+      "ensemble_70_30",
+      "ensemble_60_40",
+      "ensemble_50_50",
+      "xgboost"
+    ],
+    "promotion_rules": {
+      "winner_is_ensemble": false,
+      "median_return_not_worse": true,
+      "mean_return_not_worse": true,
+      "positive_folds_not_worse": true,
+      "worst_drawdown_not_worse": true,
+      "trade_count_at_least_90_percent": true
+    },
+    "promotion_passed": false,
+    "decision": "Keep tuned LightGBM as the paper-trading model.",
+    "note": "Research only. This workflow cannot place orders."
+  }
+}
