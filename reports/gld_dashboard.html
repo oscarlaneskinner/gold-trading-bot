@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLD AI Trading Dashboard</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1, h2, h3 { margin-top: 0; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  margin-bottom: 18px;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+.metrics div {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+}
+.metrics span {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+}
+.metrics strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+th { background: #f8fafc; }
+.small { color: #64748b; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>GLD AI Trading Dashboard</h1>
+  <p class="small">Generated 2026-07-14T18:36:16.754155+00:00 · Paper trading · Read-only</p>
+
+  <div class="grid">
+    <div class="card"><h3>Account equity</h3><strong>$99,967.44</strong></div>
+    <div class="card"><h3>Buying power</h3><strong>$381,908.84</strong></div>
+    <div class="card"><h3>Open trades</h3><strong>1</strong></div>
+    <div class="card"><h3>Closed trades</h3><strong>0</strong></div>
+    <div class="card"><h3>Realized P/L</h3><strong>$0.00</strong></div>
+    <div class="card"><h3>Win rate</h3><strong>0.00%</strong></div>
+  </div>
+
+  
+        <div class="card">
+          <h3>Open GLD Position</h3>
+          <div class="metrics">
+            <div><span>Quantity</span><strong>40.223131</strong></div>
+            <div><span>Market value</span><strong>$14,967.43</strong></div>
+            <div><span>Average entry</span><strong>$372.92</strong></div>
+            <div><span>Current price</span><strong>$372.11</strong></div>
+            <div><span>Unrealized P/L</span><strong>$-32.56</strong></div>
+            <div><span>Unrealized return</span><strong>-0.22%</strong></div>
+          </div>
+        </div>
+        
+
+  <div class="card">
+    <h2>Performance Summary</h2>
+    <div class="metrics">
+      <div><span>Profit factor</span><strong>0.00</strong></div>
+      <div><span>Average return</span><strong>0.00%</strong></div>
+      <div><span>Largest win</span><strong>0.00%</strong></div>
+      <div><span>Largest loss</span><strong>0.00%</strong></div>
+      <div><span>Open unrealized P/L</span><strong>$-32.56</strong></div>
+      <div><span>Average holding days</span><strong>0.00</strong></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Recent Trades</h2>
+    <table><thead><tr><th>ID</th><th>Status</th><th>Grade</th><th>Entry</th><th>Current / Exit</th><th>Return</th><th>P/L</th></tr></thead><tbody><tr><td>1</td><td>OPEN</td><td>PENDING</td><td>$372.92</td><td>$372.11</td><td>-0.22%</td><td>$-32.56</td></tr></tbody></table>
+  </div>
+
+  <div class="card">
+    <h2>Recent AI Decisions</h2>
+    <table><thead><tr><th>Time</th><th>Prediction</th><th>Confidence</th><th>Price</th><th>Action</th><th>Reason</th></tr></thead><tbody><tr><td>2026-07-14T17:57:54.658853+00:00</td><td>UP</td><td>85.73%</td><td>$372.81</td><td>HOLD</td><td>Position remains within exit rules.</td></tr><tr><td>2026-07-14T16:34:55.604413+00:00</td><td>UP</td><td>85.00%</td><td>$375.00</td><td>HOLD</td><td>Synthetic trade-memory test only.</td></tr></tbody></table>
+  </div>
+</div>
+</body>
+</html>
