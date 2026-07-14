@@ -1,0 +1,144 @@
+{
+  "account": {
+    "buying_power": 381908.84,
+    "cash": 85000.01,
+    "equity": 99967.44,
+    "portfolio_value": 99967.44,
+    "position": {
+      "average_entry_price": 372.919503,
+      "current_price": 372.11,
+      "market_value": 14967.429264,
+      "quantity": 40.223130966,
+      "symbol": "GLD",
+      "unrealized_profit_loss": -32.560745,
+      "unrealized_return": -0.00217
+    }
+  },
+  "generated_at_utc": "2026-07-14T18:36:16.754155+00:00",
+  "memory_summary": {
+    "closed_trade_count": 0,
+    "database_path": "/home/runner/work/gold-trading-bot/gold-trading-bot/data/trade_memory.sqlite3",
+    "decision_count": 2,
+    "open_trade_count": 1,
+    "realized_profit_loss": 0.0,
+    "trade_count": 1
+  },
+  "order_submitted": false,
+  "recent_decisions": [
+    {
+      "action": "HOLD",
+      "id": 2,
+      "market_timestamp": "2026-07-14 04:00:00+00:00",
+      "model_name": "lightgbm",
+      "model_version": "lgbm_d",
+      "notional": null,
+      "order_id": null,
+      "position_percent": 0.15,
+      "prediction": 1,
+      "price": 372.81,
+      "probability_up": 0.857307779997017,
+      "reason": "Position remains within exit rules.",
+      "symbol": "GLD",
+      "timestamp_utc": "2026-07-14T17:57:54.658853+00:00"
+    },
+    {
+      "action": "HOLD",
+      "id": 1,
+      "market_timestamp": "2026-07-14T00:00:00+00:00",
+      "model_name": "lightgbm",
+      "model_version": "lgbm_d",
+      "notional": null,
+      "order_id": null,
+      "position_percent": 0.15,
+      "prediction": 1,
+      "price": 375.0,
+      "probability_up": 0.85,
+      "reason": "Synthetic trade-memory test only.",
+      "symbol": "GLD",
+      "timestamp_utc": "2026-07-14T16:34:55.604413+00:00"
+    }
+  ],
+  "recent_trades": [
+    {
+      "created_at_utc": "2026-07-14T18:10:52.899809+00:00",
+      "entry_features_json": null,
+      "entry_order_id": "c84b5c49-7a15-4ad7-896c-4abe35b9b472",
+      "entry_price": 372.919503,
+      "entry_probability_up": null,
+      "entry_timestamp_utc": "2026-07-14T16:17:38.628770+00:00",
+      "exit_order_id": null,
+      "exit_price": null,
+      "exit_reason": null,
+      "exit_timestamp_utc": null,
+      "gross_profit_loss": null,
+      "gross_return": null,
+      "id": 1,
+      "notional": 14999.990008944631,
+      "position_percent": null,
+      "quantity": 40.223130966,
+      "status": "OPEN",
+      "symbol": "GLD",
+      "updated_at_utc": "2026-07-14T18:10:52.899809+00:00"
+    }
+  ],
+  "review": {
+    "database_summary": {
+      "closed_trade_count": 0,
+      "database_path": "/home/runner/work/gold-trading-bot/gold-trading-bot/data/trade_memory.sqlite3",
+      "decision_count": 2,
+      "open_trade_count": 1,
+      "realized_profit_loss": 0.0,
+      "trade_count": 1
+    },
+    "performance_summary": {
+      "average_holding_days": 0.0,
+      "average_realized_return": 0.0,
+      "closed_trades": 0,
+      "grade_counts": {
+        "A": 0,
+        "A+": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "F": 0,
+        "PENDING": 1
+      },
+      "largest_loss": 0.0,
+      "largest_win": 0.0,
+      "median_realized_return": 0.0,
+      "open_trades": 1,
+      "open_unrealized_profit_loss": -32.56074518637016,
+      "profit_factor": 0.0,
+      "realized_profit_loss": 0.0,
+      "total_trades": 1,
+      "win_rate": 0.0
+    },
+    "trades": [
+      {
+        "classification": "OPEN",
+        "current_price": 372.11,
+        "entry_order_id": "c84b5c49-7a15-4ad7-896c-4abe35b9b472",
+        "entry_price": 372.919503,
+        "entry_probability_up": null,
+        "entry_timestamp_utc": "2026-07-14T16:17:38.628770+00:00",
+        "exit_order_id": null,
+        "exit_price": null,
+        "exit_reason": null,
+        "exit_timestamp_utc": null,
+        "grade": "PENDING",
+        "holding_days": null,
+        "notional": 14999.990008944631,
+        "position_percent": null,
+        "quantity": 40.223130966,
+        "realized_profit_loss": null,
+        "realized_return": null,
+        "status": "OPEN",
+        "symbol": "GLD",
+        "trade_id": 1,
+        "unrealized_profit_loss": -32.56074518637016,
+        "unrealized_return": -0.0021707177916088227
+      }
+    ]
+  },
+  "symbol": "GLD"
+}
