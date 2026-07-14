@@ -12,7 +12,7 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      - name: Checkout paper-15-percent branch
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           ref: paper-15-percent
