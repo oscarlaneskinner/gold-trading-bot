@@ -1,0 +1,35 @@
+name: Check GLD 15 Percent Sizing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-15-percent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements_models.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements_models.txt
+
+      - name: Run read-only 15 percent sizing check
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          POSITION_PERCENT: "0.15"
+        run: python daily_bot_15pct_check.py
