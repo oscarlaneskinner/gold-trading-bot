@@ -36,6 +36,7 @@ from strategy import (
     model_exit_signal,
 )
 from trade_memory import record_decision
+from trade_memory_sync import synchronize_filled_trades
 
 
 def get_open_buy_orders(client, symbol: str):
@@ -72,11 +73,6 @@ def latest_entry_information(client):
 
 
 def feature_snapshot(row) -> dict[str, float]:
-    """
-    Convert the current production feature row into plain floats so it can be
-    stored safely as JSON in SQLite.
-    """
-
     return {
         feature_name: float(row[feature_name])
         for feature_name in MODEL_FEATURES
@@ -98,11 +94,6 @@ def save_memory_safely(
     open_buy_order_count: int,
     order_id: str | None,
 ) -> int | None:
-    """
-    Save the completed decision without allowing a database problem to crash
-    the trading workflow.
-    """
-
     try:
         market_timestamp = latest.get("timestamp")
 
@@ -141,6 +132,26 @@ def save_memory_safely(
         print(
             "WARNING: The trading decision completed, but "
             f"trade-memory storage failed: {error}"
+        )
+        return None
+
+
+def synchronize_safely(client, stage: str) -> dict | None:
+    try:
+        result = synchronize_filled_trades(
+            client,
+            SYMBOL,
+        )
+        print(
+            f"Trade-memory synchronization ({stage}): "
+            f"{json.dumps(result, sort_keys=True)}"
+        )
+        return result
+
+    except Exception as error:
+        print(
+            f"WARNING: Trade-memory synchronization "
+            f"failed during {stage}: {error}"
         )
         return None
 
@@ -212,6 +223,11 @@ def run():
     )
 
     client = create_trading_client()
+    synchronize_before = synchronize_safely(
+        client,
+        "before_decision",
+    )
+
     clock = client.get_clock()
 
     position = get_position(
@@ -321,9 +337,7 @@ def run():
             peak_price = max(
                 entry_price,
                 float(
-                    since_entry[
-                        "high"
-                    ].max()
+                    since_entry["high"].max()
                 ),
             )
 
@@ -411,6 +425,11 @@ def run():
         order_id=order_id,
     )
 
+    synchronize_after = synchronize_safely(
+        client,
+        "after_decision",
+    )
+
     output = {
         "symbol": SYMBOL,
         "model_name": model_info[
@@ -426,30 +445,24 @@ def run():
         ),
         "probability_up": probability_up,
         "price": price,
-        "position_percent":
-            POSITION_PERCENT,
+        "position_percent": POSITION_PERCENT,
         "notional": notional,
-        "market_open":
-            bool(clock.is_open),
-        "existing_position":
-            position is not None,
-        "open_buy_order_count":
-            len(open_buy_orders),
+        "market_open": bool(clock.is_open),
+        "existing_position": position is not None,
+        "open_buy_order_count": len(open_buy_orders),
         "action": action,
         "reason": reason,
         "order_id": order_id,
         "trade_memory_decision_id":
             memory_decision_id,
-        "paper_trading":
-            PAPER_TRADING,
+        "trade_sync_before":
+            synchronize_before,
+        "trade_sync_after":
+            synchronize_after,
+        "paper_trading": PAPER_TRADING,
     }
 
-    print(
-        json.dumps(
-            output,
-            indent=2,
-        )
-    )
+    print(json.dumps(output, indent=2))
 
 
 if __name__ == "__main__":

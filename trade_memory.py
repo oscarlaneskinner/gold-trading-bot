@@ -66,7 +66,7 @@ def initialize_database() -> None:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 symbol TEXT NOT NULL,
                 entry_order_id TEXT UNIQUE,
-                exit_order_id TEXT,
+                exit_order_id TEXT UNIQUE,
                 entry_timestamp_utc TEXT,
                 exit_timestamp_utc TEXT,
                 entry_price REAL,
@@ -163,6 +163,24 @@ def record_decision(
         return int(cursor.lastrowid)
 
 
+def latest_buy_decision_for_order(
+    order_id: str,
+) -> sqlite3.Row | None:
+    initialize_database()
+
+    with closing(connect()) as connection:
+        return connection.execute(
+            """
+            SELECT *
+            FROM decisions
+            WHERE order_id = ? AND action = 'BUY'
+            ORDER BY id DESC
+            LIMIT 1
+            """,
+            (order_id,),
+        ).fetchone()
+
+
 def record_trade_entry(
     *,
     symbol: str,
@@ -171,9 +189,9 @@ def record_trade_entry(
     entry_price: float,
     notional: float,
     quantity: float | None,
-    probability_up: float,
-    position_percent: float,
-    entry_features: dict[str, float],
+    probability_up: float | None,
+    position_percent: float | None,
+    entry_features: dict[str, float] | None,
 ) -> int:
     initialize_database()
     now = utc_now()
@@ -201,9 +219,18 @@ def record_trade_entry(
                 entry_price = excluded.entry_price,
                 notional = excluded.notional,
                 quantity = excluded.quantity,
-                entry_probability_up = excluded.entry_probability_up,
-                position_percent = excluded.position_percent,
-                entry_features_json = excluded.entry_features_json,
+                entry_probability_up = COALESCE(
+                    excluded.entry_probability_up,
+                    trades.entry_probability_up
+                ),
+                position_percent = COALESCE(
+                    excluded.position_percent,
+                    trades.position_percent
+                ),
+                entry_features_json = COALESCE(
+                    excluded.entry_features_json,
+                    trades.entry_features_json
+                ),
                 updated_at_utc = excluded.updated_at_utc
             """,
             (
@@ -213,15 +240,37 @@ def record_trade_entry(
                 float(entry_price),
                 float(notional),
                 quantity,
-                float(probability_up),
-                float(position_percent),
-                json.dumps(entry_features, sort_keys=True),
+                probability_up,
+                position_percent,
+                (
+                    json.dumps(entry_features, sort_keys=True)
+                    if entry_features is not None
+                    else None
+                ),
                 now,
                 now,
             ),
         )
         connection.commit()
         return int(cursor.lastrowid or 0)
+
+
+def latest_open_trade(
+    symbol: str,
+) -> sqlite3.Row | None:
+    initialize_database()
+
+    with closing(connect()) as connection:
+        return connection.execute(
+            """
+            SELECT *
+            FROM trades
+            WHERE symbol = ? AND status = 'OPEN'
+            ORDER BY id DESC
+            LIMIT 1
+            """,
+            (symbol,),
+        ).fetchone()
 
 
 def close_latest_open_trade(
@@ -314,10 +363,36 @@ def database_summary() -> dict[str, Any]:
             "SELECT COUNT(*) FROM trades WHERE status = 'CLOSED'"
         ).fetchone()[0]
 
+        realized_profit_loss = connection.execute(
+            """
+            SELECT COALESCE(SUM(gross_profit_loss), 0)
+            FROM trades
+            WHERE status = 'CLOSED'
+            """
+        ).fetchone()[0]
+
     return {
         "database_path": str(DATABASE_PATH),
         "decision_count": int(decision_count),
         "trade_count": int(trade_count),
         "open_trade_count": int(open_trade_count),
         "closed_trade_count": int(closed_trade_count),
+        "realized_profit_loss": float(realized_profit_loss),
     }
+
+
+def recent_trades(limit: int = 10) -> list[dict[str, Any]]:
+    initialize_database()
+
+    with closing(connect()) as connection:
+        rows = connection.execute(
+            """
+            SELECT *
+            FROM trades
+            ORDER BY id DESC
+            LIMIT ?
+            """,
+            (int(limit),),
+        ).fetchall()
+
+    return [dict(row) for row in rows]

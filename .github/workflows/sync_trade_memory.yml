@@ -1,0 +1,55 @@
+name: Synchronize GLD Trade Memory
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  synchronize-memory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements_models.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements_models.txt
+
+      - name: Reconcile filled GLD orders
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python sync_trade_memory.py
+
+      - name: Save synchronized database
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -f data/trade_memory.sqlite3 ]; then
+            git add data/trade_memory.sqlite3
+          fi
+
+          if git diff --cached --quiet; then
+            echo "No trade-memory synchronization changes to commit."
+          else
+            git commit -m "Synchronize GLD trade memory"
+            git push
+          fi
