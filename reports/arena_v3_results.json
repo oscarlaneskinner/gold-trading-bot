@@ -1,0 +1,18 @@
+{
+  "symbols_loaded": [
+    "GLD",
+    "IWM",
+    "QQQ",
+    "SLV",
+    "SPY"
+  ],
+  "candidate_count": 120,
+  "finalist_count": 0,
+  "worker_count": 3,
+  "walk_forward_folds": 4,
+  "monte_carlo_runs": 250,
+  "top_finalists": [],
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false
+}
