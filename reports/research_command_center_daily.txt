@@ -1,0 +1,27 @@
+DAILY TRADING RESEARCH COMPETITION
+======================================
+
+Generated: 2026-07-15T16:29:32.564710+00:00
+Experiments stored: 2
+
+CURRENT CHAMPION
+----------------
+GLD 1D | UT Competition Lab — UT Original
+Tournament score: 58.945
+Net profit: 26.04%
+Max drawdown: 5.17%
+Profit factor: 1.431
+Profitable trades: 40.79%
+Closed trades: 407
+
+OVERALL LEADERBOARD
+-------------------
+#1 GLD 1D — UT Original | Score 58.945 | Return 26.04% | DD 5.17% | PF 1.431 | Trades 407
+#2 GLD 1D — UT + EMA200 | Score 41.009 | Return 16.86% | DD 5.38% | PF 1.419 | Trades 282
+
+RECENT EXPERIMENTS
+------------------
+RND-00002 | GLD 1D | UT + EMA200 | Return 16.86% | Trades 282
+RND-00001 | GLD 1D | UT Original | Return 26.04% | Trades 407
+
+Safety: research only; no market request and no order submission.
