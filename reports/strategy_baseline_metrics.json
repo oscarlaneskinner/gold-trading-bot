@@ -1,0 +1,18 @@
+{
+  "average_return": 0.017383333333333334,
+  "fold_returns": [
+    0.0344,
+    0.004,
+    -0.0122,
+    0.0151,
+    0.0314,
+    0.0316
+  ],
+  "maximum_drawdown": -0.0224,
+  "median_return": 0.02325,
+  "name": "LightGBM Production",
+  "paper_research_only": true,
+  "profit_factor": 1.0,
+  "trade_count": 77,
+  "win_rate": 0.7373737373737373
+}
