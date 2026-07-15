@@ -1,0 +1,67 @@
+{
+  "symbols": [
+    "GLD",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "SLV",
+    "TLT",
+    "AMZN",
+    "NVDA",
+    "TSLA"
+  ],
+  "timeframe": "1D",
+  "start_date": "2005-01-01",
+  "starting_capital": 100000,
+  "position_percent": 15,
+  "commission_percent": 0.01,
+  "slippage_dollars": 0.01,
+  "minimum_trades_per_symbol": 20,
+  "minimum_symbols_passed": 4,
+  "train_fraction": 0.7,
+  "ut_sensitivities": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "atr_periods": [
+    7,
+    10,
+    14
+  ],
+  "max_bars_held": [
+    10,
+    20,
+    30
+  ],
+  "risk_profiles": [
+    {
+      "name": "Balanced",
+      "stop_loss_percent": 3.0,
+      "take_profit_percent": 8.0
+    },
+    {
+      "name": "Trend",
+      "stop_loss_percent": 4.0,
+      "take_profit_percent": 10.0
+    }
+  ],
+  "filter_sets": [
+    "Original",
+    "EMA200",
+    "RSI",
+    "MACD",
+    "ADX",
+    "RelativeVolume",
+    "LinearRegression",
+    "SmoothedHeikenAshi",
+    "BXStyle",
+    "EMA200+RSI",
+    "EMA200+MACD",
+    "RSI+MACD",
+    "EMA200+BXStyle",
+    "BXStyle+LinearRegression",
+    "EMA200+RSI+MACD"
+  ],
+  "top_n_candidates": 25
+}
