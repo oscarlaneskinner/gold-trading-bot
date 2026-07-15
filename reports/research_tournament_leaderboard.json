@@ -1,11 +1,11 @@
 {
   "filters": {
     "asset": "GLD",
-    "timeframe": null,
+    "timeframe": "1D",
     "source_platform": null,
     "minimum_trades": 30
   },
-  "experiment_count": 2,
+  "experiment_count": 3,
   "leaderboard": [
     {
       "id": 1,
@@ -64,9 +64,38 @@
       "created_at_utc": "2026-07-15T16:12:22.445335+00:00",
       "score": 41.0092,
       "rank": 2
+    },
+    {
+      "id": 3,
+      "experiment_code": "RND-00003",
+      "asset": "GLD",
+      "venue": "NYSE Arca",
+      "strategy_name": "UT Bot Championship",
+      "strategy_variant": "UT + EMA50",
+      "timeframe": "1D",
+      "date_start": "2004-11-18",
+      "date_end": "2026-07-15",
+      "starting_capital": 100000.0,
+      "commission_percent": 0.01,
+      "slippage_units": 1.0,
+      "position_percent": 15.0,
+      "net_profit_amount": 14070.32,
+      "net_profit_percent": 14.07,
+      "max_drawdown_amount": 6995.41,
+      "max_drawdown_percent": 6.26,
+      "profitable_trades_percent": 39.77,
+      "profit_factor": 1.361,
+      "closed_trades": 264,
+      "market_regime": "",
+      "source_platform": "TradingView",
+      "strategy_version": "3.0",
+      "notes": "",
+      "created_at_utc": "2026-07-15T18:04:39.399310+00:00",
+      "score": 33.0637,
+      "rank": 3
     }
   ],
-  "generated_at_utc": "2026-07-15T16:29:32.563505+00:00",
+  "generated_at_utc": "2026-07-15T18:05:17.669118+00:00",
   "production_strategy_changed": false,
   "market_request_made": false,
   "order_submitted": false
