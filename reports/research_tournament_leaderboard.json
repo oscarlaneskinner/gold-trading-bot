@@ -1,0 +1,44 @@
+{
+  "filters": {
+    "asset": "GLD",
+    "timeframe": "1D",
+    "source_platform": null,
+    "minimum_trades": 30
+  },
+  "experiment_count": 1,
+  "leaderboard": [
+    {
+      "id": 1,
+      "experiment_code": "RND-00001",
+      "asset": "GLD",
+      "venue": "NYSE Arca",
+      "strategy_name": "UT Competition Lab",
+      "strategy_variant": "UT Original",
+      "timeframe": "1D",
+      "date_start": "2004-11-18",
+      "date_end": "2026-07-15",
+      "starting_capital": 100000.0,
+      "commission_percent": 0.01,
+      "slippage_units": 1.0,
+      "position_percent": 15.0,
+      "net_profit_amount": 26042.87,
+      "net_profit_percent": 26.04,
+      "max_drawdown_amount": 6047.02,
+      "max_drawdown_percent": 5.17,
+      "profitable_trades_percent": 40.79,
+      "profit_factor": 1.431,
+      "closed_trades": 407,
+      "market_regime": "",
+      "source_platform": "TradingView",
+      "strategy_version": "2.1",
+      "notes": "",
+      "created_at_utc": "2026-07-15T16:00:01.130215+00:00",
+      "score": 58.945,
+      "rank": 1
+    }
+  ],
+  "generated_at_utc": "2026-07-15T16:02:06.903921+00:00",
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false
+}
