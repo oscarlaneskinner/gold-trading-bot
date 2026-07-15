@@ -1,0 +1,37 @@
+{
+  "baseline": {
+    "entry_threshold": 0.5,
+    "holding_days": 20,
+    "model_name": "lightgbm",
+    "model_version": "lgbm_d",
+    "name": "LightGBM Production",
+    "paper_research_position_percent": 0.15,
+    "position_percent": 0.1,
+    "status": "ACTIVE",
+    "stop_loss_percent": 0.1,
+    "symbol": "GLD",
+    "take_profit_percent": 0.2
+  },
+  "baseline_metrics_available": true,
+  "experiment_count": 1,
+  "leaderboard": [],
+  "market_request_made": false,
+  "order_submitted": false,
+  "overall_status": "READY",
+  "production_strategy_changed": false,
+  "promotion_recommendations": [
+    {
+      "experiment_id": "EXP-0001",
+      "result": {
+        "baseline_score": 55.779,
+        "candidate_score": null,
+        "comparison": {},
+        "order_submitted": false,
+        "production_strategy_changed": false,
+        "reason": "Candidate or baseline metrics are incomplete.",
+        "recommendation": "COLLECT_MORE_DATA",
+        "statistical_validation": {}
+      }
+    }
+  ]
+}
