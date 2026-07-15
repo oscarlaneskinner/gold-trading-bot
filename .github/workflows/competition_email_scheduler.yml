@@ -1,0 +1,35 @@
+name: Schedule Daily Competition Email
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 22 * * 1-5"
+
+permissions:
+  contents: read
+
+jobs:
+  send-competition-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout TradingView branch
+        uses: actions/checkout@v4
+        with:
+          ref: v2-tradingview
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Generate research report
+        run: python research_command_center.py
+
+      - name: Send daily email
+        env:
+          YAHOO_EMAIL_USERNAME: ${{ secrets.YAHOO_EMAIL_USERNAME }}
+          YAHOO_EMAIL_APP_PASSWORD: ${{ secrets.YAHOO_EMAIL_APP_PASSWORD }}
+          COMPETITION_EMAIL_TO: oscarlaneskinner@yahoo.com
+        run: python send_daily_competition_email.py
