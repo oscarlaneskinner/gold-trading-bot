@@ -1,0 +1,60 @@
+{
+  "symbol": "GLD",
+  "timeframe": "1D",
+  "starting_capital": 100000,
+  "position_percent": 15,
+  "commission_percent": 0.01,
+  "slippage_dollars": 0.01,
+  "minimum_trades": 30,
+  "train_fraction": 0.7,
+  "ut_sensitivities": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "atr_periods": [
+    7,
+    10,
+    14
+  ],
+  "max_bars_held": [
+    10,
+    20,
+    30
+  ],
+  "risk_profiles": [
+    {
+      "name": "Balanced",
+      "stop_loss_percent": 3.0,
+      "take_profit_percent": 8.0
+    },
+    {
+      "name": "Conservative",
+      "stop_loss_percent": 2.0,
+      "take_profit_percent": 6.0
+    },
+    {
+      "name": "Trend",
+      "stop_loss_percent": 4.0,
+      "take_profit_percent": 10.0
+    }
+  ],
+  "filter_sets": [
+    "Original",
+    "EMA200",
+    "RSI",
+    "MACD",
+    "ADX",
+    "RelativeVolume",
+    "LinearRegression",
+    "SmoothedHeikenAshi",
+    "BXStyle",
+    "EMA200+RSI",
+    "EMA200+MACD",
+    "EMA200+RelativeVolume",
+    "RSI+MACD",
+    "BXStyle+LinearRegression",
+    "EMA200+BXStyle",
+    "EMA200+RSI+MACD"
+  ]
+}
