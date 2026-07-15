@@ -1,0 +1,45 @@
+{
+  "baseline": {
+    "entry_threshold": 0.5,
+    "holding_days": 20,
+    "model_name": "lightgbm",
+    "model_version": "lgbm_d",
+    "name": "LightGBM Production",
+    "paper_research_position_percent": 0.15,
+    "position_percent": 0.1,
+    "status": "ACTIVE",
+    "stop_loss_percent": 0.1,
+    "symbol": "GLD",
+    "take_profit_percent": 0.2
+  },
+  "experiments": [
+    {
+      "baseline_name": "LightGBM Production",
+      "candidate_settings": {
+        "entry_threshold": 0.85,
+        "holding_days": 20,
+        "position_percent": 0.15,
+        "stop_loss_percent": 0.1,
+        "take_profit_percent": 0.2
+      },
+      "category": "entry_threshold",
+      "comparison": {
+        "baseline_checked": true
+      },
+      "created_at_utc": "2026-07-14T20:19:02.255636+00:00",
+      "decision": "No production change.",
+      "experiment_id": "EXP-0001",
+      "hypothesis": "A higher entry threshold may reduce weak trades without materially reducing return.",
+      "metrics": {
+        "test_metric": 1.0
+      },
+      "name": "Synthetic confidence threshold test",
+      "notes": "Synthetic registry test only.",
+      "status": "READY",
+      "updated_at_utc": "2026-07-14T20:19:02.255979+00:00"
+    }
+  ],
+  "next_experiment_number": 2,
+  "schema_version": 1,
+  "updated_at_utc": "2026-07-14T20:19:02.255998+00:00"
+}
