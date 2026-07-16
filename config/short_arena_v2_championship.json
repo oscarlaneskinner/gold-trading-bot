@@ -1,0 +1,88 @@
+{
+  "symbols": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "AMZN",
+    "NVDA",
+    "TSLA",
+    "META",
+    "AMD",
+    "SLV"
+  ],
+  "benchmark_symbol": "SPY",
+  "starting_capital": 2000.0,
+  "position_percent": 10.0,
+  "commission_percent": 0.01,
+  "slippage_dollars": 0.01,
+  "train_fraction": 0.7,
+  "minimum_trades_per_symbol": 10,
+  "minimum_symbols_passed": 4,
+  "minimum_profit_factor": 1.05,
+  "maximum_median_drawdown_percent": 12.0,
+  "top_n": 100,
+  "entry_models": [
+    "Breakdown",
+    "FailedRally",
+    "EMARejection",
+    "RelativeWeakness",
+    "LowerHigh",
+    "DonchianBreakdown",
+    "ATRBreakdown",
+    "VolumeReversal",
+    "RSIFailure",
+    "MACDBearCross"
+  ],
+  "lookback_periods": [
+    10,
+    20,
+    30,
+    50
+  ],
+  "ema_fast_periods": [
+    10,
+    20
+  ],
+  "ema_slow_periods": [
+    50,
+    100,
+    200
+  ],
+  "rsi_thresholds": [
+    40,
+    45,
+    50
+  ],
+  "relative_weakness_periods": [
+    10,
+    20
+  ],
+  "atr_periods": [
+    7,
+    10,
+    14,
+    20
+  ],
+  "atr_entry_multipliers": [
+    0.5,
+    1.0,
+    1.5
+  ],
+  "max_bars_held": [
+    5,
+    10,
+    20,
+    30
+  ],
+  "stop_loss_percent": [
+    2.0,
+    3.0,
+    4.0
+  ],
+  "take_profit_percent": [
+    4.0,
+    6.0,
+    8.0,
+    10.0
+  ]
+}
