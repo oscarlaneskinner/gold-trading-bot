@@ -1,0 +1,2 @@
+strategy_name,role,symbol,allocation_percent,allocation_dollars,score,profit_factor,drawdown_percent,consistency_percent,status
+MM-0013,LONG,MULTI,35.0,700.0,36.5173,1.5328,1.7784,88.89,RESEARCH_ALLOCATION_ONLY

@@ -1,0 +1,24 @@
+{
+  "starting_capital": 2000.0,
+  "allocations": [
+    {
+      "strategy_name": "MM-0013",
+      "role": "LONG",
+      "symbol": "MULTI",
+      "allocation_percent": 35.0,
+      "allocation_dollars": 700.0,
+      "score": 36.5173,
+      "profit_factor": 1.5328,
+      "drawdown_percent": 1.7784,
+      "consistency_percent": 88.89,
+      "status": "RESEARCH_ALLOCATION_ONLY"
+    }
+  ],
+  "allocated_percent": 35.0,
+  "cash_reserve_percent": 65.0,
+  "cash_reserve_dollars": 1300.0,
+  "eligible_strategy_count": 1,
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false
+}
