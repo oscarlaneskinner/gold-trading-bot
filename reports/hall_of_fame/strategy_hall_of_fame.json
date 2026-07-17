@@ -1,8 +1,24 @@
 {
-  "strategy_count": 135,
+  "strategy_count": 137,
   "top_strategies": [
     {
       "rank": 1,
+      "strategy_key": "reports\\scanner\\championship_scanner_v1.json|Unknown Strategy|NVDA|{}",
+      "strategy_name": "Unknown Strategy",
+      "role": "LONG",
+      "symbol": "NVDA",
+      "source_report": "reports\\scanner\\championship_scanner_v1.json",
+      "score": 88.5,
+      "return_percent": 0.0,
+      "drawdown_percent": 0.0,
+      "profit_factor": 0.0,
+      "consistency_percent": 0.0,
+      "trade_count": 0,
+      "status": "RESEARCH",
+      "parameters_json": "{}"
+    },
+    {
+      "rank": 2,
       "strategy_key": "reports\\strategy_research_arena.json|ARENA-0036|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Trend\", \"sensitivity\": 1.0, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "ARENA-0036",
       "role": "LONG",
@@ -18,7 +34,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Trend\", \"sensitivity\": 1.0, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 2,
+      "rank": 3,
       "strategy_key": "reports\\strategy_research_arena.json|ARENA-0033|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Trend\", \"sensitivity\": 1.0, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "ARENA-0033",
       "role": "LONG",
@@ -34,7 +50,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Trend\", \"sensitivity\": 1.0, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 3,
+      "rank": 4,
       "strategy_key": "reports\\strategy_research_arena.json|ARENA-0081|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Trend\", \"sensitivity\": 1.2, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "ARENA-0081",
       "role": "LONG",
@@ -50,7 +66,23 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Trend\", \"sensitivity\": 1.2, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 4,
+      "rank": 5,
+      "strategy_key": "verified-gld|ARENA-0081|GLD",
+      "strategy_name": "ARENA-0081",
+      "role": "GLD",
+      "symbol": "GLD",
+      "source_report": "TradingView verified GLD finalist",
+      "score": 53.0156,
+      "return_percent": 28.25,
+      "drawdown_percent": 4.13,
+      "profit_factor": 1.524,
+      "consistency_percent": 75.0,
+      "trade_count": 328,
+      "status": "QUALIFIED_GLD",
+      "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"position_percent\": 15.0, \"sensitivity\": 1.2, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0, \"validation_source\": \"TradingView\"}"
+    },
+    {
+      "rank": 6,
       "strategy_key": "reports\\strategy_research_arena.json|ARENA-0240|MULTI|{\"atr_period\": 14, \"filter_set\": \"RSI\", \"max_bars_held\": 20, \"risk_profile\": \"Trend\", \"sensitivity\": 1.2, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "ARENA-0240",
       "role": "LONG",
@@ -66,7 +98,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"RSI\", \"max_bars_held\": 20, \"risk_profile\": \"Trend\", \"sensitivity\": 1.2, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 5,
+      "rank": 7,
       "strategy_key": "reports\\strategy_research_arena.json|ARENA-0807|MULTI|{\"atr_period\": 14, \"filter_set\": \"EMA200+RSI\", \"max_bars_held\": 20, \"risk_profile\": \"Trend\", \"sensitivity\": 1.2, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "ARENA-0807",
       "role": "LONG",
@@ -82,7 +114,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"EMA200+RSI\", \"max_bars_held\": 20, \"risk_profile\": \"Trend\", \"sensitivity\": 1.2, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 6,
+      "rank": 8,
       "strategy_key": "reports\\strategy_research_arena.json|ARENA-0031|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Balanced\", \"sensitivity\": 1.0, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "ARENA-0031",
       "role": "LONG",
@@ -98,7 +130,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Balanced\", \"sensitivity\": 1.0, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 7,
+      "rank": 9,
       "strategy_key": "reports\\strategy_research_arena.json|ARENA-0034|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Balanced\", \"sensitivity\": 1.0, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "ARENA-0034",
       "role": "LONG",
@@ -114,7 +146,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Balanced\", \"sensitivity\": 1.0, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 8,
+      "rank": 10,
       "strategy_key": "reports\\strategy_research_arena.json|ARENA-0045|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Trend\", \"sensitivity\": 1.0, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "ARENA-0045",
       "role": "LONG",
@@ -130,7 +162,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Trend\", \"sensitivity\": 1.0, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 9,
+      "rank": 11,
       "strategy_key": "reports\\strategy_research_arena.json|ARENA-0040|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Balanced\", \"sensitivity\": 1.0, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "ARENA-0040",
       "role": "LONG",
@@ -146,7 +178,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Balanced\", \"sensitivity\": 1.0, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 10,
+      "rank": 12,
       "strategy_key": "reports\\strategy_research_arena.json|ARENA-0043|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Balanced\", \"sensitivity\": 1.0, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "ARENA-0043",
       "role": "LONG",
@@ -162,7 +194,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Balanced\", \"sensitivity\": 1.0, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 11,
+      "rank": 13,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0013|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0013",
       "role": "LONG",
@@ -178,7 +210,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 12,
+      "rank": 14,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0007|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0007",
       "role": "LONG",
@@ -194,7 +226,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 13,
+      "rank": 15,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0015|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0015",
       "role": "LONG",
@@ -210,7 +242,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 14,
+      "rank": 16,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0017|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0017",
       "role": "LONG",
@@ -226,7 +258,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 15,
+      "rank": 17,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0121|MULTI|{\"atr_period\": 14, \"filter_set\": \"RSI\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0121",
       "role": "LONG",
@@ -242,7 +274,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"RSI\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 16,
+      "rank": 18,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0009|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0009",
       "role": "LONG",
@@ -258,7 +290,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 17,
+      "rank": 19,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0011|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0011",
       "role": "LONG",
@@ -274,7 +306,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 18,
+      "rank": 20,
       "strategy_key": "reports\\arena_v3_results.json|V3-000904|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000904",
       "role": "LONG",
@@ -290,7 +322,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 19,
+      "rank": 21,
       "strategy_key": "reports\\arena_v3_results.json|V3-000454|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000454",
       "role": "LONG",
@@ -306,7 +338,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 20,
+      "rank": 22,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0001|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0001",
       "role": "LONG",
@@ -322,7 +354,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 21,
+      "rank": 23,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0115|MULTI|{\"atr_period\": 10, \"filter_set\": \"RSI\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0115",
       "role": "LONG",
@@ -338,7 +370,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"RSI\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 22,
+      "rank": 24,
       "strategy_key": "reports\\arena_v3_results.json|V3-000754|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000754",
       "role": "LONG",
@@ -354,7 +386,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 23,
+      "rank": 25,
       "strategy_key": "reports\\arena_v3_results.json|V3-000905|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000905",
       "role": "LONG",
@@ -370,7 +402,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 24,
+      "rank": 26,
       "strategy_key": "reports\\arena_v3_results.json|V3-000903|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000903",
       "role": "LONG",
@@ -386,7 +418,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 25,
+      "rank": 27,
       "strategy_key": "reports\\arena_v3_results.json|V3-000604|MULTI|{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000604",
       "role": "LONG",
@@ -402,7 +434,7 @@
       "parameters_json": "{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 26,
+      "rank": 28,
       "strategy_key": "reports\\arena_v3_results.json|V3-000455|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000455",
       "role": "LONG",
@@ -418,7 +450,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 27,
+      "rank": 29,
       "strategy_key": "reports\\arena_v3_results.json|V3-000154|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000154",
       "role": "LONG",
@@ -434,7 +466,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 28,
+      "rank": 30,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0499|MULTI|{\"atr_period\": 14, \"filter_set\": \"EMA200+RSI\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0499",
       "role": "LONG",
@@ -450,7 +482,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"EMA200+RSI\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 29,
+      "rank": 31,
       "strategy_key": "reports\\arena_v3_results.json|V3-000005|MULTI|{\"atr_period\": 5, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000005",
       "role": "LONG",
@@ -466,7 +498,7 @@
       "parameters_json": "{\"atr_period\": 5, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 30,
+      "rank": 32,
       "strategy_key": "reports\\arena_v3_results.json|V3-000004|MULTI|{\"atr_period\": 5, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000004",
       "role": "LONG",
@@ -482,7 +514,7 @@
       "parameters_json": "{\"atr_period\": 5, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 31,
+      "rank": 33,
       "strategy_key": "reports\\arena_v3_results.json|V3-000155|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000155",
       "role": "LONG",
@@ -498,7 +530,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 32,
+      "rank": 34,
       "strategy_key": "reports\\arena_v3_results.json|V3-000305|MULTI|{\"atr_period\": 8, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000305",
       "role": "LONG",
@@ -514,7 +546,7 @@
       "parameters_json": "{\"atr_period\": 8, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 33,
+      "rank": 35,
       "strategy_key": "reports\\arena_v3_results.json|V3-000755|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000755",
       "role": "LONG",
@@ -530,7 +562,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 34,
+      "rank": 36,
       "strategy_key": "reports\\arena_v3_results.json|V3-000453|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000453",
       "role": "LONG",
@@ -546,7 +578,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 35,
+      "rank": 37,
       "strategy_key": "reports\\arena_v3_results.json|V3-000480|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000480",
       "role": "LONG",
@@ -562,7 +594,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 36,
+      "rank": 38,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0003|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0003",
       "role": "LONG",
@@ -578,7 +610,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 37,
+      "rank": 39,
       "strategy_key": "reports\\arena_v3_results.json|V3-000930|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000930",
       "role": "LONG",
@@ -594,7 +626,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 38,
+      "rank": 40,
       "strategy_key": "reports\\arena_v3_results.json|V3-000753|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000753",
       "role": "LONG",
@@ -610,7 +642,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 39,
+      "rank": 41,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0005|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0005",
       "role": "LONG",
@@ -626,7 +658,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 40,
+      "rank": 42,
       "strategy_key": "reports\\arena_v3_results.json|V3-000929|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000929",
       "role": "LONG",
@@ -642,7 +674,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 41,
+      "rank": 43,
       "strategy_key": "reports\\arena_v3_results.json|V3-000304|MULTI|{\"atr_period\": 8, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000304",
       "role": "LONG",
@@ -658,7 +690,7 @@
       "parameters_json": "{\"atr_period\": 8, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 42,
+      "rank": 44,
       "strategy_key": "reports\\arena_v3_results.json|V3-000954|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000954",
       "role": "LONG",
@@ -674,7 +706,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 43,
+      "rank": 45,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0016|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "MM-0016",
       "role": "LONG",
@@ -690,7 +722,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 44,
+      "rank": 46,
       "strategy_key": "reports\\arena_v3_results.json|V3-000605|MULTI|{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000605",
       "role": "LONG",
@@ -706,7 +738,7 @@
       "parameters_json": "{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 45,
+      "rank": 47,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0018|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "MM-0018",
       "role": "LONG",
@@ -722,7 +754,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 46,
+      "rank": 48,
       "strategy_key": "reports\\arena_v3_results.json|V3-000153|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000153",
       "role": "LONG",
@@ -738,7 +770,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 47,
+      "rank": 49,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0014|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "MM-0014",
       "role": "LONG",
@@ -754,7 +786,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 48,
+      "rank": 50,
       "strategy_key": "reports\\arena_v3_results.json|V3-000479|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000479",
       "role": "LONG",
@@ -770,7 +802,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 49,
+      "rank": 51,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0122|MULTI|{\"atr_period\": 14, \"filter_set\": \"RSI\", \"max_bars_held\": 10, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "MM-0122",
       "role": "LONG",
@@ -786,7 +818,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"RSI\", \"max_bars_held\": 10, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 50,
+      "rank": 52,
       "strategy_key": "reports\\arena_v3_results.json|V3-000603|MULTI|{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000603",
       "role": "LONG",
@@ -802,7 +834,7 @@
       "parameters_json": "{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 51,
+      "rank": 53,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0010|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "MM-0010",
       "role": "LONG",
@@ -818,7 +850,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 52,
+      "rank": 54,
       "strategy_key": "reports\\arena_v3_results.json|V3-000003|MULTI|{\"atr_period\": 5, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000003",
       "role": "LONG",
@@ -834,7 +866,7 @@
       "parameters_json": "{\"atr_period\": 5, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 53,
+      "rank": 55,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0031|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 1.0, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0031",
       "role": "LONG",
@@ -850,7 +882,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 1.0, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 54,
+      "rank": 56,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0012|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}",
       "strategy_name": "MM-0012",
       "role": "LONG",
@@ -866,7 +898,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"risk_profile\": \"Trend\", \"sensitivity\": 0.8, \"stop_loss_percent\": 4.0, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 55,
+      "rank": 57,
       "strategy_key": "reports\\arena_v3_results.json|V3-000780|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000780",
       "role": "LONG",
@@ -882,7 +914,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 56,
+      "rank": 58,
       "strategy_key": "reports\\arena_v3_results.json|V3-000955|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000955",
       "role": "LONG",
@@ -898,7 +930,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 57,
+      "rank": 59,
       "strategy_key": "reports\\arena_v3_results.json|V3-000505|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000505",
       "role": "LONG",
@@ -914,7 +946,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 58,
+      "rank": 60,
       "strategy_key": "reports\\arena_v3_results.json|V3-000530|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000530",
       "role": "LONG",
@@ -930,7 +962,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 59,
+      "rank": 61,
       "strategy_key": "reports\\arena_v3_results.json|V3-000555|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000555",
       "role": "LONG",
@@ -946,7 +978,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 60,
+      "rank": 62,
       "strategy_key": "reports\\arena_v3_results.json|V3-000580|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000580",
       "role": "LONG",
@@ -962,7 +994,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 61,
+      "rank": 63,
       "strategy_key": "reports\\arena_v3_results.json|V3-000902|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 6.0}",
       "strategy_name": "V3-000902",
       "role": "LONG",
@@ -978,7 +1010,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 6.0}"
     },
     {
-      "rank": 62,
+      "rank": 64,
       "strategy_key": "reports\\arena_v3_results.json|V3-000180|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000180",
       "role": "LONG",
@@ -994,7 +1026,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 63,
+      "rank": 65,
       "strategy_key": "reports\\arena_v3_results.json|V3-000179|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000179",
       "role": "LONG",
@@ -1010,7 +1042,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 64,
+      "rank": 66,
       "strategy_key": "reports\\arena_v3_results.json|V3-000504|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000504",
       "role": "LONG",
@@ -1026,7 +1058,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 65,
+      "rank": 67,
       "strategy_key": "reports\\arena_v3_results.json|V3-000979|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000979",
       "role": "LONG",
@@ -1042,7 +1074,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 66,
+      "rank": 68,
       "strategy_key": "reports\\multi_market_strategy_arena_v2.json|MM-0109|MULTI|{\"atr_period\": 7, \"filter_set\": \"RSI\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}",
       "strategy_name": "MM-0109",
       "role": "LONG",
@@ -1058,7 +1090,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"RSI\", \"max_bars_held\": 10, \"risk_profile\": \"Balanced\", \"sensitivity\": 0.8, \"stop_loss_percent\": 3.0, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 67,
+      "rank": 69,
       "strategy_key": "reports\\arena_v3_results.json|V3-000630|MULTI|{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000630",
       "role": "LONG",
@@ -1074,7 +1106,7 @@
       "parameters_json": "{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 68,
+      "rank": 70,
       "strategy_key": "reports\\arena_v3_results.json|V3-000205|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000205",
       "role": "LONG",
@@ -1090,7 +1122,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 69,
+      "rank": 71,
       "strategy_key": "reports\\arena_v3_results.json|V3-000779|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000779",
       "role": "LONG",
@@ -1106,7 +1138,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 70,
+      "rank": 72,
       "strategy_key": "reports\\arena_v3_results.json|V3-000204|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000204",
       "role": "LONG",
@@ -1122,7 +1154,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 71,
+      "rank": 73,
       "strategy_key": "reports\\arena_v3_results.json|V3-000230|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000230",
       "role": "LONG",
@@ -1138,7 +1170,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 72,
+      "rank": 74,
       "strategy_key": "reports\\arena_v3_results.json|V3-000255|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000255",
       "role": "LONG",
@@ -1154,7 +1186,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 73,
+      "rank": 75,
       "strategy_key": "reports\\arena_v3_results.json|V3-000280|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000280",
       "role": "LONG",
@@ -1170,7 +1202,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 74,
+      "rank": 76,
       "strategy_key": "reports\\arena_v3_results.json|V3-000629|MULTI|{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000629",
       "role": "LONG",
@@ -1186,7 +1218,7 @@
       "parameters_json": "{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 75,
+      "rank": 77,
       "strategy_key": "reports\\arena_v3_results.json|V3-000529|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000529",
       "role": "LONG",
@@ -1202,7 +1234,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 76,
+      "rank": 78,
       "strategy_key": "reports\\arena_v3_results.json|V3-000554|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000554",
       "role": "LONG",
@@ -1218,7 +1250,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 77,
+      "rank": 79,
       "strategy_key": "reports\\arena_v3_results.json|V3-000579|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000579",
       "role": "LONG",
@@ -1234,7 +1266,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 78,
+      "rank": 80,
       "strategy_key": "reports\\arena_v3_results.json|V3-000804|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000804",
       "role": "LONG",
@@ -1250,7 +1282,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 79,
+      "rank": 81,
       "strategy_key": "reports\\arena_v3_results.json|V3-000980|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000980",
       "role": "LONG",
@@ -1266,7 +1298,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 80,
+      "rank": 82,
       "strategy_key": "reports\\arena_v3_results.json|V3-000229|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000229",
       "role": "LONG",
@@ -1282,7 +1314,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 81,
+      "rank": 83,
       "strategy_key": "reports\\arena_v3_results.json|V3-000254|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000254",
       "role": "LONG",
@@ -1298,7 +1330,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 82,
+      "rank": 84,
       "strategy_key": "reports\\arena_v3_results.json|V3-000279|MULTI|{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000279",
       "role": "LONG",
@@ -1314,7 +1346,7 @@
       "parameters_json": "{\"atr_period\": 7, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 83,
+      "rank": 85,
       "strategy_key": "reports\\arena_v3_results.json|V3-000953|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000953",
       "role": "LONG",
@@ -1330,7 +1362,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 84,
+      "rank": 86,
       "strategy_key": "reports\\arena_v3_results.json|V3-000978|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000978",
       "role": "LONG",
@@ -1346,7 +1378,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 85,
+      "rank": 87,
       "strategy_key": "reports\\arena_v3_results.json|V3-000928|MULTI|{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000928",
       "role": "LONG",
@@ -1362,7 +1394,7 @@
       "parameters_json": "{\"atr_period\": 16, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 86,
+      "rank": 88,
       "strategy_key": "reports\\arena_v3_results.json|V3-000829|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000829",
       "role": "LONG",
@@ -1378,7 +1410,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 87,
+      "rank": 89,
       "strategy_key": "reports\\arena_v3_results.json|V3-000854|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000854",
       "role": "LONG",
@@ -1394,7 +1426,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 88,
+      "rank": 90,
       "strategy_key": "reports\\arena_v3_results.json|V3-000879|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000879",
       "role": "LONG",
@@ -1410,7 +1442,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 89,
+      "rank": 91,
       "strategy_key": "reports\\arena_v3_results.json|V3-000478|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000478",
       "role": "LONG",
@@ -1426,7 +1458,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 90,
+      "rank": 92,
       "strategy_key": "reports\\arena_v3_results.json|V3-000654|MULTI|{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000654",
       "role": "LONG",
@@ -1442,7 +1474,7 @@
       "parameters_json": "{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     },
     {
-      "rank": 91,
+      "rank": 93,
       "strategy_key": "reports\\arena_v3_results.json|V3-000503|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000503",
       "role": "LONG",
@@ -1458,7 +1490,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 92,
+      "rank": 94,
       "strategy_key": "reports\\arena_v3_results.json|V3-000528|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000528",
       "role": "LONG",
@@ -1474,7 +1506,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 93,
+      "rank": 95,
       "strategy_key": "reports\\arena_v3_results.json|V3-000553|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000553",
       "role": "LONG",
@@ -1490,7 +1522,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 94,
+      "rank": 96,
       "strategy_key": "reports\\arena_v3_results.json|V3-000578|MULTI|{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000578",
       "role": "LONG",
@@ -1506,7 +1538,7 @@
       "parameters_json": "{\"atr_period\": 10, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 95,
+      "rank": 97,
       "strategy_key": "reports\\arena_v3_results.json|V3-000015|MULTI|{\"atr_period\": 5, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 2.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000015",
       "role": "LONG",
@@ -1522,7 +1554,7 @@
       "parameters_json": "{\"atr_period\": 5, \"filter_set\": \"Original\", \"max_bars_held\": 5, \"sensitivity\": 0.5, \"stop_loss_percent\": 2.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 96,
+      "rank": 98,
       "strategy_key": "reports\\arena_v3_results.json|V3-000805|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}",
       "strategy_name": "V3-000805",
       "role": "LONG",
@@ -1538,7 +1570,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 15, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 12.0}"
     },
     {
-      "rank": 97,
+      "rank": 99,
       "strategy_key": "reports\\arena_v3_results.json|V3-000778|MULTI|{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}",
       "strategy_name": "V3-000778",
       "role": "LONG",
@@ -1554,7 +1586,7 @@
       "parameters_json": "{\"atr_period\": 14, \"filter_set\": \"Original\", \"max_bars_held\": 10, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 8.0}"
     },
     {
-      "rank": 98,
+      "rank": 100,
       "strategy_key": "reports\\arena_v3_results.json|V3-000679|MULTI|{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
       "strategy_name": "V3-000679",
       "role": "LONG",
@@ -1568,38 +1600,6 @@
       "trade_count": 34,
       "status": "WALK_FORWARD_FINALIST",
       "parameters_json": "{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 20, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
-    },
-    {
-      "rank": 99,
-      "strategy_key": "reports\\arena_v3_results.json|V3-000704|MULTI|{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
-      "strategy_name": "V3-000704",
-      "role": "LONG",
-      "symbol": "MULTI",
-      "source_report": "reports\\arena_v3_results.json",
-      "score": 29.0999,
-      "return_percent": 1.6772,
-      "drawdown_percent": 1.9365,
-      "profit_factor": 1.4027,
-      "consistency_percent": 84.38,
-      "trade_count": 34,
-      "status": "WALK_FORWARD_FINALIST",
-      "parameters_json": "{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 30, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
-    },
-    {
-      "rank": 100,
-      "strategy_key": "reports\\arena_v3_results.json|V3-000729|MULTI|{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}",
-      "strategy_name": "V3-000729",
-      "role": "LONG",
-      "symbol": "MULTI",
-      "source_report": "reports\\arena_v3_results.json",
-      "score": 29.0999,
-      "return_percent": 1.6772,
-      "drawdown_percent": 1.9365,
-      "profit_factor": 1.4027,
-      "consistency_percent": 84.38,
-      "trade_count": 34,
-      "status": "WALK_FORWARD_FINALIST",
-      "parameters_json": "{\"atr_period\": 12, \"filter_set\": \"Original\", \"max_bars_held\": 40, \"sensitivity\": 0.5, \"stop_loss_percent\": 1.5, \"take_profit_percent\": 10.0}"
     }
   ],
   "database_path": "data\\strategy_hall_of_fame.sqlite3",

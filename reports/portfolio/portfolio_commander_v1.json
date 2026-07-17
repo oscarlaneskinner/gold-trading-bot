@@ -2,6 +2,18 @@
   "starting_capital": 2000.0,
   "allocations": [
     {
+      "strategy_name": "ARENA-0081",
+      "role": "GLD",
+      "symbol": "GLD",
+      "allocation_percent": 35.0,
+      "allocation_dollars": 700.0,
+      "score": 53.0156,
+      "profit_factor": 1.524,
+      "drawdown_percent": 4.13,
+      "consistency_percent": 75.0,
+      "status": "RESEARCH_ALLOCATION_ONLY"
+    },
+    {
       "strategy_name": "MM-0013",
       "role": "LONG",
       "symbol": "MULTI",
@@ -14,10 +26,10 @@
       "status": "RESEARCH_ALLOCATION_ONLY"
     }
   ],
-  "allocated_percent": 35.0,
-  "cash_reserve_percent": 65.0,
-  "cash_reserve_dollars": 1300.0,
-  "eligible_strategy_count": 1,
+  "allocated_percent": 70.0,
+  "cash_reserve_percent": 30.0,
+  "cash_reserve_dollars": 600.0,
+  "eligible_strategy_count": 2,
   "production_strategy_changed": false,
   "market_request_made": false,
   "order_submitted": false

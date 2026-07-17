@@ -1,0 +1,49 @@
+name: Eight-Day Shadow Observation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 21 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  shadow-observation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - run: |
+          pip install -r requirements.txt
+          pip install -r requirements_market_regime_lab_v1.txt
+          pip install -r requirements_hall_of_fame_portfolio_v1.txt
+          pip install -r requirements_championship_scanner_v1.txt
+          pip install -r requirements_two_bot_shadow_controller_v1.txt
+          pip install -r requirements_eight_day_shadow_observation_v1.txt
+
+      - name: Run observation
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          SHADOW_REPORT_EMAIL_TO: ${{ secrets.SHADOW_REPORT_EMAIL_TO }}
+          SHADOW_REPORT_EMAIL_FROM: ${{ secrets.SHADOW_REPORT_EMAIL_FROM }}
+          SHADOW_REPORT_SMTP_HOST: ${{ secrets.SHADOW_REPORT_SMTP_HOST }}
+          SHADOW_REPORT_SMTP_PORT: ${{ secrets.SHADOW_REPORT_SMTP_PORT }}
+          SHADOW_REPORT_SMTP_USERNAME: ${{ secrets.SHADOW_REPORT_SMTP_USERNAME }}
+          SHADOW_REPORT_SMTP_PASSWORD: ${{ secrets.SHADOW_REPORT_SMTP_PASSWORD }}
+        run: python eight_day_shadow_observation_v1.py
+
+      - name: Commit observation reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/shadow_observation reports/market_regime reports/hall_of_fame reports/portfolio reports/scanner reports/shadow
+          git diff --cached --quiet || git commit -m "Update shadow observation reports"
+          git push
