@@ -1,0 +1,25 @@
+{
+  "benchmark_symbol": "SPY",
+  "regime": "BULL",
+  "close": 754.77,
+  "ema_fast": 737.2596,
+  "ema_slow": 695.7264,
+  "atr_percent": 1.1202,
+  "price_vs_slow_percent": 8.4866,
+  "fast_vs_slow_percent": 5.9698,
+  "slow_slope_20d_percent": 1.5961,
+  "reasons": [
+    "Price is above the slow EMA.",
+    "Fast EMA is above the slow EMA.",
+    "Slow EMA slope is positive."
+  ],
+  "permissions": {
+    "allow_gld_bot": true,
+    "allow_long_bot": true,
+    "allow_short_bot": false,
+    "reduce_position_size": false
+  },
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false
+}

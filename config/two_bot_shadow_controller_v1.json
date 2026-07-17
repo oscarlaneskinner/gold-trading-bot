@@ -1,0 +1,19 @@
+{
+  "starting_capital": 2000.0,
+  "maximum_total_exposure_percent": 70.0,
+  "cash_reserve_percent": 30.0,
+  "maximum_single_position_percent": 35.0,
+  "minimum_trade_dollars": 50.0,
+  "maximum_daily_proposals": 2,
+  "allowed_roles": [
+    "GLD",
+    "LONG"
+  ],
+  "report_paths": {
+    "market_regime": "reports/market_regime/market_regime_lab_v1.json",
+    "portfolio": "reports/portfolio/portfolio_commander_v1.json",
+    "hall_of_fame": "reports/hall_of_fame/strategy_hall_of_fame.json",
+    "scanner": "reports/scanner/championship_scanner_v1.json"
+  },
+  "research_only": true
+}
