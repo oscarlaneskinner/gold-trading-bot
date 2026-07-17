@@ -1,0 +1,17 @@
+name: Test GLD UT Competition Bundle
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-ut-bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python test_ut_competition_bundle.py

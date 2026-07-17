@@ -1,0 +1,55 @@
+name: Email Daily Trading Competition Report
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 22 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  daily-competition-email:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Build daily command-center report
+        run: python research_command_center.py
+
+      - name: Send daily competition email
+        env:
+          YAHOO_EMAIL_USERNAME:
+            ${{ secrets.YAHOO_EMAIL_USERNAME }}
+          YAHOO_EMAIL_APP_PASSWORD:
+            ${{ secrets.YAHOO_EMAIL_APP_PASSWORD }}
+          COMPETITION_EMAIL_TO:
+            oscarlaneskinner@yahoo.com
+        run: python send_daily_competition_email.py
+
+      - name: Save daily reports
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add reports/research_command_center_daily.json || true
+          git add reports/research_command_center_daily.txt || true
+          git add reports/research_command_center_daily.html || true
+
+          if git diff --cached --quiet; then
+            echo "No daily command-center changes."
+          else
+            git commit -m "Update daily research competition report"
+            git push
+          fi

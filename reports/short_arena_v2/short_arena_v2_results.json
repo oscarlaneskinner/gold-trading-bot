@@ -1,0 +1,20 @@
+{
+  "symbols_loaded": [
+    "AMZN",
+    "IWM",
+    "NVDA",
+    "QQQ",
+    "SLV",
+    "SPY",
+    "TSLA"
+  ],
+  "candidate_count": 10000,
+  "qualified_count": 0,
+  "best_candidate": null,
+  "top_100": [],
+  "promoted_to_hall_of_fame": false,
+  "next_stage": "CONTINUE_SHORT_RESEARCH",
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false
+}

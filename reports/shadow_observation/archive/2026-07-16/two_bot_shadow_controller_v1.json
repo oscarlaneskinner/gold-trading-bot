@@ -1,0 +1,42 @@
+{
+  "controller": "Two-Bot Shadow Controller v1",
+  "market_regime": "BULL",
+  "permissions": {
+    "allow_gld_bot": true,
+    "allow_long_bot": true,
+    "allow_short_bot": false,
+    "reduce_position_size": false
+  },
+  "missing_inputs": [],
+  "proposal_count": 2,
+  "proposed_total_dollars": 1400.0,
+  "cash_remaining_dollars": 600.0,
+  "proposals": [
+    {
+      "role": "GLD",
+      "symbol": "GLD",
+      "side": "BUY",
+      "strategy_name": "ARENA-0081",
+      "proposed_dollars": 700.0,
+      "reason": "Qualified GLD strategy and current regime permits GLD exposure.",
+      "status": "SHADOW_ONLY"
+    },
+    {
+      "role": "LONG",
+      "symbol": "NVDA",
+      "side": "BUY",
+      "strategy_name": "MM-0013",
+      "scanner_score": 73.4658,
+      "proposed_dollars": 700.0,
+      "suggested_stop": 197.8745,
+      "suggested_target": 234.4383,
+      "reason": "Qualified long strategy, current regime permits long exposure, and scanner ranked this symbol first.",
+      "status": "SHADOW_ONLY"
+    }
+  ],
+  "hall_of_fame_strategy_count": 137,
+  "shadow_mode": true,
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false
+}

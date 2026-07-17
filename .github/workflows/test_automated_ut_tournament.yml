@@ -1,0 +1,22 @@
+name: Test Automated UT Tournament
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-automation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install numpy pandas
+      - name: Run offline automation test
+        run: python test_automated_ut_tournament.py

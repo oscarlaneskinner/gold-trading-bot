@@ -1,0 +1,64 @@
+//@version=6
+strategy("GLD TradingView Research Strategy v2.0", overlay=true, initial_capital=100000, pyramiding=0, commission_type=strategy.commission.percent, commission_value=0.01, slippage=1, process_orders_on_close=true)
+
+// Independent TradingView competitor. This does not reproduce the Python LightGBM model.
+
+fastLength = input.int(9, "Fast EMA")
+mediumLength = input.int(21, "Medium EMA")
+slowLength = input.int(50, "Slow EMA")
+trendLength = input.int(200, "Trend EMA")
+rsiLength = input.int(14, "RSI Length")
+minimumRsi = input.float(50.0, "Minimum RSI")
+maximumRsi = input.float(75.0, "Maximum RSI")
+positionPercent = input.float(15.0, "Position Size %", minval=1, maxval=100)
+stopLossPercent = input.float(10.0, "Stop Loss %")
+takeProfitPercent = input.float(20.0, "Take Profit %")
+trailingStopPercent = input.float(5.0, "Trailing Stop %")
+maximumBarsHeld = input.int(20, "Maximum Bars Held")
+useSessionFilter = input.bool(true, "Use US Regular Session")
+sessionInput = input.session("0930-1600", "Trading Session")
+
+emaFast = ta.ema(close, fastLength)
+emaMedium = ta.ema(close, mediumLength)
+emaSlow = ta.ema(close, slowLength)
+emaTrend = ta.ema(close, trendLength)
+rsiValue = ta.rsi(close, rsiLength)
+
+inSession = not na(time(timeframe.period, sessionInput))
+sessionAllowed = not useSessionFilter or inSession
+trendBullish = close > emaTrend and emaFast > emaMedium and emaMedium > emaSlow
+momentumAllowed = rsiValue >= minimumRsi and rsiValue <= maximumRsi
+entrySignal = barstate.isconfirmed and sessionAllowed and trendBullish and momentumAllowed
+
+var int entryBar = na
+var float highestSinceEntry = na
+
+if strategy.position_size == 0
+    entryBar := na
+    highestSinceEntry := na
+
+if entrySignal and strategy.position_size == 0
+    strategy.entry("TV-LONG", strategy.long, qty=(strategy.equity * positionPercent / 100.0) / close, alert_message='{"source":"tradingview","strategy":"gld_research_v2","event":"BUY","ticker":"{{ticker}}","exchange":"{{exchange}}","timeframe":"{{interval}}","price":{{close}}}')
+    entryBar := bar_index
+    highestSinceEntry := high
+
+if strategy.position_size > 0
+    highestSinceEntry := math.max(nz(highestSinceEntry, high), high)
+    stopPrice = strategy.position_avg_price * (1.0 - stopLossPercent / 100.0)
+    targetPrice = strategy.position_avg_price * (1.0 + takeProfitPercent / 100.0)
+    trailingPrice = highestSinceEntry * (1.0 - trailingStopPercent / 100.0)
+    barsHeld = na(entryBar) ? 0 : bar_index - entryBar
+    trendExit = barstate.isconfirmed and (emaFast < emaMedium or close < emaSlow)
+    timeExit = barsHeld >= maximumBarsHeld
+
+    strategy.exit("TV-RISK-EXIT", from_entry="TV-LONG", stop=math.max(stopPrice, trailingPrice), limit=targetPrice, alert_message='{"source":"tradingview","strategy":"gld_research_v2","event":"RISK_EXIT","ticker":"{{ticker}}","price":{{close}}}')
+
+    if trendExit or timeExit
+        strategy.close("TV-LONG", comment=trendExit ? "TREND_EXIT" : "TIME_EXIT", alert_message='{"source":"tradingview","strategy":"gld_research_v2","event":"CLOSE","ticker":"{{ticker}}","price":{{close}}}')
+
+plot(emaFast, "EMA 9")
+plot(emaMedium, "EMA 21")
+plot(emaSlow, "EMA 50")
+plot(emaTrend, "EMA 200")
+plotshape(entrySignal and strategy.position_size == 0, title="Research Buy Signal", style=shape.triangleup, location=location.belowbar, text="BUY")
+alertcondition(entrySignal and strategy.position_size == 0, title="GLD Research Buy Signal", message='{"source":"tradingview","strategy":"gld_research_v2","event":"BUY_SIGNAL","ticker":"{{ticker}}","exchange":"{{exchange}}","timeframe":"{{interval}}","price":{{close}}}')

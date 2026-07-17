@@ -1,0 +1,287 @@
+{
+  "symbols_loaded": [
+    "NVDA",
+    "AMZN",
+    "TSLA",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "GLD",
+    "SLV",
+    "TLT"
+  ],
+  "top_longs": [
+    {
+      "symbol": "NVDA",
+      "side": "long",
+      "score": 73.4658,
+      "close": 212.5,
+      "average_volume_20d": 4659347.85,
+      "atr_14": 7.3128,
+      "atr_percent": 3.4413,
+      "rsi_14": 56.8638,
+      "distance_from_ema_200_percent": 9.8051,
+      "suggested_stop": 197.8745,
+      "suggested_target": 234.4383,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": [
+        "Price above EMA200",
+        "Bullish EMA alignment",
+        "Positive RSI momentum"
+      ]
+    },
+    {
+      "symbol": "AMZN",
+      "side": "long",
+      "score": 71.5037,
+      "close": 254.94,
+      "average_volume_20d": 2455965.45,
+      "atr_14": 7.3414,
+      "atr_percent": 2.8797,
+      "rsi_14": 60.2749,
+      "distance_from_ema_200_percent": 8.382,
+      "suggested_stop": 240.2572,
+      "suggested_target": 276.9641,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": [
+        "Price above EMA200",
+        "Positive RSI momentum",
+        "20-day breakout"
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "side": "long",
+      "score": 67.0924,
+      "close": 754.77,
+      "average_volume_20d": 1626318.3,
+      "atr_14": 8.4546,
+      "atr_percent": 1.1202,
+      "rsi_14": 58.2074,
+      "distance_from_ema_200_percent": 8.4866,
+      "suggested_stop": 737.8608,
+      "suggested_target": 780.1337,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": [
+        "Price above EMA200",
+        "Bullish EMA alignment",
+        "Positive RSI momentum"
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "side": "long",
+      "score": 64.6087,
+      "close": 295.77,
+      "average_volume_20d": 1391098.75,
+      "atr_14": 4.6633,
+      "atr_percent": 1.5767,
+      "rsi_14": 53.462,
+      "distance_from_ema_200_percent": 11.5885,
+      "suggested_stop": 286.4435,
+      "suggested_target": 309.7598,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": [
+        "Price above EMA200",
+        "Bullish EMA alignment"
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "side": "long",
+      "score": 58.9443,
+      "close": 717.7,
+      "average_volume_20d": 683209.55,
+      "atr_14": 14.8776,
+      "atr_percent": 2.073,
+      "rsi_14": 49.9581,
+      "distance_from_ema_200_percent": 11.3611,
+      "suggested_stop": 687.9448,
+      "suggested_target": 762.3328,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": [
+        "Price above EMA200",
+        "Bullish EMA alignment"
+      ]
+    },
+    {
+      "symbol": "TSLA",
+      "side": "long",
+      "score": 33.7702,
+      "close": 394.32,
+      "average_volume_20d": 961440.55,
+      "atr_14": 17.5477,
+      "atr_percent": 4.4501,
+      "rsi_14": 47.1373,
+      "distance_from_ema_200_percent": -0.7386,
+      "suggested_stop": 359.2246,
+      "suggested_target": 446.9631,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": []
+    },
+    {
+      "symbol": "SLV",
+      "side": "long",
+      "score": 24.552,
+      "close": 52.21,
+      "average_volume_20d": 784755.05,
+      "atr_14": 2.2314,
+      "atr_percent": 4.2739,
+      "rsi_14": 36.7511,
+      "distance_from_ema_200_percent": -13.2448,
+      "suggested_stop": 47.7472,
+      "suggested_target": 58.9043,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": []
+    },
+    {
+      "symbol": "TLT",
+      "side": "long",
+      "score": 24.5274,
+      "close": 84.24,
+      "average_volume_20d": 1063637.35,
+      "atr_14": 0.5723,
+      "atr_percent": 0.6794,
+      "rsi_14": 37.811,
+      "distance_from_ema_200_percent": -3.1648,
+      "suggested_stop": 83.0954,
+      "suggested_target": 85.9569,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": []
+    }
+  ],
+  "top_shorts": [
+    {
+      "symbol": "TLT",
+      "side": "short",
+      "score": 63.8536,
+      "close": 84.24,
+      "average_volume_20d": 1063637.35,
+      "atr_14": 0.5723,
+      "atr_percent": 0.6794,
+      "rsi_14": 37.811,
+      "distance_from_ema_200_percent": -3.1648,
+      "suggested_stop": 85.3846,
+      "suggested_target": 82.5231,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": [
+        "Price below EMA200",
+        "Bearish EMA alignment",
+        "Negative RSI momentum"
+      ]
+    },
+    {
+      "symbol": "SLV",
+      "side": "short",
+      "score": 58.8114,
+      "close": 52.21,
+      "average_volume_20d": 784755.05,
+      "atr_14": 2.2314,
+      "atr_percent": 4.2739,
+      "rsi_14": 36.7511,
+      "distance_from_ema_200_percent": -13.2448,
+      "suggested_stop": 56.6728,
+      "suggested_target": 45.5157,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": [
+        "Price below EMA200",
+        "Negative RSI momentum"
+      ]
+    },
+    {
+      "symbol": "TSLA",
+      "side": "short",
+      "score": 49.1186,
+      "close": 394.32,
+      "average_volume_20d": 961440.55,
+      "atr_14": 17.5477,
+      "atr_percent": 4.4501,
+      "rsi_14": 47.1373,
+      "distance_from_ema_200_percent": -0.7386,
+      "suggested_stop": 429.4154,
+      "suggested_target": 341.6769,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": [
+        "Price below EMA200"
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "side": "short",
+      "score": 32.1863,
+      "close": 717.7,
+      "average_volume_20d": 683209.55,
+      "atr_14": 14.8776,
+      "atr_percent": 2.073,
+      "rsi_14": 49.9581,
+      "distance_from_ema_200_percent": 11.3611,
+      "suggested_stop": 747.4552,
+      "suggested_target": 673.0672,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": []
+    },
+    {
+      "symbol": "IWM",
+      "side": "short",
+      "score": 31.9185,
+      "close": 295.77,
+      "average_volume_20d": 1391098.75,
+      "atr_14": 4.6633,
+      "atr_percent": 1.5767,
+      "rsi_14": 53.462,
+      "distance_from_ema_200_percent": 11.5885,
+      "suggested_stop": 305.0965,
+      "suggested_target": 281.7802,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": []
+    },
+    {
+      "symbol": "AMZN",
+      "side": "short",
+      "score": 29.1659,
+      "close": 254.94,
+      "average_volume_20d": 2455965.45,
+      "atr_14": 7.3414,
+      "atr_percent": 2.8797,
+      "rsi_14": 60.2749,
+      "distance_from_ema_200_percent": 8.382,
+      "suggested_stop": 269.6228,
+      "suggested_target": 232.9159,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": []
+    },
+    {
+      "symbol": "SPY",
+      "side": "short",
+      "score": 23.7748,
+      "close": 754.77,
+      "average_volume_20d": 1626318.3,
+      "atr_14": 8.4546,
+      "atr_percent": 1.1202,
+      "rsi_14": 58.2074,
+      "distance_from_ema_200_percent": 8.4866,
+      "suggested_stop": 771.6792,
+      "suggested_target": 729.4063,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": []
+    },
+    {
+      "symbol": "NVDA",
+      "side": "short",
+      "score": 22.4394,
+      "close": 212.5,
+      "average_volume_20d": 4659347.85,
+      "atr_14": 7.3128,
+      "atr_percent": 3.4413,
+      "rsi_14": 56.8638,
+      "distance_from_ema_200_percent": 9.8051,
+      "suggested_stop": 227.1255,
+      "suggested_target": 190.5617,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": []
+    }
+  ],
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false
+}

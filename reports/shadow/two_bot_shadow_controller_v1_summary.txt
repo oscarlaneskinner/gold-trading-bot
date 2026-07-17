@@ -1,0 +1,13 @@
+TWO-BOT SHADOW CONTROLLER V1
+==============================
+Regime: BULL
+Proposal count: 2
+Proposed total: $1400.00
+Cash remaining: $600.00
+
+1. GLD | BUY GLD | $700.00
+2. LONG | BUY NVDA | $700.00
+
+Shadow mode only.
+No market request was made.
+No order was submitted.

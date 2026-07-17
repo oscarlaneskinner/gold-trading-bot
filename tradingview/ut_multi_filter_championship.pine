@@ -1,0 +1,179 @@
+//@version=6
+strategy(
+     "UT Multi-Filter Championship v4.0",
+     overlay = true,
+     initial_capital = 100000,
+     pyramiding = 0,
+     commission_type = strategy.commission.percent,
+     commission_value = 0.01,
+     slippage = 1,
+     process_orders_on_close = true
+)
+
+// Open, inspectable UT-style research implementation.
+// Research only. No broker connection or order routing.
+
+competitor = input.string(
+     "UT Original",
+     "Competitor",
+     options = [
+         "UT Original",
+         "UT + EMA200 + RSI",
+         "UT + EMA200 + MACD",
+         "UT + EMA200 + ADX",
+         "UT + EMA200 + Supertrend",
+         "UT + EMA200 + Relative Volume",
+         "UT + EMA200 + Volume Spike",
+         "UT + RSI + MACD",
+         "UT + RSI + Relative Volume",
+         "UT + RSI + Supertrend",
+         "UT + MACD + Supertrend",
+         "UT + ADX + Supertrend",
+         "UT + EMA200 + RSI + MACD",
+         "UT + EMA200 + RSI + Relative Volume",
+         "UT + EMA200 + RSI + Supertrend",
+         "UT + EMA200 + MACD + Supertrend",
+         "UT + EMA200 + ADX + Supertrend",
+         "UT + RSI + MACD + Relative Volume",
+         "UT + RSI + MACD + Supertrend",
+         "UT + EMA200 + RSI + MACD + Relative Volume"
+     ]
+)
+
+sensitivity = input.float(1.0, "UT Sensitivity", minval = 0.1, step = 0.1)
+atrPeriod = input.int(10, "UT ATR Period", minval = 1)
+positionPercent = input.float(15.0, "Position Size %", minval = 1, maxval = 100)
+maximumBarsHeld = input.int(20, "Maximum Bars Held", minval = 1)
+hardStopPercent = input.float(3.0, "Hard Stop %", minval = 0.1, step = 0.1)
+takeProfitPercent = input.float(8.0, "Take Profit %", minval = 0.1, step = 0.1)
+
+emaLength = input.int(200, "EMA Length", minval = 20)
+rsiLength = input.int(14, "RSI Length", minval = 2)
+adxLength = input.int(14, "ADX Length", minval = 2)
+volumeLength = input.int(20, "Volume Average Length", minval = 2)
+volumeSpikeMultiplier = input.float(1.5, "Volume Spike Multiplier", minval = 0.1, step = 0.1)
+
+src = close
+atrValue = ta.atr(atrPeriod)
+lossDistance = sensitivity * atrValue
+
+var float utStop = na
+previousStop = nz(utStop[1], src)
+previousSource = nz(src[1], src)
+
+utStop :=
+     src > previousStop and previousSource > previousStop
+         ? math.max(previousStop, src - lossDistance)
+     : src < previousStop and previousSource < previousStop
+         ? math.min(previousStop, src + lossDistance)
+     : src > previousStop
+         ? src - lossDistance
+     : src + lossDistance
+
+utBuy = ta.crossover(src, utStop)
+utSell = ta.crossunder(src, utStop)
+
+ema200 = ta.ema(close, emaLength)
+rsiValue = ta.rsi(close, rsiLength)
+[macdLine, macdSignal, _] = ta.macd(close, 12, 26, 9)
+[supertrendValue, supertrendDirection] = ta.supertrend(3.0, 10)
+
+upMove = high - high[1]
+downMove = low[1] - low
+plusDM = upMove > downMove and upMove > 0 ? upMove : 0
+minusDM = downMove > upMove and downMove > 0 ? downMove : 0
+trueRangeRma = ta.rma(ta.tr(true), adxLength)
+plusDI = 100 * ta.rma(plusDM, adxLength) / math.max(trueRangeRma, 0.0001)
+minusDI = 100 * ta.rma(minusDM, adxLength) / math.max(trueRangeRma, 0.0001)
+dx = 100 * math.abs(plusDI - minusDI) / math.max(plusDI + minusDI, 0.0001)
+adxValue = ta.rma(dx, adxLength)
+
+volumeAverage = ta.sma(volume, volumeLength)
+relativeVolume = volume / math.max(volumeAverage, 1)
+
+emaPass = close > ema200
+rsiPass = rsiValue > 50 and rsiValue < 75
+macdPass = macdLine > macdSignal
+adxPass = adxValue > 20 and plusDI > minusDI
+supertrendPass = supertrendDirection < 0
+relativeVolumePass = relativeVolume > 1.0
+volumeSpikePass = volume > volumeAverage * volumeSpikeMultiplier
+
+filterPass =
+     competitor == "UT Original" ? true :
+     competitor == "UT + EMA200 + RSI" ? emaPass and rsiPass :
+     competitor == "UT + EMA200 + MACD" ? emaPass and macdPass :
+     competitor == "UT + EMA200 + ADX" ? emaPass and adxPass :
+     competitor == "UT + EMA200 + Supertrend" ? emaPass and supertrendPass :
+     competitor == "UT + EMA200 + Relative Volume" ? emaPass and relativeVolumePass :
+     competitor == "UT + EMA200 + Volume Spike" ? emaPass and volumeSpikePass :
+     competitor == "UT + RSI + MACD" ? rsiPass and macdPass :
+     competitor == "UT + RSI + Relative Volume" ? rsiPass and relativeVolumePass :
+     competitor == "UT + RSI + Supertrend" ? rsiPass and supertrendPass :
+     competitor == "UT + MACD + Supertrend" ? macdPass and supertrendPass :
+     competitor == "UT + ADX + Supertrend" ? adxPass and supertrendPass :
+     competitor == "UT + EMA200 + RSI + MACD" ? emaPass and rsiPass and macdPass :
+     competitor == "UT + EMA200 + RSI + Relative Volume" ? emaPass and rsiPass and relativeVolumePass :
+     competitor == "UT + EMA200 + RSI + Supertrend" ? emaPass and rsiPass and supertrendPass :
+     competitor == "UT + EMA200 + MACD + Supertrend" ? emaPass and macdPass and supertrendPass :
+     competitor == "UT + EMA200 + ADX + Supertrend" ? emaPass and adxPass and supertrendPass :
+     competitor == "UT + RSI + MACD + Relative Volume" ? rsiPass and macdPass and relativeVolumePass :
+     competitor == "UT + RSI + MACD + Supertrend" ? rsiPass and macdPass and supertrendPass :
+     emaPass and rsiPass and macdPass and relativeVolumePass
+
+entrySignal = barstate.isconfirmed and utBuy and filterPass
+exitSignal = barstate.isconfirmed and utSell
+
+var int entryBar = na
+
+if strategy.position_size == 0
+    entryBar := na
+
+if entrySignal and strategy.position_size == 0
+    strategy.entry(
+         "UT-LONG",
+         strategy.long,
+         qty = (strategy.equity * positionPercent / 100.0) / close,
+         alert_message = '{"source":"tradingview","strategy":"ut_multi_filter_championship","competitor":"' + competitor + '","event":"BUY","ticker":"{{ticker}}","timeframe":"{{interval}}","price":{{close}}}'
+    )
+    entryBar := bar_index
+
+if strategy.position_size > 0
+    stopPrice = strategy.position_avg_price * (1.0 - hardStopPercent / 100.0)
+    targetPrice = strategy.position_avg_price * (1.0 + takeProfitPercent / 100.0)
+    barsHeld = na(entryBar) ? 0 : bar_index - entryBar
+
+    strategy.exit(
+         "UT-RISK-EXIT",
+         from_entry = "UT-LONG",
+         stop = stopPrice,
+         limit = targetPrice
+    )
+
+    if exitSignal or barsHeld >= maximumBarsHeld
+        strategy.close(
+             "UT-LONG",
+             comment = exitSignal ? "UT_SELL" : "TIME_EXIT"
+        )
+
+plot(utStop, "UT ATR Stop")
+plot(ema200, "EMA 200")
+plot(supertrendValue, "Supertrend")
+
+plotshape(
+     entrySignal and strategy.position_size == 0,
+     title = "UT Buy",
+     text = "UT BUY",
+     style = shape.labelup,
+     location = location.belowbar,
+     size = size.tiny
+)
+
+plotshape(
+     exitSignal and strategy.position_size > 0,
+     title = "UT Sell",
+     text = "UT SELL",
+     style = shape.labeldown,
+     location = location.abovebar,
+     size = size.tiny
+)
