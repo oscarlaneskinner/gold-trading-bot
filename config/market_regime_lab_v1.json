@@ -1,0 +1,6 @@
+{
+ "benchmark":"SPY",
+ "trend_filter":"EMA200",
+ "volatility_filter":"ATR",
+ "research_only":true
+}

@@ -1,0 +1,2 @@
+name: Test Market Regime Lab v1
+on: {workflow_dispatch: {}}
