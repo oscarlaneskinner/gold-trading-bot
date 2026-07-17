@@ -1,2 +1,3 @@
-role,symbol,side,strategy_name,proposed_dollars,reason,status
-GLD,GLD,BUY,ARENA-0081,700.0,Qualified GLD strategy and current regime permits GLD exposure.,SHADOW_ONLY
+role,symbol,side,strategy_name,proposed_dollars,reason,status,scanner_score,suggested_stop,suggested_target
+GLD,GLD,BUY,ARENA-0081,700.0,Qualified GLD strategy and current regime permits GLD exposure.,SHADOW_ONLY,,,
+LONG,NVDA,BUY,MM-0013,700.0,"Qualified long strategy, current regime permits long exposure, and scanner ranked this symbol first.",SHADOW_ONLY,73.4658,197.8745,234.4383

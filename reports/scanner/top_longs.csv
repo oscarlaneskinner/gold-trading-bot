@@ -1,1 +1,9 @@
-
+symbol,side,score,close,average_volume_20d,atr_14,atr_percent,rsi_14,distance_from_ema_200_percent,suggested_stop,suggested_target,maximum_position_percent,signal_reasons
+NVDA,long,73.4658,212.5,4659347.85,7.3128,3.4413,56.8638,9.8051,197.8745,234.4383,10.0,"['Price above EMA200', 'Bullish EMA alignment', 'Positive RSI momentum']"
+AMZN,long,71.5037,254.94,2455965.45,7.3414,2.8797,60.2749,8.382,240.2572,276.9641,10.0,"['Price above EMA200', 'Positive RSI momentum', '20-day breakout']"
+SPY,long,67.0924,754.77,1626318.3,8.4546,1.1202,58.2074,8.4866,737.8608,780.1337,10.0,"['Price above EMA200', 'Bullish EMA alignment', 'Positive RSI momentum']"
+IWM,long,64.6087,295.77,1391098.75,4.6633,1.5767,53.462,11.5885,286.4435,309.7598,10.0,"['Price above EMA200', 'Bullish EMA alignment']"
+QQQ,long,58.9443,717.7,683209.55,14.8776,2.073,49.9581,11.3611,687.9448,762.3328,10.0,"['Price above EMA200', 'Bullish EMA alignment']"
+TSLA,long,33.7702,394.32,961440.55,17.5477,4.4501,47.1373,-0.7386,359.2246,446.9631,10.0,[]
+SLV,long,24.552,52.21,784755.05,2.2314,4.2739,36.7511,-13.2448,47.7472,58.9043,10.0,[]
+TLT,long,24.5274,84.24,1063637.35,0.5723,0.6794,37.811,-3.1648,83.0954,85.9569,10.0,[]
