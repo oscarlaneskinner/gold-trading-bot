@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "buy_decisions_without_order_id": 0,
+    "closed_trade_count": 0,
+    "closed_trades_missing_exit_price": 0,
+    "closed_trades_missing_return": 0,
+    "decision_count": 4,
+    "decision_intelligence_count": 1,
+    "decisions_missing_features": 0,
+    "duplicate_entry_order_ids": 0,
+    "duplicate_exit_order_ids": 0,
+    "foreign_key_violation_count": 0,
+    "intelligence_record_count": 2,
+    "open_trade_count": 1,
+    "open_trades_with_exit_data": 0,
+    "orphan_intelligence_count": 0,
+    "sqlite_integrity_check": "ok",
+    "trade_count": 1
+  },
+  "database_exists": true,
+  "database_path": "/home/runner/work/gold-trading-bot/gold-trading-bot/data/trade_memory.sqlite3",
+  "database_size_bytes": 73728,
+  "generated_at_utc": "2026-07-18T17:42:42.538584+00:00",
+  "issues": [],
+  "market_request_made": false,
+  "order_submitted": false,
+  "production_strategy_changed": false,
+  "status": "PASSED",
+  "warnings": []
+}
