@@ -1,0 +1,1 @@
+Research-only regime-aware short strategy framework.

@@ -1,0 +1,20 @@
+name: Test Hall of Fame and Portfolio Commander v1
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-command-center:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements_hall_of_fame_portfolio_v1.txt
+      - run: python test_hall_of_fame_portfolio_commander_v1.py

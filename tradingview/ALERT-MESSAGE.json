@@ -1,0 +1,12 @@
+{
+  "source": "tradingview",
+  "strategy": "gld_research_v2",
+  "event": "{{strategy.order.action}}",
+  "ticker": "{{ticker}}",
+  "exchange": "{{exchange}}",
+  "timeframe": "{{interval}}",
+  "price": "{{close}}",
+  "order_id": "{{strategy.order.id}}",
+  "position_size": "{{strategy.position_size}}",
+  "timestamp": "{{timenow}}"
+}

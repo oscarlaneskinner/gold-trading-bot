@@ -1,0 +1,74 @@
+{
+  "starting_capital": 2000.0,
+  "verified_gld": {
+    "strategy_name": "ARENA-0081",
+    "symbol": "GLD",
+    "role": "GLD",
+    "score": 53.0156,
+    "return_percent": 28.25,
+    "drawdown_percent": 4.13,
+    "profit_factor": 1.524,
+    "consistency_percent": 75.0,
+    "trade_count": 328,
+    "parameters": {
+      "filter_set": "Original",
+      "sensitivity": 1.2,
+      "atr_period": 14,
+      "max_bars_held": 30,
+      "stop_loss_percent": 4.0,
+      "take_profit_percent": 10.0,
+      "position_percent": 15.0,
+      "validation_source": "TradingView"
+    }
+  },
+  "qualification_rules": {
+    "minimum_score": 20.0,
+    "minimum_profit_factor": 1.1,
+    "maximum_drawdown_percent": 12.0,
+    "minimum_consistency_percent": 50.0,
+    "minimum_trade_count": 20
+  },
+  "short_arena": {
+    "symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "AMZN",
+      "NVDA",
+      "TSLA",
+      "META",
+      "AMD",
+      "SLV"
+    ],
+    "sensitivities": [
+      0.6,
+      0.8,
+      1.0,
+      1.2
+    ],
+    "atr_periods": [
+      7,
+      10,
+      14,
+      20
+    ],
+    "max_bars_held": [
+      5,
+      10,
+      20
+    ],
+    "stop_loss_percent": [
+      2.0,
+      3.0,
+      4.0
+    ],
+    "take_profit_percent": [
+      4.0,
+      6.0,
+      8.0
+    ],
+    "minimum_symbols_passed": 4,
+    "train_fraction": 0.7
+  },
+  "hall_of_fame_database": "data/strategy_hall_of_fame.sqlite3"
+}

@@ -1,0 +1,103 @@
+//@version=6
+strategy("UT Bot Championship v3.0", overlay=true, initial_capital=100000, pyramiding=0, commission_type=strategy.commission.percent, commission_value=0.01, slippage=1, process_orders_on_close=true)
+
+// Open, inspectable UT-style research implementation.
+
+competitor = input.string("UT Original", "Competitor", options=[
+ "UT Original","UT + EMA50","UT + EMA100","UT + EMA200","UT + Supertrend",
+ "UT + RSI","UT + MACD","UT + ADX","UT + Stochastic",
+ "UT + Relative Volume","UT + OBV","UT + Volume Spike",
+ "UT + ATR Exit","UT + Chandelier Exit","UT + Dynamic Trail"
+])
+
+sensitivity = input.float(1.0, "UT Sensitivity", minval=0.1, step=0.1)
+atrPeriod = input.int(10, "UT ATR Period", minval=1)
+positionPercent = input.float(15.0, "Position Size %", minval=1, maxval=100)
+maximumBarsHeld = input.int(20, "Maximum Bars Held", minval=1)
+hardStopPercent = input.float(3.0, "Hard Stop %", minval=0.1)
+takeProfitPercent = input.float(8.0, "Take Profit %", minval=0.1)
+
+src = close
+atrValue = ta.atr(atrPeriod)
+lossDistance = sensitivity * atrValue
+var float utStop = na
+previousStop = nz(utStop[1], src)
+previousSource = nz(src[1], src)
+utStop := src > previousStop and previousSource > previousStop ? math.max(previousStop, src-lossDistance) :
+          src < previousStop and previousSource < previousStop ? math.min(previousStop, src+lossDistance) :
+          src > previousStop ? src-lossDistance : src+lossDistance
+
+utBuy = ta.crossover(src, utStop)
+utSell = ta.crossunder(src, utStop)
+
+ema50 = ta.ema(close, 50)
+ema100 = ta.ema(close, 100)
+ema200 = ta.ema(close, 200)
+[supertrendValue, supertrendDirection] = ta.supertrend(3.0, 10)
+rsiValue = ta.rsi(close, 14)
+[macdLine, macdSignal, _] = ta.macd(close, 12, 26, 9)
+volumeAverage = ta.sma(volume, 20)
+relativeVolume = volume / math.max(volumeAverage, 1)
+obvValue = ta.cum(close > close[1] ? volume : close < close[1] ? -volume : 0)
+obvAverage = ta.sma(obvValue, 20)
+stoch = ta.stoch(close, high, low, 14)
+
+upMove = high-high[1]
+downMove = low[1]-low
+plusDM = upMove > downMove and upMove > 0 ? upMove : 0
+minusDM = downMove > upMove and downMove > 0 ? downMove : 0
+trur = ta.rma(ta.tr(true), 14)
+plusDI = 100*ta.rma(plusDM,14)/math.max(trur,0.0001)
+minusDI = 100*ta.rma(minusDM,14)/math.max(trur,0.0001)
+dx = 100*math.abs(plusDI-minusDI)/math.max(plusDI+minusDI,0.0001)
+adxValue = ta.rma(dx,14)
+
+filterPass =
+ competitor == "UT Original" ? true :
+ competitor == "UT + EMA50" ? close > ema50 :
+ competitor == "UT + EMA100" ? close > ema100 :
+ competitor == "UT + EMA200" ? close > ema200 :
+ competitor == "UT + Supertrend" ? supertrendDirection < 0 :
+ competitor == "UT + RSI" ? rsiValue > 50 and rsiValue < 75 :
+ competitor == "UT + MACD" ? macdLine > macdSignal :
+ competitor == "UT + ADX" ? adxValue > 20 and plusDI > minusDI :
+ competitor == "UT + Stochastic" ? stoch > 50 and stoch < 85 :
+ competitor == "UT + Relative Volume" ? relativeVolume > 1 :
+ competitor == "UT + OBV" ? obvValue > obvAverage :
+ competitor == "UT + Volume Spike" ? volume > volumeAverage*1.5 : true
+
+entrySignal = barstate.isconfirmed and utBuy and filterPass
+exitSignal = barstate.isconfirmed and utSell
+
+var int entryBar = na
+var float highestSinceEntry = na
+
+if strategy.position_size == 0
+    entryBar := na
+    highestSinceEntry := na
+
+if entrySignal and strategy.position_size == 0
+    strategy.entry("UT-LONG", strategy.long, qty=(strategy.equity*positionPercent/100)/close)
+    entryBar := bar_index
+    highestSinceEntry := high
+
+if strategy.position_size > 0
+    highestSinceEntry := math.max(nz(highestSinceEntry,high),high)
+    fixedStop = strategy.position_avg_price*(1-hardStopPercent/100)
+    target = strategy.position_avg_price*(1+takeProfitPercent/100)
+    atrStop = close - 2*atrValue
+    chandelierStop = highestSinceEntry - 3*atrValue
+    dynamicStop = highestSinceEntry*(1-4/100)
+    selectedStop = competitor == "UT + ATR Exit" ? math.max(fixedStop,atrStop) :
+                   competitor == "UT + Chandelier Exit" ? math.max(fixedStop,chandelierStop) :
+                   competitor == "UT + Dynamic Trail" ? math.max(fixedStop,dynamicStop) :
+                   fixedStop
+    strategy.exit("UT-RISK-EXIT", from_entry="UT-LONG", stop=selectedStop, limit=target)
+    barsHeld = na(entryBar) ? 0 : bar_index-entryBar
+    if exitSignal or barsHeld >= maximumBarsHeld
+        strategy.close("UT-LONG")
+
+plot(utStop, "UT ATR Stop")
+plot(ema200, "EMA 200")
+plotshape(entrySignal and strategy.position_size == 0, title="UT Buy", text="UT BUY", style=shape.labelup, location=location.belowbar, size=size.tiny)
+plotshape(exitSignal and strategy.position_size > 0, title="UT Sell", text="UT SELL", style=shape.labeldown, location=location.abovebar, size=size.tiny)

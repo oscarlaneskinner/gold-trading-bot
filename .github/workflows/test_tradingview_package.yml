@@ -1,0 +1,22 @@
+name: Test GLD TradingView Research Package
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-tradingview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Validate TradingView research files
+        run: python test_tradingview_package.py
+      - name: Test offline signal logging
+        run: |
+          python tradingview_signal_log.py --payload-json '{"source":"tradingview","strategy":"gld_research_v2","event":"BUY_SIGNAL","ticker":"GLD","exchange":"AMEX","timeframe":"D","price":"375.00","timestamp":"test"}'

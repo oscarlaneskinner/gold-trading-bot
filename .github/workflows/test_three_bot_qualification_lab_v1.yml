@@ -1,0 +1,20 @@
+name: Test Three-Bot Qualification Lab v1
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-qualification-lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements_three_bot_qualification_lab_v1.txt
+      - run: python test_three_bot_qualification_lab_v1.py

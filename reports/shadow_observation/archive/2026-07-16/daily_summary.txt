@@ -1,0 +1,23 @@
+EIGHT-DAY SHADOW OBSERVATION
+==============================
+Observation day: 1 / 8
+Date: 2026-07-16
+Market regime: BULL
+Proposal count: 2
+Proposed total: $1400.00
+
+BOT PERMISSIONS
+- allow_gld_bot: True
+- allow_long_bot: True
+- allow_short_bot: False
+- reduce_position_size: False
+
+SHADOW PROPOSALS
+1. GLD | BUY GLD | $700.00 | ARENA-0081
+2. LONG | BUY NVDA | $700.00 | MM-0013
+
+PIPELINE STATUS
+- FAILED: python download_multi_market_research_data.py
+
+Shadow mode only.
+No order was submitted.

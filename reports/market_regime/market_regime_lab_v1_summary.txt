@@ -1,0 +1,17 @@
+MARKET REGIME LAB V1
+====================
+Benchmark: SPY
+Regime: BULL
+Close: 754.77
+ATR %: 1.1202
+
+Permissions:
+GLD bot: True
+Long bot: True
+Short bot: False
+Reduce size: False
+
+Reasons:
+- Price is above the slow EMA.
+- Fast EMA is above the slow EMA.
+- Slow EMA slope is positive.

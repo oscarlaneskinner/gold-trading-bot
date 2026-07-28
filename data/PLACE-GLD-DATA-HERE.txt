@@ -1,0 +1,1 @@
+Save GLD daily OHLCV data as data/GLD_1D.csv, or use download_alpaca_research_data.py.

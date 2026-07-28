@@ -1,0 +1,10 @@
+{
+  "symbols":["SPY","QQQ","IWM","AMZN","NVDA","TSLA","META","AMD","SLV"],
+  "entry_models":[
+    "breakdown",
+    "failed_rally",
+    "relative_weakness",
+    "ema_rejection"
+  ],
+  "research_only": true
+}
