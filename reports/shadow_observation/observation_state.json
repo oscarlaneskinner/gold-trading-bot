@@ -1,0 +1,10 @@
+{
+  "target_days": 8,
+  "completed_days": 0,
+  "successful_dates": [],
+  "failed_dates": [
+    "2026-07-29"
+  ],
+  "status": "ACTIVE",
+  "last_run_timestamp": "2026-07-29T12:03:55.200682-04:00"
+}

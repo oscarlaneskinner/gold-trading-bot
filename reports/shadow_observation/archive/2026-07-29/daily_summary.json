@@ -1,0 +1,104 @@
+{
+  "run_timestamp": "2026-07-29T12:03:55.200682-04:00",
+  "run_date": "2026-07-29",
+  "market_regime": "UNKNOWN",
+  "permissions": {},
+  "hall_of_fame_strategy_count": 0,
+  "portfolio_allocations": [],
+  "scanner_top_long": null,
+  "shadow_proposal_count": 0,
+  "shadow_proposed_total_dollars": 0.0,
+  "shadow_proposals": [],
+  "missing_inputs": [],
+  "command_results": [
+    {
+      "command": [
+        "python",
+        "download_multi_market_research_data.py"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "python: can't open file '/home/runner/work/gold-trading-bot/gold-trading-bot/download_multi_market_research_data.py': [Errno 2] No such file or directory\n",
+      "status": "failed"
+    },
+    {
+      "command": [
+        "python",
+        "market_regime_lab_v1.py",
+        "--data-dir",
+        "data"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/market_regime_lab_v1.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/market_regime_lab_v1.py\", line 266, in main\n    config = load_config(Path(arguments.config))\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/market_regime_lab_v1.py\", line 31, in load_config\n    raise FileNotFoundError(f\"Configuration file not found: {path}\")\nFileNotFoundError: Configuration file not found: config/market_regime_lab_v1.json\n",
+      "status": "failed"
+    },
+    {
+      "command": [
+        "python",
+        "strategy_hall_of_fame_v1.py"
+      ],
+      "returncode": 0,
+      "stdout": "Strategy Hall of Fame v1\n{\n  \"records_imported\": 0,\n  \"strategy_count\": 0,\n  \"top_strategies\": [],\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nNo market request was made.\nNo order was submitted.\n",
+      "stderr": "",
+      "status": "passed"
+    },
+    {
+      "command": [
+        "python",
+        "portfolio_commander_v1.py"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/portfolio_commander_v1.py\", line 173, in <module>\n    main()\n    ~~~~^^\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/portfolio_commander_v1.py\", line 134, in main\n    config = load_config(Path(args.config))\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/portfolio_commander_v1.py\", line 25, in load_config\n    return json.loads(path.read_text(encoding=\"utf-8\"))\n                      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/pathlib/_local.py\", line 546, in read_text\n    return PathBase.read_text(self, encoding, errors, newline)\n           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/pathlib/_abc.py\", line 632, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/pathlib/_local.py\", line 537, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'config/portfolio_commander_v1.json'\n",
+      "status": "failed"
+    },
+    {
+      "command": [
+        "python",
+        "championship_market_scanner_v1.py",
+        "--data-dir",
+        "data"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/championship_market_scanner_v1.py\", line 72, in <module>\n    if __name__=='__main__': main()\n                             ~~~~^^\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/championship_market_scanner_v1.py\", line 60, in main\n    ap=argparse.ArgumentParser(); ap.add_argument('--data-dir',default='data/scanner'); ap.add_argument('--config',default='config/championship_scanner_v1.json'); a=ap.parse_args(); cfg=load_config(Path(a.config)); d=Path(a.data_dir); longs=[]; shorts=[]; loaded=[]\n                                                                                                                                                                                          ~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/championship_market_scanner_v1.py\", line 13, in load_config\n    def load_config(path:Path)->dict[str,Any]: return json.loads(path.read_text(encoding='utf-8'))\n                                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/pathlib/_local.py\", line 546, in read_text\n    return PathBase.read_text(self, encoding, errors, newline)\n           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/pathlib/_abc.py\", line 632, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.13.14/x64/lib/python3.13/pathlib/_local.py\", line 537, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'config/championship_scanner_v1.json'\n",
+      "status": "failed"
+    },
+    {
+      "command": [
+        "python",
+        "two_bot_shadow_controller_v1.py"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/two_bot_shadow_controller_v1.py\", line 313, in <module>\n    main()\n    ~~~~^^\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/two_bot_shadow_controller_v1.py\", line 190, in main\n    paths = config[\"report_paths\"]\n            ~~~~~~^^^^^^^^^^^^^^^^\nKeyError: 'report_paths'\n",
+      "status": "failed"
+    }
+  ],
+  "archived_reports": {
+    "market_regime": null,
+    "hall_of_fame": "reports/shadow_observation/archive/2026-07-29/strategy_hall_of_fame.json",
+    "portfolio": null,
+    "scanner": null,
+    "shadow_controller": null
+  },
+  "shadow_mode": true,
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false,
+  "observation_state": {
+    "target_days": 8,
+    "completed_days": 0,
+    "successful_dates": [],
+    "failed_dates": [
+      "2026-07-29"
+    ],
+    "status": "ACTIVE",
+    "last_run_timestamp": "2026-07-29T12:03:55.200682-04:00"
+  },
+  "email_result": {
+    "status": "preview_only",
+    "reason": "SMTP environment variables are incomplete."
+  }
+}
