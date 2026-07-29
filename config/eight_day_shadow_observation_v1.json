@@ -1,0 +1,70 @@
+{
+  "observation_days": 8,
+  "timezone": "America/New_York",
+  "starting_capital": 2000.0,
+  "refresh_market_data": true,
+  "scanner_data_directory": "data",
+  "archive_directory": "reports/shadow_observation/archive",
+  "state_file": "reports/shadow_observation/observation_state.json",
+  "daily_summary_file": "reports/shadow_observation/latest_summary.json",
+  "daily_text_file": "reports/shadow_observation/latest_summary.txt",
+  "email_preview_file": "reports/shadow_observation/latest_email_preview.txt",
+  "required_commands": [
+    [
+      "python",
+      "market_regime_lab_v1.py",
+      "--data-dir",
+      "data"
+    ],
+    [
+      "python",
+      "strategy_hall_of_fame_v1.py"
+    ],
+    [
+      "python",
+      "portfolio_commander_v1.py"
+    ],
+    [
+      "python",
+      "championship_market_scanner_v1.py",
+      "--data-dir",
+      "data"
+    ],
+    [
+      "python",
+      "two_bot_shadow_controller_v1.py"
+    ]
+  ],
+  "market_data_command": [
+    "python",
+    "download_multi_market_research_data.py"
+  ],
+  "report_paths": {
+    "market_regime": "reports/market_regime/market_regime_lab_v1.json",
+    "hall_of_fame": "reports/hall_of_fame/strategy_hall_of_fame.json",
+    "portfolio": "reports/portfolio/portfolio_commander_v1.json",
+    "scanner": "reports/scanner/championship_scanner_v1.json",
+    "shadow_controller": "reports/shadow/two_bot_shadow_controller_v1.json"
+  },
+  "email": {
+    "enabled": true,
+    "recipient_env": "SHADOW_REPORT_EMAIL_TO",
+    "sender_env": "SHADOW_REPORT_EMAIL_FROM",
+    "smtp_host_env": "SHADOW_REPORT_SMTP_HOST",
+    "smtp_port_env": "SHADOW_REPORT_SMTP_PORT",
+    "smtp_username_env": "SHADOW_REPORT_SMTP_USERNAME",
+    "smtp_password_env": "SHADOW_REPORT_SMTP_PASSWORD",
+    "use_tls": true,
+    "subject_prefix": "Eight-Day Shadow Observation"
+  },
+  "safety": {
+    "forbidden_modules": [
+      "alpaca.trading",
+      "TradingClient",
+      "submit_order",
+      "paper=False"
+    ],
+    "require_shadow_mode": true,
+    "allow_order_submission": false
+  }
+}
