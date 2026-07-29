@@ -20,7 +20,8 @@ jobs:
         with:
           python-version: "3.13"
 
-      - run: |
+      - name: Install dependencies
+        run: |
           pip install -r requirements.txt
           pip install -r requirements_market_regime_lab_v1.txt
           pip install -r requirements_hall_of_fame_portfolio_v1.txt
@@ -40,7 +41,7 @@ jobs:
           SHADOW_REPORT_SMTP_PASSWORD: ${{ secrets.SHADOW_REPORT_SMTP_PASSWORD }}
         run: python eight_day_shadow_observation_v1.py
 
-            - name: Commit observation reports
+      - name: Commit observation reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
