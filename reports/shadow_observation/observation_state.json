@@ -4,8 +4,9 @@
   "successful_dates": [],
   "failed_dates": [
     "2026-07-29",
+    "2026-07-30",
     "2026-07-30"
   ],
   "status": "ACTIVE",
-  "last_run_timestamp": "2026-07-30T03:23:10.071631-04:00"
+  "last_run_timestamp": "2026-07-30T10:57:09.079325-04:00"
 }
