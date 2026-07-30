@@ -1,0 +1,8 @@
+{
+  "strategy_count": 0,
+  "top_strategies": [],
+  "database_path": "data/strategy_hall_of_fame.sqlite3",
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false
+}
