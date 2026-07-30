@@ -1,5 +1,5 @@
 {
-  "run_timestamp": "2026-07-30T10:57:09.079325-04:00",
+  "run_timestamp": "2026-07-30T11:05:45.271245-04:00",
   "run_date": "2026-07-30",
   "market_regime": "UNKNOWN",
   "permissions": {},
@@ -94,10 +94,11 @@
     "failed_dates": [
       "2026-07-29",
       "2026-07-30",
+      "2026-07-30",
       "2026-07-30"
     ],
     "status": "ACTIVE",
-    "last_run_timestamp": "2026-07-30T10:57:09.079325-04:00"
+    "last_run_timestamp": "2026-07-30T11:05:45.271245-04:00"
   },
   "email_result": {
     "status": "preview_only",
