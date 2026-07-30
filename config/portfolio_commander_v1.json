@@ -1,0 +1,47 @@
+{
+  "starting_capital": 2000.0,
+  "cash_reserve_percent": 20.0,
+  "maximum_total_exposure_percent": 80.0,
+  "maximum_strategy_allocation_percent": 35.0,
+  "minimum_strategy_allocation_percent": 5.0,
+  "maximum_single_symbol_percent": 20.0,
+  "minimum_score": 20.0,
+  "minimum_profit_factor": 1.1,
+  "maximum_drawdown_percent": 12.0,
+  "minimum_consistency_percent": 50.0,
+  "maximum_active_strategies": 3,
+  "preferred_roles": [
+    "GLD",
+    "LONG",
+    "SHORT"
+  ],
+  "role_keywords": {
+    "GLD": [
+      "GLD",
+      "gold"
+    ],
+    "LONG": [
+      "long",
+      "bull",
+      "momentum",
+      "breakout"
+    ],
+    "SHORT": [
+      "short",
+      "bear",
+      "breakdown"
+    ]
+  },
+  "allocation_weights": {
+    "score": 0.4,
+    "profit_factor": 0.2,
+    "consistency": 0.2,
+    "drawdown": 0.2
+  },
+  "source_reports": [
+    "reports/arena_v3_results.json",
+    "reports/multi_market_strategy_arena_v2.json",
+    "reports/strategy_research_arena.json",
+    "reports/scanner/championship_scanner_v1.json"
+  ]
+}
