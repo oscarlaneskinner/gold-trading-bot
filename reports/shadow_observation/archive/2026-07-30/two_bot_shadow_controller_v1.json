@@ -1,0 +1,17 @@
+{
+  "controller": "Two-Bot Shadow Controller v1",
+  "market_regime": "UNKNOWN",
+  "permissions": {},
+  "missing_inputs": [
+    "market_regime"
+  ],
+  "proposal_count": 0,
+  "proposed_total_dollars": 0,
+  "cash_remaining_dollars": 2000.0,
+  "proposals": [],
+  "hall_of_fame_strategy_count": 0,
+  "shadow_mode": true,
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false
+}

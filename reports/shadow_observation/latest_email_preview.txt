@@ -16,9 +16,6 @@ SHADOW PROPOSALS
 PIPELINE STATUS
 - FAILED: python download_multi_market_research_data.py
 - FAILED: python market_regime_lab_v1.py --data-dir data
-- FAILED: python portfolio_commander_v1.py
-- FAILED: python championship_market_scanner_v1.py --data-dir data
-- FAILED: python two_bot_shadow_controller_v1.py
 
 Shadow mode only.
 No order was submitted.
