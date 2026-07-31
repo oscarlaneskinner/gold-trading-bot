@@ -1,5 +1,5 @@
 {
-  "run_timestamp": "2026-07-31T04:18:09.320243-04:00",
+  "run_timestamp": "2026-07-31T09:10:14.563378-04:00",
   "run_date": "2026-07-31",
   "market_regime": "UNKNOWN",
   "permissions": {},
@@ -99,10 +99,11 @@
       "2026-07-30",
       "2026-07-30",
       "2026-07-30",
+      "2026-07-31",
       "2026-07-31"
     ],
     "status": "ACTIVE",
-    "last_run_timestamp": "2026-07-31T04:18:09.320243-04:00"
+    "last_run_timestamp": "2026-07-31T09:10:14.563378-04:00"
   },
   "email_result": {
     "status": "preview_only",
