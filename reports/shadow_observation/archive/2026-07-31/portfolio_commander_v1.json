@@ -1,0 +1,11 @@
+{
+  "starting_capital": 2000.0,
+  "allocations": [],
+  "allocated_percent": 0,
+  "cash_reserve_percent": 100.0,
+  "cash_reserve_dollars": 2000.0,
+  "eligible_strategy_count": 0,
+  "production_strategy_changed": false,
+  "market_request_made": false,
+  "order_submitted": false
+}
