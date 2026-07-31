@@ -1,27 +1,47 @@
 {
-  "run_timestamp": "2026-07-31T09:18:56.500765-04:00",
+  "run_timestamp": "2026-07-31T09:29:55.211794-04:00",
   "run_date": "2026-07-31",
-  "market_regime": "UNKNOWN",
-  "permissions": {},
+  "market_regime": "BULL",
+  "permissions": {
+    "allow_gld_bot": true,
+    "allow_long_bot": true,
+    "allow_short_bot": false,
+    "reduce_position_size": false
+  },
   "hall_of_fame_strategy_count": 0,
   "portfolio_allocations": [],
-  "scanner_top_long": null,
+  "scanner_top_long": {
+    "symbol": "SPY",
+    "side": "long",
+    "score": 63.3959,
+    "close": 741.63,
+    "average_volume_20d": 1500978.2,
+    "atr_14": 8.8149,
+    "atr_percent": 1.1886,
+    "rsi_14": 49.1599,
+    "distance_from_ema_200_percent": 5.8696,
+    "suggested_stop": 724.0003,
+    "suggested_target": 768.0746,
+    "maximum_position_percent": 10.0,
+    "signal_reasons": [
+      "Price above EMA200",
+      "Bullish EMA alignment"
+    ]
+  },
   "shadow_proposal_count": 0,
   "shadow_proposed_total_dollars": 0,
   "shadow_proposals": [],
-  "missing_inputs": [
-    "market_regime"
-  ],
+  "missing_inputs": [],
   "command_results": [
     {
       "command": [
         "python",
         "download_multi_market_research_data.py"
       ],
-      "returncode": 1,
-      "stdout": "",
-      "stderr": "Traceback (most recent call last):\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/download_multi_market_research_data.py\", line 367, in <module>\n    main()\n    ~~~~^^\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/download_multi_market_research_data.py\", line 240, in main\n    configuration = load_configuration(\n        config_path\n    )\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/download_multi_market_research_data.py\", line 36, in load_configuration\n    raise FileNotFoundError(\n        f\"Configuration file does not exist: {config_path}\"\n    )\nFileNotFoundError: Configuration file does not exist: config/multi_market_arena_v2.json\n",
-      "status": "failed"
+      "returncode": 0,
+      "stdout": "Downloading multi-market research data using Alpaca IEX...\nDownloading GLD...\nSaved 1510 bars for GLD to data/GLD_1D.csv.\nDownloading SPY...\nSaved 1511 bars for SPY to data/SPY_1D.csv.\nDownloading QQQ...\nSaved 1510 bars for QQQ to data/QQQ_1D.csv.\nDownloading IWM...\nSaved 1510 bars for IWM to data/IWM_1D.csv.\nDownloading SLV...\nSaved 1510 bars for SLV to data/SLV_1D.csv.\nDownloading TLT...\nSaved 1510 bars for TLT to data/TLT_1D.csv.\nDownloading AMZN...\nSaved 1510 bars for AMZN to data/AMZN_1D.csv.\nDownloading NVDA...\nSaved 1510 bars for NVDA to data/NVDA_1D.csv.\nDownloading TSLA...\nSaved 1510 bars for TSLA to data/TSLA_1D.csv.\n\nMulti-market research-data download\n{\n  \"status\": \"completed\",\n  \"feed\": \"IEX\",\n  \"start_date\": \"2005-01-01\",\n  \"symbols_requested\": [\n    \"GLD\",\n    \"SPY\",\n    \"QQQ\",\n    \"IWM\",\n    \"SLV\",\n    \"TLT\",\n    \"AMZN\",\n    \"NVDA\",\n    \"TSLA\"\n  ],\n  \"symbols_saved\": [\n    \"GLD\",\n    \"SPY\",\n    \"QQQ\",\n    \"IWM\",\n    \"SLV\",\n    \"TLT\",\n    \"AMZN\",\n    \"NVDA\",\n    \"TSLA\"\n  ],\n  \"symbols_failed\": [],\n  \"symbols_with_no_data\": [],\n  \"total_bars_saved\": 13591,\n  \"results\": [\n    {\n      \"symbol\": \"GLD\",\n      \"status\": \"saved\",\n      \"bar_count\": 1510,\n      \"file\": \"data/GLD_1D.csv\",\n      \"error\": null\n    },\n    {\n      \"symbol\": \"SPY\",\n      \"status\": \"saved\",\n      \"bar_count\": 1511,\n      \"file\": \"data/SPY_1D.csv\",\n      \"error\": null\n    },\n    {\n      \"symbol\": \"QQQ\",\n      \"status\": \"saved\",\n      \"bar_count\": 1510,\n      \"file\": \"data/QQQ_1D.csv\",\n      \"error\": null\n    },\n    {\n      \"symbol\": \"IWM\",\n      \"status\": \"saved\",\n      \"bar_count\": 1510,\n      \"file\": \"data/IWM_1D.csv\",\n      \"error\": null\n    },\n    {\n      \"symbol\": \"SLV\",\n      \"status\": \"saved\",\n      \"bar_count\": 1510,\n      \"file\": \"data/SLV_1D.csv\",\n      \"error\": null\n    },\n    {\n      \"symbol\": \"TLT\",\n      \"status\": \"saved\",\n      \"bar_count\": 1510,\n      \"file\": \"data/TLT_1D.csv\",\n      \"error\": null\n    },\n    {\n      \"symbol\": \"AMZN\",\n      \"status\": \"saved\",\n      \"bar_count\": 1510,\n      \"file\": \"data/AMZN_1D.csv\",\n      \"error\": null\n    },\n    {\n      \"symbol\": \"NVDA\",\n      \"status\": \"saved\",\n      \"bar_count\": 1510,\n      \"file\": \"data/NVDA_1D.csv\",\n      \"error\": null\n    },\n    {\n      \"symbol\": \"TSLA\",\n      \"status\": \"saved\",\n      \"bar_count\": 1510,\n      \"file\": \"data/TSLA_1D.csv\",\n      \"error\": null\n    }\n  ],\n  \"market_data_request_made\": true,\n  \"trading_client_created\": false,\n  \"order_submitted\": false\n}\nHistorical IEX market-data requests were made.\nNo trading client was created.\nNo order was submitted.\n",
+      "stderr": "",
+      "status": "passed"
     },
     {
       "command": [
@@ -30,10 +50,10 @@
         "--data-dir",
         "data"
       ],
-      "returncode": 1,
-      "stdout": "",
-      "stderr": "Traceback (most recent call last):\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/market_regime_lab_v1.py\", line 364, in <module>\n    main()\n    ~~~~^^\n  File \"/home/runner/work/gold-trading-bot/gold-trading-bot/market_regime_lab_v1.py\", line 281, in main\n    raise FileNotFoundError(\n        f\"Benchmark CSV not found: {csv_path}\"\n    )\nFileNotFoundError: Benchmark CSV not found: data/SPY_1D.csv\n",
-      "status": "failed"
+      "returncode": 0,
+      "stdout": "Market Regime Lab v1\n{\n  \"benchmark_symbol\": \"SPY\",\n  \"regime\": \"BULL\",\n  \"close\": 741.63,\n  \"ema_fast\": 738.7053,\n  \"ema_slow\": 700.5128,\n  \"atr_percent\": 1.1886,\n  \"price_vs_slow_percent\": 5.8696,\n  \"fast_vs_slow_percent\": 5.4521,\n  \"slow_slope_20d_percent\": 1.4363,\n  \"reasons\": [\n    \"Price is above the slow EMA.\",\n    \"Fast EMA is above the slow EMA.\",\n    \"Slow EMA slope is positive.\"\n  ],\n  \"permissions\": {\n    \"allow_gld_bot\": true,\n    \"allow_long_bot\": true,\n    \"allow_short_bot\": false,\n    \"reduce_position_size\": false\n  },\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nNo market request was made.\nNo order was submitted.\n",
+      "stderr": "",
+      "status": "passed"
     },
     {
       "command": [
@@ -63,7 +83,7 @@
         "data"
       ],
       "returncode": 0,
-      "stdout": "Championship Market Scanner v1\n{\n  \"symbols_loaded\": [],\n  \"long_candidate_count\": 0,\n  \"short_candidate_count\": 0,\n  \"top_longs\": [],\n  \"top_shorts\": [],\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nNo market request was made.\nNo order was submitted.\n",
+      "stdout": "Championship Market Scanner v1\n{\n  \"symbols_loaded\": [\n    \"NVDA\",\n    \"AMZN\",\n    \"TSLA\",\n    \"SPY\",\n    \"QQQ\",\n    \"IWM\",\n    \"GLD\",\n    \"SLV\",\n    \"TLT\"\n  ],\n  \"long_candidate_count\": 7,\n  \"short_candidate_count\": 7,\n  \"top_longs\": [\n    {\n      \"symbol\": \"SPY\",\n      \"side\": \"long\",\n      \"score\": 63.3959,\n      \"close\": 741.63,\n      \"average_volume_20d\": 1500978.2,\n      \"atr_14\": 8.8149,\n      \"atr_percent\": 1.1886,\n      \"rsi_14\": 49.1599,\n      \"distance_from_ema_200_percent\": 5.8696,\n      \"suggested_stop\": 724.0003,\n      \"suggested_target\": 768.0746,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price above EMA200\",\n        \"Bullish EMA alignment\"\n      ]\n    },\n    {\n      \"symbol\": \"IWM\",\n      \"side\": \"long\",\n      \"score\": 60.1591,\n      \"close\": 292.53,\n      \"average_volume_20d\": 1171847.05,\n      \"atr_14\": 4.2918,\n      \"atr_percent\": 1.4671,\n      \"rsi_14\": 48.975,\n      \"distance_from_ema_200_percent\": 9.169,\n      \"suggested_stop\": 283.9465,\n      \"suggested_target\": 305.4053,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price above EMA200\",\n        \"Bullish EMA alignment\"\n      ]\n    },\n    {\n      \"symbol\": \"AMZN\",\n      \"side\": \"long\",\n      \"score\": 55.9221,\n      \"close\": 235.75,\n      \"average_volume_20d\": 1915160.0,\n      \"atr_14\": 7.2277,\n      \"atr_percent\": 3.0658,\n      \"rsi_14\": 44.6649,\n      \"distance_from_ema_200_percent\": 0.0634,\n      \"suggested_stop\": 221.2946,\n      \"suggested_target\": 257.433,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price above EMA200\",\n        \"Above-average volume\"\n      ]\n    },\n    {\n      \"symbol\": \"QQQ\",\n      \"side\": \"long\",\n      \"score\": 47.2023,\n      \"close\": 683.6,\n      \"average_volume_20d\": 588668.9,\n      \"atr_14\": 15.2064,\n      \"atr_percent\": 2.2245,\n      \"rsi_14\": 43.2048,\n      \"distance_from_ema_200_percent\": 5.3008,\n      \"suggested_stop\": 653.1872,\n      \"suggested_target\": 729.2193,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price above EMA200\",\n        \"Above-average volume\"\n      ]\n    },\n    {\n      \"symbol\": \"NVDA\",\n      \"side\": \"long\",\n      \"score\": 39.2177,\n      \"close\": 195.04,\n      \"average_volume_20d\": 4921799.7,\n      \"atr_14\": 7.4496,\n      \"atr_percent\": 3.8195,\n      \"rsi_14\": 43.089,\n      \"distance_from_ema_200_percent\": 0.3063,\n      \"suggested_stop\": 180.1408,\n      \"suggested_target\": 217.3889,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price above EMA200\"\n      ]\n    },\n    {\n      \"symbol\": \"TLT\",\n      \"side\": \"long\",\n      \"score\": 31.0057,\n      \"close\": 82.795,\n      \"average_volume_20d\": 1075293.4,\n      \"atr_14\": 0.6,\n      \"atr_percent\": 0.7247,\n      \"rsi_14\": 34.4169,\n      \"distance_from_ema_200_percent\": -4.4387,\n      \"suggested_stop\": 81.5949,\n      \"suggested_target\": 84.5951,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Above-average volume\"\n      ]\n    },\n    {\n      \"symbol\": \"TSLA\",\n      \"side\": \"long\",\n      \"score\": 10.8756,\n      \"close\": 308.6,\n      \"average_volume_20d\": 1084434.75,\n      \"atr_14\": 16.9752,\n      \"atr_percent\": 5.5007,\n      \"rsi_14\": 30.5242,\n      \"distance_from_ema_200_percent\": -21.1313,\n      \"suggested_stop\": 274.6495,\n      \"suggested_target\": 359.5257,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": []\n    }\n  ],\n  \"top_shorts\": [\n    {\n      \"symbol\": \"TSLA\",\n      \"side\": \"short\",\n      \"score\": 73.6364,\n      \"close\": 308.6,\n      \"average_volume_20d\": 1084434.75,\n      \"atr_14\": 16.9752,\n      \"atr_percent\": 5.5007,\n      \"rsi_14\": 30.5242,\n      \"distance_from_ema_200_percent\": -21.1313,\n      \"suggested_stop\": 342.5505,\n      \"suggested_target\": 257.6743,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price below EMA200\",\n        \"Bearish EMA alignment\",\n        \"Negative RSI momentum\"\n      ]\n    },\n    {\n      \"symbol\": \"TLT\",\n      \"side\": \"short\",\n      \"score\": 72.008,\n      \"close\": 82.795,\n      \"average_volume_20d\": 1075293.4,\n      \"atr_14\": 0.6,\n      \"atr_percent\": 0.7247,\n      \"rsi_14\": 34.4169,\n      \"distance_from_ema_200_percent\": -4.4387,\n      \"suggested_stop\": 83.9951,\n      \"suggested_target\": 80.9949,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price below EMA200\",\n        \"Bearish EMA alignment\",\n        \"Negative RSI momentum\",\n        \"Above-average volume\"\n      ]\n    },\n    {\n      \"symbol\": \"NVDA\",\n      \"side\": \"short\",\n      \"score\": 52.9409,\n      \"close\": 195.04,\n      \"average_volume_20d\": 4921799.7,\n      \"atr_14\": 7.4496,\n      \"atr_percent\": 3.8195,\n      \"rsi_14\": 43.089,\n      \"distance_from_ema_200_percent\": 0.3063,\n      \"suggested_stop\": 209.9392,\n      \"suggested_target\": 172.6911,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Negative RSI momentum\"\n      ]\n    },\n    {\n      \"symbol\": \"QQQ\",\n      \"side\": \"short\",\n      \"score\": 47.4439,\n      \"close\": 683.6,\n      \"average_volume_20d\": 588668.9,\n      \"atr_14\": 15.2064,\n      \"atr_percent\": 2.2245,\n      \"rsi_14\": 43.2048,\n      \"distance_from_ema_200_percent\": 5.3008,\n      \"suggested_stop\": 714.0128,\n      \"suggested_target\": 637.9807,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Negative RSI momentum\",\n        \"Above-average volume\"\n      ]\n    },\n    {\n      \"symbol\": \"AMZN\",\n      \"side\": \"short\",\n      \"score\": 45.2704,\n      \"close\": 235.75,\n      \"average_volume_20d\": 1915160.0,\n      \"atr_14\": 7.2277,\n      \"atr_percent\": 3.0658,\n      \"rsi_14\": 44.6649,\n      \"distance_from_ema_200_percent\": 0.0634,\n      \"suggested_stop\": 250.2054,\n      \"suggested_target\": 214.067,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Negative RSI momentum\",\n        \"Above-average volume\"\n      ]\n    },\n    {\n      \"symbol\": \"IWM\",\n      \"side\": \"short\",\n      \"score\": 35.521,\n      \"close\": 292.53,\n      \"average_volume_20d\": 1171847.05,\n      \"atr_14\": 4.2918,\n      \"atr_percent\": 1.4671,\n      \"rsi_14\": 48.975,\n      \"distance_from_ema_200_percent\": 9.169,\n      \"suggested_stop\": 301.1135,\n      \"suggested_target\": 279.6547,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": []\n    },\n    {\n      \"symbol\": \"SPY\",\n      \"side\": \"short\",\n      \"score\": 32.7363,\n      \"close\": 741.63,\n      \"average_volume_20d\": 1500978.2,\n      \"atr_14\": 8.8149,\n      \"atr_percent\": 1.1886,\n      \"rsi_14\": 49.1599,\n      \"distance_from_ema_200_percent\": 5.8696,\n      \"suggested_stop\": 759.2597,\n      \"suggested_target\": 715.1854,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": []\n    }\n  ],\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nNo market request was made.\nNo order was submitted.\n",
       "stderr": "",
       "status": "passed"
     },
@@ -73,13 +93,13 @@
         "two_bot_shadow_controller_v1.py"
       ],
       "returncode": 0,
-      "stdout": "Two-Bot Shadow Controller v1\n{\n  \"controller\": \"Two-Bot Shadow Controller v1\",\n  \"market_regime\": \"UNKNOWN\",\n  \"permissions\": {},\n  \"missing_inputs\": [\n    \"market_regime\"\n  ],\n  \"proposal_count\": 0,\n  \"proposed_total_dollars\": 0,\n  \"cash_remaining_dollars\": 2000.0,\n  \"proposals\": [],\n  \"hall_of_fame_strategy_count\": 0,\n  \"shadow_mode\": true,\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nShadow mode only.\nNo market request was made.\nNo order was submitted.\n",
+      "stdout": "Two-Bot Shadow Controller v1\n{\n  \"controller\": \"Two-Bot Shadow Controller v1\",\n  \"market_regime\": \"BULL\",\n  \"permissions\": {\n    \"allow_gld_bot\": true,\n    \"allow_long_bot\": true,\n    \"allow_short_bot\": false,\n    \"reduce_position_size\": false\n  },\n  \"missing_inputs\": [],\n  \"proposal_count\": 0,\n  \"proposed_total_dollars\": 0,\n  \"cash_remaining_dollars\": 2000.0,\n  \"proposals\": [],\n  \"hall_of_fame_strategy_count\": 0,\n  \"shadow_mode\": true,\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nShadow mode only.\nNo market request was made.\nNo order was submitted.\n",
       "stderr": "",
       "status": "passed"
     }
   ],
   "archived_reports": {
-    "market_regime": null,
+    "market_regime": "reports/shadow_observation/archive/2026-07-31/market_regime_lab_v1.json",
     "hall_of_fame": "reports/shadow_observation/archive/2026-07-31/strategy_hall_of_fame.json",
     "portfolio": "reports/shadow_observation/archive/2026-07-31/portfolio_commander_v1.json",
     "scanner": "reports/shadow_observation/archive/2026-07-31/championship_scanner_v1.json",
@@ -87,12 +107,14 @@
   },
   "shadow_mode": true,
   "production_strategy_changed": false,
-  "market_request_made": false,
+  "market_request_made": true,
   "order_submitted": false,
   "observation_state": {
     "target_days": 8,
-    "completed_days": 0,
-    "successful_dates": [],
+    "completed_days": 1,
+    "successful_dates": [
+      "2026-07-31"
+    ],
     "failed_dates": [
       "2026-07-29",
       "2026-07-30",
@@ -104,7 +126,7 @@
       "2026-07-31"
     ],
     "status": "ACTIVE",
-    "last_run_timestamp": "2026-07-31T09:18:56.500765-04:00"
+    "last_run_timestamp": "2026-07-31T09:29:55.211794-04:00"
   },
   "email_result": {
     "status": "preview_only",

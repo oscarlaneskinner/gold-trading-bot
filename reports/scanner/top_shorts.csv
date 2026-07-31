@@ -1,1 +1,8 @@
-
+symbol,side,score,close,average_volume_20d,atr_14,atr_percent,rsi_14,distance_from_ema_200_percent,suggested_stop,suggested_target,maximum_position_percent,signal_reasons
+TSLA,short,73.6364,308.6,1084434.75,16.9752,5.5007,30.5242,-21.1313,342.5505,257.6743,10.0,"['Price below EMA200', 'Bearish EMA alignment', 'Negative RSI momentum']"
+TLT,short,72.008,82.795,1075293.4,0.6,0.7247,34.4169,-4.4387,83.9951,80.9949,10.0,"['Price below EMA200', 'Bearish EMA alignment', 'Negative RSI momentum', 'Above-average volume']"
+NVDA,short,52.9409,195.04,4921799.7,7.4496,3.8195,43.089,0.3063,209.9392,172.6911,10.0,['Negative RSI momentum']
+QQQ,short,47.4439,683.6,588668.9,15.2064,2.2245,43.2048,5.3008,714.0128,637.9807,10.0,"['Negative RSI momentum', 'Above-average volume']"
+AMZN,short,45.2704,235.75,1915160.0,7.2277,3.0658,44.6649,0.0634,250.2054,214.067,10.0,"['Negative RSI momentum', 'Above-average volume']"
+IWM,short,35.521,292.53,1171847.05,4.2918,1.4671,48.975,9.169,301.1135,279.6547,10.0,[]
+SPY,short,32.7363,741.63,1500978.2,8.8149,1.1886,49.1599,5.8696,759.2597,715.1854,10.0,[]

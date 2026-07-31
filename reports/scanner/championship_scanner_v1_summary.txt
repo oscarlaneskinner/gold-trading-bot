@@ -2,5 +2,19 @@ CHAMPIONSHIP MARKET SCANNER V1
 ==================================
 
 TOP LONGS
+1. SPY score=63.3959 stop=724.0003 target=768.0746
+2. IWM score=60.1591 stop=283.9465 target=305.4053
+3. AMZN score=55.9221 stop=221.2946 target=257.433
+4. QQQ score=47.2023 stop=653.1872 target=729.2193
+5. NVDA score=39.2177 stop=180.1408 target=217.3889
+6. TLT score=31.0057 stop=81.5949 target=84.5951
+7. TSLA score=10.8756 stop=274.6495 target=359.5257
 
 TOP SHORTS
+1. TSLA score=73.6364 stop=342.5505 target=257.6743
+2. TLT score=72.008 stop=83.9951 target=80.9949
+3. NVDA score=52.9409 stop=209.9392 target=172.6911
+4. QQQ score=47.4439 stop=714.0128 target=637.9807
+5. AMZN score=45.2704 stop=250.2054 target=214.067
+6. IWM score=35.521 stop=301.1135 target=279.6547
+7. SPY score=32.7363 stop=759.2597 target=715.1854

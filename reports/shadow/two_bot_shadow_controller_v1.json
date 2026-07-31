@@ -1,10 +1,13 @@
 {
   "controller": "Two-Bot Shadow Controller v1",
-  "market_regime": "UNKNOWN",
-  "permissions": {},
-  "missing_inputs": [
-    "market_regime"
-  ],
+  "market_regime": "BULL",
+  "permissions": {
+    "allow_gld_bot": true,
+    "allow_long_bot": true,
+    "allow_short_bot": false,
+    "reduce_position_size": false
+  },
+  "missing_inputs": [],
   "proposal_count": 0,
   "proposed_total_dollars": 0,
   "cash_remaining_dollars": 2000.0,
