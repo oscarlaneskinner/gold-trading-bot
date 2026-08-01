@@ -1,0 +1,19 @@
+SHADOW PERFORMANCE TRACKER V1
+==============================
+Report date: 2026-07-31
+Open positions: 0
+Closed positions: 0
+Wins: 0
+Losses: 0
+Win rate: 0.00%
+Total P/L: $0.00
+Total return: 0.00%
+Profit factor: 0.00
+Expectancy: 0.00%
+Maximum drawdown: 0.00%
+Ending equity: $2000.00
+New trades created: 0
+Trades closed today: 0
+
+Shadow mode only.
+No order was submitted.
