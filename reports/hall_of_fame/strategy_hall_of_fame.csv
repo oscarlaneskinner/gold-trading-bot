@@ -1,1 +1,8 @@
 rank,strategy_key,strategy_name,role,symbol,source_report,score,return_percent,drawdown_percent,profit_factor,consistency_percent,trade_count,status,parameters_json
+1,reports/scanner/championship_scanner_v1.json|Unknown Strategy|SPY|{},Unknown Strategy,LONG,SPY,reports/scanner/championship_scanner_v1.json,63.3959,0.0,0.0,0.0,0.0,0,RESEARCH,{}
+2,reports/scanner/championship_scanner_v1.json|Unknown Strategy|IWM|{},Unknown Strategy,LONG,IWM,reports/scanner/championship_scanner_v1.json,60.1591,0.0,0.0,0.0,0.0,0,RESEARCH,{}
+3,reports/scanner/championship_scanner_v1.json|Unknown Strategy|AMZN|{},Unknown Strategy,LONG,AMZN,reports/scanner/championship_scanner_v1.json,55.9221,0.0,0.0,0.0,0.0,0,RESEARCH,{}
+4,reports/scanner/championship_scanner_v1.json|Unknown Strategy|QQQ|{},Unknown Strategy,LONG,QQQ,reports/scanner/championship_scanner_v1.json,47.2023,0.0,0.0,0.0,0.0,0,RESEARCH,{}
+5,reports/scanner/championship_scanner_v1.json|Unknown Strategy|NVDA|{},Unknown Strategy,LONG,NVDA,reports/scanner/championship_scanner_v1.json,39.2177,0.0,0.0,0.0,0.0,0,RESEARCH,{}
+6,reports/scanner/championship_scanner_v1.json|Unknown Strategy|TLT|{},Unknown Strategy,LONG,TLT,reports/scanner/championship_scanner_v1.json,31.0057,0.0,0.0,0.0,0.0,0,RESEARCH,{}
+7,reports/scanner/championship_scanner_v1.json|Unknown Strategy|TSLA|{},Unknown Strategy,LONG,TSLA,reports/scanner/championship_scanner_v1.json,10.8756,0.0,0.0,0.0,0.0,0,RESEARCH,{}
