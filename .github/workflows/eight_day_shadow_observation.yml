@@ -14,9 +14,11 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
@@ -29,7 +31,7 @@ jobs:
           pip install -r requirements_two_bot_shadow_controller_v1.txt
           pip install -r requirements_eight_day_shadow_observation_v1.txt
 
-      - name: Run observation
+      - name: Run shadow observation
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
@@ -41,7 +43,10 @@ jobs:
           SHADOW_REPORT_SMTP_PASSWORD: ${{ secrets.SHADOW_REPORT_SMTP_PASSWORD }}
         run: python eight_day_shadow_observation_v1.py
 
-      - name: Commit observation reports
+      - name: Run shadow performance tracker
+        run: python shadow_performance_tracker_v1.py
+
+      - name: Commit observation and performance reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -53,6 +58,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No report changes to commit."
           else
-            git commit -m "Update shadow observation reports"
-            git push
+            git commit -m "Update shadow observation and performance reports"
+            git pull --rebase origin main
+            git push origin main
           fi
