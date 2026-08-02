@@ -1,0 +1,17 @@
+UT MULTI-MARKET STRATEGY ARENA V2
+======================================
+Symbols loaded: AMZN, GLD, IWM, NVDA, QQQ, SLV, SPY, TLT, TSLA
+Candidates tested: 810
+Finalists: 135
+
+TOP FINALISTS
+1. MM-0013 | Original | sens=0.8 atr=14 hold=10 | Balanced | score=36.5173 | median return=2.7514% | median PF=1.5328 | consistency=88.89%
+2. MM-0007 | Original | sens=0.8 atr=10 hold=10 | Balanced | score=35.7882 | median return=2.8088% | median PF=1.4438 | consistency=88.89%
+3. MM-0015 | Original | sens=0.8 atr=14 hold=20 | Balanced | score=34.8416 | median return=2.4987% | median PF=1.5316 | consistency=88.89%
+4. MM-0017 | Original | sens=0.8 atr=14 hold=30 | Balanced | score=34.7659 | median return=2.4987% | median PF=1.5316 | consistency=88.89%
+5. MM-0121 | RSI | sens=0.8 atr=14 hold=10 | Balanced | score=33.8931 | median return=1.997% | median PF=1.6423 | consistency=77.78%
+6. MM-0009 | Original | sens=0.8 atr=10 hold=20 | Balanced | score=33.5818 | median return=2.5253% | median PF=1.4597 | consistency=88.89%
+7. MM-0011 | Original | sens=0.8 atr=10 hold=30 | Balanced | score=33.506 | median return=2.5253% | median PF=1.4597 | consistency=88.89%
+8. MM-0001 | Original | sens=0.8 atr=7 hold=10 | Balanced | score=32.7391 | median return=2.5407% | median PF=1.5105 | consistency=77.78%
+9. MM-0115 | RSI | sens=0.8 atr=10 hold=10 | Balanced | score=32.6585 | median return=2.0539% | median PF=1.5076 | consistency=77.78%
+10. MM-0499 | EMA200+RSI | sens=0.8 atr=14 hold=10 | Balanced | score=31.9175 | median return=1.6216% | median PF=1.496 | consistency=77.78%
