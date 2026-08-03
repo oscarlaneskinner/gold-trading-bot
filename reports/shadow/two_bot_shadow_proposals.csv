@@ -1,1 +1,2 @@
-
+role,symbol,side,strategy_name,scanner_score,proposed_dollars,suggested_stop,suggested_target,reason,status
+LONG,AMZN,BUY,MM-0013,93.5567,700.0,265.1726,314.3661,"Qualified long strategy, current regime permits long exposure, and scanner ranked this symbol first.",SHADOW_ONLY

@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "trade_id": "2026-08-03|LONG|AMZN|MM-0013",
+    "role": "LONG",
+    "strategy_name": "MM-0013",
+    "symbol": "AMZN",
+    "side": "LONG",
+    "entry_date": "2026-08-03",
+    "entry_price": 284.85,
+    "proposed_dollars": 700.0,
+    "shares": 2.45743374,
+    "stop_price": 265.1726,
+    "target_price": 314.3661,
+    "maximum_holding_days": 20,
+    "status": "OPEN",
+    "exit_date": null,
+    "exit_price": null,
+    "exit_reason": null,
+    "pnl_dollars": 0.0,
+    "pnl_percent": 0.0,
+    "holding_days": 0
+  }
+]
