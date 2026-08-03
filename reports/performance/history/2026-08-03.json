@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T16:07:27.818333+00:00",
+  "generated_at": "2026-08-03T16:35:15.849416+00:00",
   "report_date": "2026-08-03",
   "open_positions": 1,
   "closed_positions": 0,
@@ -19,12 +19,14 @@
   "maximum_drawdown_percent": 0.0,
   "starting_capital": 2000.0,
   "ending_equity": 2000.0,
-  "new_trades_created": 1,
+  "new_trades_created": 0,
   "trades_closed_today": 0,
+  "duplicate_open_positions_skipped": 1,
   "notes": [
     "Research-only shadow performance tracking.",
     "No paper or live orders were submitted.",
-    "No trades have closed yet, so performance statistics are preliminary."
+    "No trades have closed yet, so performance statistics are preliminary.",
+    "Skipped 1 duplicate open position proposal(s)."
   ],
   "shadow_mode": true,
   "market_request_made": false,

@@ -12,8 +12,9 @@ Profit factor: 0.00
 Expectancy: 0.00%
 Maximum drawdown: 0.00%
 Ending equity: $2000.00
-New trades created: 1
+New trades created: 0
 Trades closed today: 0
+Duplicate open proposals skipped: 1
 
 Shadow mode only.
 No order was submitted.
