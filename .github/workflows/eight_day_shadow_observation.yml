@@ -45,7 +45,8 @@ jobs:
 
       - name: Run shadow performance tracker
         run: python shadow_performance_tracker_v1.py
-
+      - name: Run shadow position valuation
+        run: python shadow_position_valuation_v1.py
       - name: Commit observation and performance reports
         run: |
           git config user.name "github-actions[bot]"
