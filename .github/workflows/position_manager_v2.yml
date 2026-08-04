@@ -1,0 +1,49 @@
+name: Position Manager v2 Preview
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  preview-position-manager:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Download fresh market data
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python download_multi_market_research_data.py
+
+      - name: Run Position Manager v2 preview
+        run: python position_manager_v2.py
+
+      - name: Commit preview reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add reports/position_manager
+
+          if git diff --cached --quiet; then
+            echo "No position-manager report changes to commit."
+          else
+            git commit -m "Update Position Manager v2 preview reports"
+            git pull --rebase origin main
+            git push origin main
+          fi
