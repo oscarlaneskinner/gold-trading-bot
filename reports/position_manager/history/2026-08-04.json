@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-08-04T17:05:27.381816-04:00",
+  "report_date": "2026-08-04",
+  "mode": "PREVIEW_ONLY",
+  "starting_capital": 2000.0,
+  "open_position_count": 1,
+  "closed_position_count": 0,
+  "created_today_count": 0,
+  "closed_today_count": 0,
+  "duplicate_proposals_skipped": 1,
+  "invalid_proposals_skipped": 0,
+  "realized_pnl_dollars": 0,
+  "unrealized_pnl_dollars": 1.94,
+  "estimated_equity": 2001.94,
+  "estimated_total_return_percent": 0.097,
+  "missing_market_data": [],
+  "created_today": [],
+  "closed_today": [],
+  "skipped_duplicates": [
+    {
+      "symbol": "AMZN",
+      "side": "LONG",
+      "strategy_name": "MM-0013",
+      "reason": "An open position already exists for this symbol and side."
+    }
+  ],
+  "skipped_invalid": [],
+  "open_positions": [
+    {
+      "trade_id": "2026-08-03|LONG|AMZN|MM-0013",
+      "role": "LONG",
+      "strategy_name": "MM-0013",
+      "symbol": "AMZN",
+      "side": "LONG",
+      "entry_date": "2026-08-03",
+      "entry_price": 284.85,
+      "proposed_dollars": 700.0,
+      "shares": 2.45743374,
+      "stop_price": 265.1726,
+      "target_price": 314.3661,
+      "maximum_holding_days": 20,
+      "status": "OPEN",
+      "exit_date": null,
+      "exit_price": null,
+      "exit_reason": null,
+      "pnl_dollars": 0.0,
+      "pnl_percent": 0.0,
+      "holding_days": 1,
+      "current_price": 285.64,
+      "unrealized_pnl_dollars": 1.94,
+      "unrealized_pnl_percent": 0.2773,
+      "last_valued_date": "2026-08-04"
+    }
+  ],
+  "shadow_mode": true,
+  "ledger_modified": false,
+  "trading_client_created": false,
+  "market_request_made": false,
+  "order_submitted": false
+}
