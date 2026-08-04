@@ -2,19 +2,19 @@ CHAMPIONSHIP MARKET SCANNER V1
 ==================================
 
 TOP LONGS
-1. AMZN score=93.5567 stop=265.1726 target=314.3661
-2. SPY score=68.1118 stop=737.9342 target=782.9988
-3. IWM score=62.9521 stop=286.8598 target=309.1103
-4. NVDA score=60.2931 stop=191.5822 target=229.7516
-5. QQQ score=51.0267 stop=667.8909 target=742.8637
-6. TLT score=22.6787 stop=81.0766 target=84.085
-7. TSLA score=18.8272 stop=290.1907 target=372.664
+1. AMZN score=95.8487 stop=264.4476 target=313.6411
+2. SPY score=72.5628 stop=739.3542 target=785.2688
+3. IWM score=65.9998 stop=287.1769 target=309.6096
+4. NVDA score=61.6174 stop=191.2608 target=229.9088
+5. QQQ score=55.1376 stop=669.603 target=745.833
+6. TLT score=25.5832 stop=80.9966 target=84.005
+7. TSLA score=19.8383 stop=289.0235 target=371.6647
 
 TOP SHORTS
-1. TLT score=67.8791 stop=83.4834 target=80.475
-2. TSLA score=56.0365 stop=356.1693 target=273.696
-3. QQQ score=33.0382 stop=727.8691 target=652.8963
-4. IWM score=28.6812 stop=304.6602 target=282.4097
-5. NVDA score=24.4326 stop=222.1178 target=183.9484
-6. SPY score=23.3866 stop=773.9858 target=728.9212
-7. AMZN score=15.0434 stop=304.5274 target=255.3339
+1. TLT score=71.5352 stop=83.4034 target=80.395
+2. TSLA score=58.3505 stop=355.1365 target=272.4953
+3. QQQ score=35.2892 stop=730.587 target=654.357
+4. IWM score=30.696 stop=305.1231 target=282.6904
+5. NVDA score=26.1364 stop=222.1792 target=183.5312
+6. SPY score=25.9982 stop=776.0858 target=730.1712
+7. AMZN score=17.8661 stop=303.8024 target=254.6089
