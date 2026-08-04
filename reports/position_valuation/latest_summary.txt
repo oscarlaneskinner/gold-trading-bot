@@ -1,0 +1,17 @@
+SHADOW POSITION VALUATION V1
+================================
+Generated at: 2026-08-04T09:36:28.274808-04:00
+Open positions: 1
+Closed positions: 0
+Realized P/L: $0.00
+Unrealized P/L: $1.94
+Estimated equity: $2001.94
+Estimated total return: 0.10%
+
+AMZN LONG | Entry $284.8500 | Current $285.6400
+Unrealized P/L: $1.94 (0.28%)
+
+Research only.
+The trade ledger was not modified.
+No market request was made.
+No order was submitted.

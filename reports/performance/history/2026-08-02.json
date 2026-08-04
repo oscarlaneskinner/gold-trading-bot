@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-08-02T11:25:29.975592-04:00",
+  "report_date": "2026-08-02",
+  "open_positions": 1,
+  "closed_positions": 0,
+  "wins": 0,
+  "losses": 0,
+  "breakeven_trades": 0,
+  "win_rate_percent": 0.0,
+  "total_pnl_dollars": 0,
+  "total_return_percent": 0.0,
+  "average_winner_percent": 0.0,
+  "average_loser_percent": 0.0,
+  "profit_factor": 0.0,
+  "expectancy_percent": 0.0,
+  "largest_winner_percent": 0.0,
+  "largest_loser_percent": 0.0,
+  "average_holding_days": 0.0,
+  "maximum_drawdown_percent": 0.0,
+  "starting_capital": 2000.0,
+  "ending_equity": 2000.0,
+  "new_trades_created": 1,
+  "trades_closed_today": 0,
+  "notes": [
+    "Research-only shadow performance tracking.",
+    "No paper or live orders were submitted.",
+    "No trades have closed yet, so performance statistics are preliminary."
+  ],
+  "shadow_mode": true,
+  "market_request_made": false,
+  "order_submitted": false
+}

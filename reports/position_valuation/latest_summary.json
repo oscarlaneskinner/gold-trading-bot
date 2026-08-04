@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-08-04T09:36:28.274808-04:00",
+  "starting_capital": 2000.0,
+  "open_position_count": 1,
+  "closed_position_count": 0,
+  "realized_pnl_dollars": 0,
+  "unrealized_pnl_dollars": 1.94,
+  "estimated_equity": 2001.94,
+  "estimated_total_return_percent": 0.097,
+  "missing_price_symbols": [],
+  "positions": [
+    {
+      "trade_id": "2026-08-03|LONG|AMZN|MM-0013",
+      "strategy_name": "MM-0013",
+      "symbol": "AMZN",
+      "side": "LONG",
+      "entry_date": "2026-08-03",
+      "entry_price": 284.85,
+      "current_price": 285.64,
+      "proposed_dollars": 700.0,
+      "shares": 2.45743374,
+      "stop_price": 265.1726,
+      "target_price": 314.3661,
+      "holding_days": 1,
+      "unrealized_pnl_dollars": 1.94,
+      "unrealized_pnl_percent": 0.2773,
+      "distance_to_stop_percent": -7.1655,
+      "distance_to_target_percent": 10.0567,
+      "status": "OPEN"
+    }
+  ],
+  "shadow_mode": true,
+  "ledger_modified": false,
+  "market_request_made": false,
+  "order_submitted": false
+}

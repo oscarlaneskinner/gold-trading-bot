@@ -1,0 +1,41 @@
+# Python cache and temporary files
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Local market-data downloads
+data/*_1D.csv
+
+# Local databases
+data/*.sqlite3
+data/*.db
+
+# Downloaded ZIP packages
+*.zip
+
+# Local backup files
+*_backup.py
+*.bak
+*.tmp
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+
+# Accidental local files previously created
+/git
+/main

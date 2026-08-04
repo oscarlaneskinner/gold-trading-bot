@@ -1,0 +1,22 @@
+EIGHT-DAY SHADOW OBSERVATION
+==============================
+Observation day: 3 / 8
+Date: 2026-08-02
+Market regime: BULL
+Proposal count: 1
+Proposed total: $700.00
+
+BOT PERMISSIONS
+- allow_gld_bot: True
+- allow_long_bot: True
+- allow_short_bot: False
+- reduce_position_size: False
+
+SHADOW PROPOSALS
+1. LONG | BUY AMZN | $700.00 | MM-0007
+
+PIPELINE STATUS
+- All required commands completed successfully.
+
+Shadow mode only.
+No order was submitted.
