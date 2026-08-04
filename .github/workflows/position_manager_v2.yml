@@ -44,6 +44,11 @@ jobs:
             echo "No position-manager report changes to commit."
           else
             git commit -m "Update Position Manager v2 preview reports"
+
+            # Discard unrelated temporary changes created during this run.
+            # The position-manager reports are already safely stored in the commit.
+            git reset --hard HEAD
+
             git pull --rebase origin main
             git push origin main
           fi
