@@ -2,6 +2,8 @@ name: Position Manager v2 Preview
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "45 21 * * 1-5"
 
 permissions:
   contents: write
