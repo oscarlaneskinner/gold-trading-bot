@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T21:29:00.397349+00:00",
+  "generated_at": "2026-08-06T07:49:12.075961+00:00",
   "report_date": "2026-08-04",
   "mode": "PREVIEW_ONLY",
   "starting_capital": 2000.0,
@@ -10,9 +10,9 @@
   "duplicate_proposals_skipped": 1,
   "invalid_proposals_skipped": 0,
   "realized_pnl_dollars": 0,
-  "unrealized_pnl_dollars": -18.36,
-  "estimated_equity": 1981.64,
-  "estimated_total_return_percent": -0.918,
+  "unrealized_pnl_dollars": -30.05,
+  "estimated_equity": 1969.95,
+  "estimated_total_return_percent": -1.5025,
   "missing_market_data": [],
   "created_today": [],
   "closed_today": [],
@@ -46,9 +46,9 @@
       "pnl_dollars": 0.0,
       "pnl_percent": 0.0,
       "holding_days": 1,
-      "current_price": 277.38,
-      "unrealized_pnl_dollars": -18.36,
-      "unrealized_pnl_percent": -2.6224,
+      "current_price": 272.62,
+      "unrealized_pnl_dollars": -30.05,
+      "unrealized_pnl_percent": -4.2935,
       "last_valued_date": "2026-08-04"
     }
   ],
