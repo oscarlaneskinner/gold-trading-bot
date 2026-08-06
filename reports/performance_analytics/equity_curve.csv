@@ -1,0 +1,2 @@
+sequence,date,trade_id,symbol,strategy_name,pnl_dollars,equity,return_from_start_percent
+0,,START,,,0.0,2000.0,0.0

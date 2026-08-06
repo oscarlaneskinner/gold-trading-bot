@@ -1,0 +1,47 @@
+PERFORMANCE ANALYTICS V1
+================================
+Generated at: 2026-08-06T16:51:21.827818-04:00
+Analytics status: WAITING_FOR_CLOSED_TRADES
+
+PORTFOLIO
+--------------------
+Starting capital: $2000.00
+Ending equity: $2000.00
+Estimated equity with unrealized P/L: $2000.00
+Estimated total return: 0.00%
+
+TRADE RESULTS
+--------------------
+Open positions: 1
+Closed positions: 0
+Wins: 0
+Losses: 0
+Breakeven: 0
+Win rate: 0.00%
+Total realized P/L: $0.00
+Total unrealized P/L: $0.00
+Profit factor: 0.00
+Expectancy: $0.00 (0.00%)
+
+RISK
+--------------------
+Maximum drawdown: $0.00 (0.00%)
+Sharpe ratio: 0.00
+Sortino ratio: 0.00
+Recovery factor: 0.00
+Payoff ratio: 0.00
+
+LEADERS
+--------------------
+Best strategy: None
+Worst strategy: None
+Best symbol: None
+Worst symbol: None
+
+SAFETY
+--------------------
+Shadow mode: True
+Ledger modified: False
+Trading client created: False
+Market request made: False
+Order submitted: False
