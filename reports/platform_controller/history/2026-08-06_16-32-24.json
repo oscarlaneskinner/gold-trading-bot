@@ -1,0 +1,278 @@
+{
+  "controller": "AI Trading Platform Controller v1",
+  "run_timestamp": "2026-08-06T16:32:24.353905-04:00",
+  "finished_timestamp": "2026-08-06T16:32:42.442924-04:00",
+  "duration_seconds": 18.089,
+  "overall_status": "PASSED",
+  "required_step_count": 6,
+  "required_steps_passed": 6,
+  "failed_step_count": 0,
+  "step_results": [
+    {
+      "name": "Download multi-market research data",
+      "command": [
+        "C:\\Users\\oscar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "download_multi_market_research_data.py"
+      ],
+      "required": true,
+      "status": "SKIPPED",
+      "returncode": null,
+      "started_at": "2026-08-06T16:32:24.355236-04:00",
+      "finished_at": "2026-08-06T16:32:24.355272-04:00",
+      "duration_seconds": 0.0,
+      "stdout": "",
+      "stderr": "",
+      "skipped_reason": "Disabled by command-line option."
+    },
+    {
+      "name": "Evaluate market regime",
+      "command": [
+        "C:\\Users\\oscar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "market_regime_lab_v1.py",
+        "--data-dir",
+        "data"
+      ],
+      "required": true,
+      "status": "PASSED",
+      "returncode": 0,
+      "started_at": "2026-08-06T16:32:24.355863-04:00",
+      "finished_at": "2026-08-06T16:32:31.832717-04:00",
+      "duration_seconds": 7.477,
+      "stdout": "Market Regime Lab v1\n{\n  \"benchmark_symbol\": \"SPY\",\n  \"regime\": \"BULL\",\n  \"close\": 755.25,\n  \"ema_fast\": 739.6587,\n  \"ema_slow\": 701.5133,\n  \"atr_percent\": 1.1885,\n  \"price_vs_slow_percent\": 7.6601,\n  \"fast_vs_slow_percent\": 5.4376,\n  \"slow_slope_20d_percent\": 1.414,\n  \"reasons\": [\n    \"Price is above the slow EMA.\",\n    \"Fast EMA is above the slow EMA.\",\n    \"Slow EMA slope is positive.\"\n  ],\n  \"permissions\": {\n    \"allow_gld_bot\": true,\n    \"allow_long_bot\": true,\n    \"allow_short_bot\": false,\n    \"reduce_position_size\": false\n  },\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nNo market request was made.\nNo order was submitted.\n",
+      "stderr": "",
+      "skipped_reason": null
+    },
+    {
+      "name": "Update Strategy Hall of Fame",
+      "command": [
+        "C:\\Users\\oscar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "strategy_hall_of_fame_v1.py"
+      ],
+      "required": true,
+      "status": "PASSED",
+      "returncode": 0,
+      "started_at": "2026-08-06T16:32:31.834956-04:00",
+      "finished_at": "2026-08-06T16:32:33.660712-04:00",
+      "duration_seconds": 1.826,
+      "stdout": "Strategy Hall of Fame v1\n{\n  \"records_imported\": 42,\n  \"strategy_count\": 60,\n  \"top_strategies\": [\n    {\n      \"rank\": 1,\n      \"strategy_key\": \"reports\\\\scanner\\\\championship_scanner_v1.json|Unknown Strategy|AMZN|{}\",\n      \"strategy_name\": \"Unknown Strategy\",\n      \"role\": \"LONG\",\n      \"symbol\": \"AMZN\",\n      \"source_report\": \"reports\\\\scanner\\\\championship_scanner_v1.json\",\n      \"score\": 95.8487,\n      \"return_percent\": 0.0,\n      \"drawdown_percent\": 0.0,\n      \"profit_factor\": 0.0,\n      \"consistency_percent\": 0.0,\n      \"trade_count\": 0,\n      \"status\": \"RESEARCH\",\n      \"parameters_json\": \"{}\"\n    },\n    {\n      \"rank\": 2,\n      \"strategy_key\": \"reports\\\\scanner\\\\championship_scanner_v1.json|Unknown Strategy|SPY|{}\",\n      \"strategy_name\": \"Unknown Strategy\",\n      \"role\": \"LONG\",\n      \"symbol\": \"SPY\",\n      \"source_report\": \"reports\\\\scanner\\\\championship_scanner_v1.json\",\n      \"score\": 72.5628,\n      \"return_percent\": 0.0,\n      \"drawdown_percent\": 0.0,\n      \"profit_factor\": 0.0,\n      \"consistency_percent\": 0.0,\n      \"trade_count\": 0,\n      \"status\": \"RESEARCH\",\n      \"parameters_json\": \"{}\"\n    },\n    {\n      \"rank\": 3,\n      \"strategy_key\": \"reports\\\\scanner\\\\championship_scanner_v1.json|Unknown Strategy|IWM|{}\",\n      \"strategy_name\": \"Unknown Strategy\",\n      \"role\": \"LONG\",\n      \"symbol\": \"IWM\",\n      \"source_report\": \"reports\\\\scanner\\\\championship_scanner_v1.json\",\n      \"score\": 65.9998,\n      \"return_percent\": 0.0,\n      \"drawdown_percent\": 0.0,\n      \"profit_factor\": 0.0,\n      \"consistency_percent\": 0.0,\n      \"trade_count\": 0,\n      \"status\": \"RESEARCH\",\n      \"parameters_json\": \"{}\"\n    },\n    {\n      \"rank\": 4,\n      \"strategy_key\": \"reports\\\\scanner\\\\championship_scanner_v1.json|Unknown Strategy|NVDA|{}\",\n      \"strategy_name\": \"Unknown Strategy\",\n      \"role\": \"LONG\",\n      \"symbol\": \"NVDA\",\n      \"source_report\": \"reports\\\\scanner\\\\championship_scanner_v1.json\",\n      \"score\": 61.6174,\n      \"return_percent\": 0.0,\n      \"drawdown_percent\": 0.0,\n      \"profit_factor\": 0.0,\n      \"consistency_percent\": 0.0,\n      \"trade_count\": 0,\n      \"status\": \"RESEARCH\",\n      \"parameters_json\": \"{}\"\n    },\n    {\n      \"rank\": 5,\n      \"strategy_key\": \"reports\\\\strategy_research_arena.json|ARENA-0117|MULTI|{\\\"atr_period\\\": 7, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 30, \\\"risk_profile\\\": \\\"Trend\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 4.0, \\\"take_profit_percent\\\": 10.0}\",\n      \"strategy_name\": \"ARENA-0117\",\n      \"role\": \"LONG\",\n      \"symbol\": \"MULTI\",\n      \"source_report\": \"reports\\\\strategy_research_arena.json\",\n      \"score\": 58.8061,\n      \"return_percent\": 7.3533,\n      \"drawdown_percent\": 1.1387,\n      \"profit_factor\": 3.3351,\n      \"consistency_percent\": 0.0,\n      \"trade_count\": 34,\n      \"status\": \"FINALIST\",\n      \"parameters_json\": \"{\\\"atr_period\\\": 7, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 30, \\\"risk_profile\\\": \\\"Trend\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 4.0, \\\"take_profit_percent\\\": 10.0}\"\n    },\n    {\n      \"rank\": 6,\n      \"strategy_key\": \"reports\\\\strategy_research_arena.json|ARENA-0114|MULTI|{\\\"atr_period\\\": 7, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 20, \\\"risk_profile\\\": \\\"Trend\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 4.0, \\\"take_profit_percent\\\": 10.0}\",\n      \"strategy_name\": \"ARENA-0114\",\n      \"role\": \"LONG\",\n      \"symbol\": \"MULTI\",\n      \"source_report\": \"reports\\\\strategy_research_arena.json\",\n      \"score\": 57.9365,\n      \"return_percent\": 7.1596,\n      \"drawdown_percent\": 1.1387,\n      \"profit_factor\": 3.2748,\n      \"consistency_percent\": 0.0,\n      \"trade_count\": 34,\n      \"status\": \"FINALIST\",\n      \"parameters_json\": \"{\\\"atr_period\\\": 7, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 20, \\\"risk_profile\\\": \\\"Trend\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 4.0, \\\"take_profit_percent\\\": 10.0}\"\n    },\n    {\n      \"rank\": 7,\n      \"strategy_key\": \"reports\\\\strategy_research_arena.json|ARENA-0135|MULTI|{\\\"atr_period\\\": 14, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 30, \\\"risk_profile\\\": \\\"Trend\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 4.0, \\\"take_profit_percent\\\": 10.0}\",\n      \"strategy_name\": \"ARENA-0135\",\n      \"role\": \"LONG\",\n      \"symbol\": \"MULTI\",\n      \"source_report\": \"reports\\\\strategy_research_arena.json\",\n      \"score\": 56.7643,\n      \"return_percent\": 7.202,\n      \"drawdown_percent\": 1.3837,\n      \"profit_factor\": 3.1368,\n      \"consistency_percent\": 0.0,\n      \"trade_count\": 32,\n      \"status\": \"FINALIST\",\n      \"parameters_json\": \"{\\\"atr_period\\\": 14, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 30, \\\"risk_profile\\\": \\\"Trend\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 4.0, \\\"take_profit_percent\\\": 10.0}\"\n    },\n    {\n      \"rank\": 8,\n      \"strategy_key\": \"reports\\\\strategy_research_arena.json|ARENA-0112|MULTI|{\\\"atr_period\\\": 7, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 20, \\\"risk_profile\\\": \\\"Balanced\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 3.0, \\\"take_profit_percent\\\": 8.0}\",\n      \"strategy_name\": \"ARENA-0112\",\n      \"role\": \"LONG\",\n      \"symbol\": \"MULTI\",\n      \"source_report\": \"reports\\\\strategy_research_arena.json\",\n      \"score\": 56.5381,\n      \"return_percent\": 6.6356,\n      \"drawdown_percent\": 1.1387,\n      \"profit_factor\": 3.231,\n      \"consistency_percent\": 0.0,\n      \"trade_count\": 34,\n      \"status\": \"FINALIST\",\n      \"parameters_json\": \"{\\\"atr_period\\\": 7, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 20, \\\"risk_profile\\\": \\\"Balanced\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 3.0, \\\"take_profit_percent\\\": 8.0}\"\n    },\n    {\n      \"rank\": 9,\n      \"strategy_key\": \"reports\\\\strategy_research_arena.json|ARENA-0115|MULTI|{\\\"atr_period\\\": 7, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 30, \\\"risk_profile\\\": \\\"Balanced\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 3.0, \\\"take_profit_percent\\\": 8.0}\",\n      \"strategy_name\": \"ARENA-0115\",\n      \"role\": \"LONG\",\n      \"symbol\": \"MULTI\",\n      \"source_report\": \"reports\\\\strategy_research_arena.json\",\n      \"score\": 56.5381,\n      \"return_percent\": 6.6356,\n      \"drawdown_percent\": 1.1387,\n      \"profit_factor\": 3.231,\n      \"consistency_percent\": 0.0,\n      \"trade_count\": 34,\n      \"status\": \"FINALIST\",\n      \"parameters_json\": \"{\\\"atr_period\\\": 7, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 30, \\\"risk_profile\\\": \\\"Balanced\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 3.0, \\\"take_profit_percent\\\": 8.0}\"\n    },\n    {\n      \"rank\": 10,\n      \"strategy_key\": \"reports\\\\strategy_research_arena.json|ARENA-0132|MULTI|{\\\"atr_period\\\": 14, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 20, \\\"risk_profile\\\": \\\"Trend\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 4.0, \\\"take_profit_percent\\\": 10.0}\",\n      \"strategy_name\": \"ARENA-0132\",\n      \"role\": \"LONG\",\n      \"symbol\": \"MULTI\",\n      \"source_report\": \"reports\\\\strategy_research_arena.json\",\n      \"score\": 55.9302,\n      \"return_percent\": 7.0086,\n      \"drawdown_percent\": 1.3837,\n      \"profit_factor\": 3.0809,\n      \"consistency_percent\": 0.0,\n      \"trade_count\": 32,\n      \"status\": \"FINALIST\",\n      \"parameters_json\": \"{\\\"atr_period\\\": 14, \\\"filter_set\\\": \\\"EMA200\\\", \\\"max_bars_held\\\": 20, \\\"risk_profile\\\": \\\"Trend\\\", \\\"sensitivity\\\": 1.0, \\\"stop_loss_percent\\\": 4.0, \\\"take_profit_percent\\\": 10.0}\"\n    }\n  ],\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nNo market request was made.\nNo order was submitted.\n",
+      "stderr": "",
+      "skipped_reason": null
+    },
+    {
+      "name": "Create research portfolio allocations",
+      "command": [
+        "C:\\Users\\oscar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "portfolio_commander_v1.py"
+      ],
+      "required": true,
+      "status": "PASSED",
+      "returncode": 0,
+      "started_at": "2026-08-06T16:32:33.661332-04:00",
+      "finished_at": "2026-08-06T16:32:35.234016-04:00",
+      "duration_seconds": 1.573,
+      "stdout": "Portfolio Commander v1\n{\n  \"starting_capital\": 2000.0,\n  \"allocations\": [\n    {\n      \"strategy_name\": \"MM-0013\",\n      \"role\": \"LONG\",\n      \"symbol\": \"MULTI\",\n      \"allocation_percent\": 35.0,\n      \"allocation_dollars\": 700.0,\n      \"score\": 36.5173,\n      \"profit_factor\": 1.5328,\n      \"drawdown_percent\": 1.7784,\n      \"consistency_percent\": 88.89,\n      \"status\": \"RESEARCH_ALLOCATION_ONLY\"\n    }\n  ],\n  \"allocated_percent\": 35.0,\n  \"cash_reserve_percent\": 65.0,\n  \"cash_reserve_dollars\": 1300.0,\n  \"eligible_strategy_count\": 1,\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nResearch allocation only.\nNo market request was made.\nNo order was submitted.\n",
+      "stderr": "",
+      "skipped_reason": null
+    },
+    {
+      "name": "Run championship market scanner",
+      "command": [
+        "C:\\Users\\oscar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "championship_market_scanner_v1.py",
+        "--data-dir",
+        "data"
+      ],
+      "required": true,
+      "status": "PASSED",
+      "returncode": 0,
+      "started_at": "2026-08-06T16:32:35.234438-04:00",
+      "finished_at": "2026-08-06T16:32:37.013968-04:00",
+      "duration_seconds": 1.78,
+      "stdout": "Championship Market Scanner v1\n{\n  \"symbols_loaded\": [\n    \"NVDA\",\n    \"AMZN\",\n    \"TSLA\",\n    \"SPY\",\n    \"QQQ\",\n    \"IWM\",\n    \"GLD\",\n    \"SLV\",\n    \"TLT\"\n  ],\n  \"long_candidate_count\": 7,\n  \"short_candidate_count\": 7,\n  \"top_longs\": [\n    {\n      \"symbol\": \"AMZN\",\n      \"side\": \"long\",\n      \"score\": 93.675,\n      \"close\": 285.64,\n      \"average_volume_20d\": 2160968.6,\n      \"atr_14\": 9.8387,\n      \"atr_percent\": 3.4444,\n      \"rsi_14\": 72.8225,\n      \"distance_from_ema_200_percent\": 20.8026,\n      \"suggested_stop\": 265.9626,\n      \"suggested_target\": 315.1561,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price above EMA200\",\n        \"Bullish EMA alignment\",\n        \"Positive RSI momentum\",\n        \"20-day breakout\"\n      ]\n    },\n    {\n      \"symbol\": \"SPY\",\n      \"side\": \"long\",\n      \"score\": 67.3729,\n      \"close\": 755.25,\n      \"average_volume_20d\": 1459127.65,\n      \"atr_14\": 8.9765,\n      \"atr_percent\": 1.1885,\n      \"rsi_14\": 58.2986,\n      \"distance_from_ema_200_percent\": 7.6601,\n      \"suggested_stop\": 737.297,\n      \"suggested_target\": 782.1795,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price above EMA200\",\n        \"Bullish EMA alignment\",\n        \"Positive RSI momentum\"\n      ]\n    },\n    {\n      \"symbol\": \"IWM\",\n      \"side\": \"long\",\n      \"score\": 62.266,\n      \"close\": 295.47,\n      \"average_volume_20d\": 1140063.0,\n      \"atr_14\": 4.4501,\n      \"atr_percent\": 1.5061,\n      \"rsi_14\": 53.6997,\n      \"distance_from_ema_200_percent\": 10.0598,\n      \"suggested_stop\": 286.5698,\n      \"suggested_target\": 308.8203,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price above EMA200\",\n        \"Bullish EMA alignment\"\n      ]\n    },\n    {\n      \"symbol\": \"NVDA\",\n      \"side\": \"long\",\n      \"score\": 60.2095,\n      \"close\": 206.9,\n      \"average_volume_20d\": 4782004.55,\n      \"atr_14\": 7.6339,\n      \"atr_percent\": 3.6896,\n      \"rsi_14\": 53.2522,\n      \"distance_from_ema_200_percent\": 6.3041,\n      \"suggested_stop\": 191.6322,\n      \"suggested_target\": 229.8016,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price above EMA200\"\n      ]\n    },\n    {\n      \"symbol\": \"QQQ\",\n      \"side\": \"long\",\n      \"score\": 50.1536,\n      \"close\": 696.715,\n      \"average_volume_20d\": 558908.2,\n      \"atr_14\": 14.971,\n      \"atr_percent\": 2.1488,\n      \"rsi_14\": 48.764,\n      \"distance_from_ema_200_percent\": 7.18,\n      \"suggested_stop\": 666.773,\n      \"suggested_target\": 741.628,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price above EMA200\"\n      ]\n    },\n    {\n      \"symbol\": \"TLT\",\n      \"side\": \"long\",\n      \"score\": 21.6725,\n      \"close\": 82.22,\n      \"average_volume_20d\": 1177909.7,\n      \"atr_14\": 0.6013,\n      \"atr_percent\": 0.7314,\n      \"rsi_14\": 30.7898,\n      \"distance_from_ema_200_percent\": -5.0065,\n      \"suggested_stop\": 81.0174,\n      \"suggested_target\": 84.024,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": []\n    },\n    {\n      \"symbol\": \"TSLA\",\n      \"side\": \"long\",\n      \"score\": 18.8203,\n      \"close\": 323.565,\n      \"average_volume_20d\": 1008553.7,\n      \"atr_14\": 16.4947,\n      \"atr_percent\": 5.0978,\n      \"rsi_14\": 37.527,\n      \"distance_from_ema_200_percent\": -16.9964,\n      \"suggested_stop\": 290.5757,\n      \"suggested_target\": 373.049,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": []\n    }\n  ],\n  \"top_shorts\": [\n    {\n      \"symbol\": \"TLT\",\n      \"side\": \"short\",\n      \"score\": 67.4366,\n      \"close\": 82.22,\n      \"average_volume_20d\": 1177909.7,\n      \"atr_14\": 0.6013,\n      \"atr_percent\": 0.7314,\n      \"rsi_14\": 30.7898,\n      \"distance_from_ema_200_percent\": -5.0065,\n      \"suggested_stop\": 83.4226,\n      \"suggested_target\": 80.416,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price below EMA200\",\n        \"Bearish EMA alignment\",\n        \"Negative RSI momentum\"\n      ]\n    },\n    {\n      \"symbol\": \"TSLA\",\n      \"side\": \"short\",\n      \"score\": 55.5736,\n      \"close\": 323.565,\n      \"average_volume_20d\": 1008553.7,\n      \"atr_14\": 16.4947,\n      \"atr_percent\": 5.0978,\n      \"rsi_14\": 37.527,\n      \"distance_from_ema_200_percent\": -16.9964,\n      \"suggested_stop\": 356.5543,\n      \"suggested_target\": 274.081,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": [\n        \"Price below EMA200\",\n        \"Bearish EMA alignment\",\n        \"Negative RSI momentum\"\n      ]\n    },\n    {\n      \"symbol\": \"QQQ\",\n      \"side\": \"short\",\n      \"score\": 33.1433,\n      \"close\": 696.715,\n      \"average_volume_20d\": 558908.2,\n      \"atr_14\": 14.971,\n      \"atr_percent\": 2.1488,\n      \"rsi_14\": 48.764,\n      \"distance_from_ema_200_percent\": 7.18,\n      \"suggested_stop\": 726.657,\n      \"suggested_target\": 651.802,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": []\n    },\n    {\n      \"symbol\": \"IWM\",\n      \"side\": \"short\",\n      \"score\": 28.7635,\n      \"close\": 295.47,\n      \"average_volume_20d\": 1140063.0,\n      \"atr_14\": 4.4501,\n      \"atr_percent\": 1.5061,\n      \"rsi_14\": 53.6997,\n      \"distance_from_ema_200_percent\": 10.0598,\n      \"suggested_stop\": 304.3702,\n      \"suggested_target\": 282.1197,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": []\n    },\n    {\n      \"symbol\": \"NVDA\",\n      \"side\": \"short\",\n      \"score\": 24.203,\n      \"close\": 206.9,\n      \"average_volume_20d\": 4782004.55,\n      \"atr_14\": 7.6339,\n      \"atr_percent\": 3.6896,\n      \"rsi_14\": 53.2522,\n      \"distance_from_ema_200_percent\": 6.3041,\n      \"suggested_stop\": 222.1678,\n      \"suggested_target\": 183.9984,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": []\n    },\n    {\n      \"symbol\": \"SPY\",\n      \"side\": \"short\",\n      \"score\": 23.3903,\n      \"close\": 755.25,\n      \"average_volume_20d\": 1459127.65,\n      \"atr_14\": 8.9765,\n      \"atr_percent\": 1.1885,\n      \"rsi_14\": 58.2986,\n      \"distance_from_ema_200_percent\": 7.6601,\n      \"suggested_stop\": 773.203,\n      \"suggested_target\": 728.3205,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": []\n    },\n    {\n      \"symbol\": \"AMZN\",\n      \"side\": \"short\",\n      \"score\": 14.5834,\n      \"close\": 285.64,\n      \"average_volume_20d\": 2160968.6,\n      \"atr_14\": 9.8387,\n      \"atr_percent\": 3.4444,\n      \"rsi_14\": 72.8225,\n      \"distance_from_ema_200_percent\": 20.8026,\n      \"suggested_stop\": 305.3174,\n      \"suggested_target\": 256.1239,\n      \"maximum_position_percent\": 10.0,\n      \"signal_reasons\": []\n    }\n  ],\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nNo market request was made.\nNo order was submitted.\n",
+      "stderr": "",
+      "skipped_reason": null
+    },
+    {
+      "name": "Generate two-bot shadow proposals",
+      "command": [
+        "C:\\Users\\oscar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "two_bot_shadow_controller_v1.py"
+      ],
+      "required": true,
+      "status": "PASSED",
+      "returncode": 0,
+      "started_at": "2026-08-06T16:32:37.014556-04:00",
+      "finished_at": "2026-08-06T16:32:38.341642-04:00",
+      "duration_seconds": 1.327,
+      "stdout": "Two-Bot Shadow Controller v1\n{\n  \"controller\": \"Two-Bot Shadow Controller v1\",\n  \"market_regime\": \"BULL\",\n  \"permissions\": {\n    \"allow_gld_bot\": true,\n    \"allow_long_bot\": true,\n    \"allow_short_bot\": false,\n    \"reduce_position_size\": false\n  },\n  \"missing_inputs\": [],\n  \"proposal_count\": 1,\n  \"proposed_total_dollars\": 700.0,\n  \"cash_remaining_dollars\": 1300.0,\n  \"proposals\": [\n    {\n      \"role\": \"LONG\",\n      \"symbol\": \"AMZN\",\n      \"side\": \"BUY\",\n      \"strategy_name\": \"MM-0013\",\n      \"scanner_score\": 93.675,\n      \"proposed_dollars\": 700.0,\n      \"suggested_stop\": 265.9626,\n      \"suggested_target\": 315.1561,\n      \"reason\": \"Qualified long strategy, current regime permits long exposure, and scanner ranked this symbol first.\",\n      \"status\": \"SHADOW_ONLY\"\n    }\n  ],\n  \"hall_of_fame_strategy_count\": 60,\n  \"shadow_mode\": true,\n  \"production_strategy_changed\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nShadow mode only.\nNo market request was made.\nNo order was submitted.\n",
+      "stderr": "",
+      "skipped_reason": null
+    },
+    {
+      "name": "Run shadow performance tracker",
+      "command": [
+        "C:\\Users\\oscar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "shadow_performance_tracker_v1.py"
+      ],
+      "required": true,
+      "status": "PASSED",
+      "returncode": 0,
+      "started_at": "2026-08-06T16:32:38.342782-04:00",
+      "finished_at": "2026-08-06T16:32:39.535801-04:00",
+      "duration_seconds": 1.193,
+      "stdout": "Shadow Performance Tracker v1\n{\n  \"generated_at\": \"2026-08-06T16:32:39.306322-04:00\",\n  \"report_date\": \"2026-08-04\",\n  \"open_positions\": 1,\n  \"closed_positions\": 0,\n  \"wins\": 0,\n  \"losses\": 0,\n  \"breakeven_trades\": 0,\n  \"win_rate_percent\": 0.0,\n  \"total_pnl_dollars\": 0,\n  \"total_return_percent\": 0.0,\n  \"average_winner_percent\": 0.0,\n  \"average_loser_percent\": 0.0,\n  \"profit_factor\": 0.0,\n  \"expectancy_percent\": 0.0,\n  \"largest_winner_percent\": 0.0,\n  \"largest_loser_percent\": 0.0,\n  \"average_holding_days\": 0.0,\n  \"maximum_drawdown_percent\": 0.0,\n  \"starting_capital\": 2000.0,\n  \"ending_equity\": 2000.0,\n  \"new_trades_created\": 0,\n  \"trades_closed_today\": 0,\n  \"duplicate_open_positions_skipped\": 1,\n  \"notes\": [\n    \"Research-only shadow performance tracking.\",\n    \"No paper or live orders were submitted.\",\n    \"No trades have closed yet, so performance statistics are preliminary.\",\n    \"Skipped 1 duplicate open position proposal(s).\"\n  ],\n  \"shadow_mode\": true,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nShadow mode only.\nNo market request was made.\nNo order was submitted.\n",
+      "stderr": "2026-08-06 16:32:39,240 INFO Starting Shadow Performance Tracker v1.\n2026-08-06 16:32:39,276 INFO Skipping duplicate open trade for MM-0013 AMZN LONG.\n",
+      "skipped_reason": null
+    },
+    {
+      "name": "Run Position Manager v2 preview",
+      "command": [
+        "C:\\Users\\oscar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "position_manager_v2.py"
+      ],
+      "required": false,
+      "status": "PASSED",
+      "returncode": 0,
+      "started_at": "2026-08-06T16:32:39.536347-04:00",
+      "finished_at": "2026-08-06T16:32:40.917105-04:00",
+      "duration_seconds": 1.381,
+      "stdout": "Position Manager v2\n{\n  \"generated_at\": \"2026-08-06T16:32:40.771094-04:00\",\n  \"report_date\": \"2026-08-04\",\n  \"mode\": \"PREVIEW_ONLY\",\n  \"starting_capital\": 2000.0,\n  \"open_position_count\": 1,\n  \"closed_position_count\": 0,\n  \"created_today_count\": 0,\n  \"closed_today_count\": 0,\n  \"duplicate_proposals_skipped\": 1,\n  \"invalid_proposals_skipped\": 0,\n  \"realized_pnl_dollars\": 0,\n  \"unrealized_pnl_dollars\": 1.94,\n  \"estimated_equity\": 2001.94,\n  \"estimated_total_return_percent\": 0.097,\n  \"missing_market_data\": [],\n  \"created_today\": [],\n  \"closed_today\": [],\n  \"skipped_duplicates\": [\n    {\n      \"symbol\": \"AMZN\",\n      \"side\": \"LONG\",\n      \"strategy_name\": \"MM-0013\",\n      \"reason\": \"An open position already exists for this symbol and side.\"\n    }\n  ],\n  \"skipped_invalid\": [],\n  \"open_positions\": [\n    {\n      \"trade_id\": \"2026-08-03|LONG|AMZN|MM-0013\",\n      \"role\": \"LONG\",\n      \"strategy_name\": \"MM-0013\",\n      \"symbol\": \"AMZN\",\n      \"side\": \"LONG\",\n      \"entry_date\": \"2026-08-03\",\n      \"entry_price\": 284.85,\n      \"proposed_dollars\": 700.0,\n      \"shares\": 2.45743374,\n      \"stop_price\": 265.1726,\n      \"target_price\": 314.3661,\n      \"maximum_holding_days\": 20,\n      \"status\": \"OPEN\",\n      \"exit_date\": null,\n      \"exit_price\": null,\n      \"exit_reason\": null,\n      \"pnl_dollars\": 0.0,\n      \"pnl_percent\": 0.0,\n      \"holding_days\": 1,\n      \"current_price\": 285.64,\n      \"unrealized_pnl_dollars\": 1.94,\n      \"unrealized_pnl_percent\": 0.2773,\n      \"last_valued_date\": \"2026-08-04\"\n    }\n  ],\n  \"shadow_mode\": true,\n  \"ledger_modified\": false,\n  \"trading_client_created\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nPreview only; the ledger was not modified.\nNo trading client was created.\nNo market request was made.\nNo order was submitted.\n",
+      "stderr": "",
+      "skipped_reason": null
+    },
+    {
+      "name": "Run shadow position valuation",
+      "command": [
+        "C:\\Users\\oscar\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "shadow_position_valuation_v1.py"
+      ],
+      "required": false,
+      "status": "PASSED",
+      "returncode": 0,
+      "started_at": "2026-08-06T16:32:40.917914-04:00",
+      "finished_at": "2026-08-06T16:32:42.442276-04:00",
+      "duration_seconds": 1.524,
+      "stdout": "Shadow Position Valuation v1\n{\n  \"generated_at\": \"2026-08-06T16:32:42.136990-04:00\",\n  \"starting_capital\": 2000.0,\n  \"open_position_count\": 1,\n  \"closed_position_count\": 0,\n  \"realized_pnl_dollars\": 0,\n  \"unrealized_pnl_dollars\": 1.94,\n  \"estimated_equity\": 2001.94,\n  \"estimated_total_return_percent\": 0.097,\n  \"missing_price_symbols\": [],\n  \"positions\": [\n    {\n      \"trade_id\": \"2026-08-03|LONG|AMZN|MM-0013\",\n      \"strategy_name\": \"MM-0013\",\n      \"symbol\": \"AMZN\",\n      \"side\": \"LONG\",\n      \"entry_date\": \"2026-08-03\",\n      \"entry_price\": 284.85,\n      \"current_price\": 285.64,\n      \"proposed_dollars\": 700.0,\n      \"shares\": 2.45743374,\n      \"stop_price\": 265.1726,\n      \"target_price\": 314.3661,\n      \"holding_days\": 1,\n      \"unrealized_pnl_dollars\": 1.94,\n      \"unrealized_pnl_percent\": 0.2773,\n      \"distance_to_stop_percent\": -7.1655,\n      \"distance_to_target_percent\": 10.0567,\n      \"status\": \"OPEN\"\n    }\n  ],\n  \"shadow_mode\": true,\n  \"ledger_modified\": false,\n  \"market_request_made\": false,\n  \"order_submitted\": false\n}\nThe trade ledger was not modified.\nNo market request was made.\nNo order was submitted.\n",
+      "stderr": "",
+      "skipped_reason": null
+    }
+  ],
+  "platform_snapshot": {
+    "market_regime": "BULL",
+    "market_permissions": {
+      "allow_gld_bot": true,
+      "allow_long_bot": true,
+      "allow_short_bot": false,
+      "reduce_position_size": false
+    },
+    "hall_of_fame_strategy_count": 60,
+    "portfolio_allocations": [
+      {
+        "strategy_name": "MM-0013",
+        "role": "LONG",
+        "symbol": "MULTI",
+        "allocation_percent": 35.0,
+        "allocation_dollars": 700.0,
+        "score": 36.5173,
+        "profit_factor": 1.5328,
+        "drawdown_percent": 1.7784,
+        "consistency_percent": 88.89,
+        "status": "RESEARCH_ALLOCATION_ONLY"
+      }
+    ],
+    "cash_reserve_dollars": 1300.0,
+    "scanner_top_long": {
+      "symbol": "AMZN",
+      "side": "long",
+      "score": 93.675,
+      "close": 285.64,
+      "average_volume_20d": 2160968.6,
+      "atr_14": 9.8387,
+      "atr_percent": 3.4444,
+      "rsi_14": 72.8225,
+      "distance_from_ema_200_percent": 20.8026,
+      "suggested_stop": 265.9626,
+      "suggested_target": 315.1561,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": [
+        "Price above EMA200",
+        "Bullish EMA alignment",
+        "Positive RSI momentum",
+        "20-day breakout"
+      ]
+    },
+    "scanner_top_short": {
+      "symbol": "TLT",
+      "side": "short",
+      "score": 67.4366,
+      "close": 82.22,
+      "average_volume_20d": 1177909.7,
+      "atr_14": 0.6013,
+      "atr_percent": 0.7314,
+      "rsi_14": 30.7898,
+      "distance_from_ema_200_percent": -5.0065,
+      "suggested_stop": 83.4226,
+      "suggested_target": 80.416,
+      "maximum_position_percent": 10.0,
+      "signal_reasons": [
+        "Price below EMA200",
+        "Bearish EMA alignment",
+        "Negative RSI momentum"
+      ]
+    },
+    "shadow_proposals": [
+      {
+        "role": "LONG",
+        "symbol": "AMZN",
+        "side": "BUY",
+        "strategy_name": "MM-0013",
+        "scanner_score": 93.675,
+        "proposed_dollars": 700.0,
+        "suggested_stop": 265.9626,
+        "suggested_target": 315.1561,
+        "reason": "Qualified long strategy, current regime permits long exposure, and scanner ranked this symbol first.",
+        "status": "SHADOW_ONLY"
+      }
+    ],
+    "shadow_proposal_count": 1,
+    "open_positions": 1,
+    "closed_positions": 0,
+    "realized_pnl_dollars": 0,
+    "position_manager_mode": "PREVIEW_ONLY",
+    "position_manager_open_positions": 1,
+    "position_manager_duplicates_skipped": 1,
+    "unrealized_pnl_dollars": 1.94,
+    "estimated_equity": 2001.94,
+    "observation_state": {
+      "target_days": 8,
+      "completed_days": 4,
+      "successful_dates": [
+        "2026-07-31",
+        "2026-08-01",
+        "2026-08-03",
+        "2026-08-04"
+      ],
+      "failed_dates": [
+        "2026-07-29",
+        "2026-07-30",
+        "2026-07-30",
+        "2026-07-30",
+        "2026-07-30",
+        "2026-07-31",
+        "2026-07-31",
+        "2026-07-31"
+      ],
+      "status": "ACTIVE",
+      "last_run_timestamp": "2026-08-04T02:46:42.539542-04:00"
+    },
+    "shadow_mode": true,
+    "trading_client_created": false,
+    "order_submitted": false
+  },
+  "safety": {
+    "shadow_mode": true,
+    "position_manager_apply_used": false,
+    "trading_client_created": false,
+    "order_submitted": false
+  }
+}

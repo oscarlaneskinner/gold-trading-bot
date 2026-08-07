@@ -1,0 +1,34 @@
+AI TRADING PLATFORM CONTROLLER V1
+========================================
+Run timestamp: 2026-08-06T16:32:24.353905-04:00
+Overall status: PASSED
+Required steps passed: 6/6
+Failed steps: 0
+
+PLATFORM SNAPSHOT
+--------------------
+Market regime: BULL
+Hall of Fame strategies: 60
+Shadow proposals: 1
+Open positions: 1
+Unrealized P/L: $1.94
+Estimated equity: $2001.94
+
+SAFETY
+--------------------
+Shadow mode: True
+Position Manager apply used: False
+Trading client created: False
+Order submitted: False
+
+STEP RESULTS
+--------------------
+SKIPPED: Download multi-market research data (0.000s)
+PASSED: Evaluate market regime (7.477s)
+PASSED: Update Strategy Hall of Fame (1.826s)
+PASSED: Create research portfolio allocations (1.573s)
+PASSED: Run championship market scanner (1.780s)
+PASSED: Generate two-bot shadow proposals (1.327s)
+PASSED: Run shadow performance tracker (1.193s)
+PASSED: Run Position Manager v2 preview (1.381s)
+PASSED: Run shadow position valuation (1.524s)
