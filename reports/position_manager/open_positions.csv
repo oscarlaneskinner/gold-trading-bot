@@ -1,2 +1,2 @@
 trade_id,role,strategy_name,symbol,side,entry_date,entry_price,proposed_dollars,shares,stop_price,target_price,maximum_holding_days,status,exit_date,exit_price,exit_reason,pnl_dollars,pnl_percent,holding_days,current_price,unrealized_pnl_dollars,unrealized_pnl_percent,last_valued_date
-2026-08-03|LONG|AMZN|MM-0013,LONG,MM-0013,AMZN,LONG,2026-08-03,284.85,700.0,2.45743374,265.1726,314.3661,20,OPEN,,,,0.0,0.0,1,272.62,-30.05,-4.2935,2026-08-04
+2026-08-03|LONG|AMZN|MM-0013,LONG,MM-0013,AMZN,LONG,2026-08-03,284.85,700.0,2.45743374,265.1726,314.3661,20,OPEN,,,,0.0,0.0,1,272.35,-30.72,-4.3883,2026-08-04
