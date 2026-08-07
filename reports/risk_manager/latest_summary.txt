@@ -1,0 +1,26 @@
+RISK MANAGER V2
+============================
+Generated at: 2026-08-07T11:16:59.983633-04:00
+Risk score: 15/100
+Risk level: LOW
+Trade acceptance status: SHADOW_RESEARCH_ALLOWED
+
+PORTFOLIO
+--------------------
+Starting capital: $2000.00
+Open positions: 1
+Total exposure: $700.00 (35.00%)
+Portfolio heat: $48.36 (2.42%)
+Combined P/L: $-30.72 (-1.54%)
+
+WARNINGS
+--------------------
+No active risk warnings.
+
+SAFETY
+--------------------
+Research shadow mode only.
+Ledger modified: False
+Trading client created: False
+Market request made: False
+Order submitted: False

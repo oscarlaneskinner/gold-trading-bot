@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-08-07T11:16:59.983633-04:00",
+  "starting_capital": 2000.0,
+  "open_position_count": 1,
+  "risk_score": 15,
+  "risk_level": "LOW",
+  "trade_acceptance_status": "SHADOW_RESEARCH_ALLOWED",
+  "trade_acceptance_reasons": [
+    "No critical or high-severity portfolio-risk condition requires blocking new shadow trades."
+  ],
+  "limits": {
+    "max_position_percent": 35.0,
+    "max_total_exposure_percent": 80.0,
+    "max_single_symbol_percent": 35.0,
+    "max_portfolio_heat_percent": 8.0,
+    "daily_loss_limit_percent": 5.0,
+    "max_drawdown_percent": 12.0
+  },
+  "portfolio_metrics": {
+    "total_exposure_dollars": 700.0,
+    "total_exposure_percent": 35.0,
+    "portfolio_heat_dollars": 48.36,
+    "portfolio_heat_percent": 2.418,
+    "combined_pnl_dollars": -30.72,
+    "combined_return_percent": -1.536,
+    "symbol_exposure": {
+      "AMZN": {
+        "dollars": 700.0,
+        "percent": 35.0
+      }
+    }
+  },
+  "positions": [
+    {
+      "trade_id": "2026-08-03|LONG|AMZN|MM-0013",
+      "symbol": "AMZN",
+      "strategy_name": "MM-0013",
+      "side": "LONG",
+      "proposed_dollars": 700.0,
+      "allocation_percent": 35.0,
+      "entry_price": 284.85,
+      "current_price": 272.35,
+      "stop_price": 265.1726,
+      "target_price": 314.3661,
+      "shares": 2.45743374,
+      "unrealized_pnl_dollars": -30.72,
+      "unrealized_pnl_percent": -4.3883,
+      "stop_risk_dollars": 48.36,
+      "stop_risk_percent_of_position": 6.908,
+      "stop_risk_percent_of_account": 2.4178,
+      "has_stop": true,
+      "has_target": true,
+      "holding_days": 1,
+      "status": "OPEN"
+    }
+  ],
+  "warnings": [],
+  "warning_count": 0,
+  "critical_warning_count": 0,
+  "high_warning_count": 0,
+  "portfolio_commander_allocations": [
+    {
+      "strategy_name": "MM-0013",
+      "role": "LONG",
+      "symbol": "MULTI",
+      "allocation_percent": 35.0,
+      "allocation_dollars": 700.0,
+      "score": 36.5173,
+      "profit_factor": 1.5328,
+      "drawdown_percent": 1.7784,
+      "consistency_percent": 88.89,
+      "status": "RESEARCH_ALLOCATION_ONLY"
+    }
+  ],
+  "position_manager_data_used": true,
+  "shadow_mode": true,
+  "ledger_modified": false,
+  "trading_client_created": false,
+  "market_request_made": false,
+  "order_submitted": false
+}
