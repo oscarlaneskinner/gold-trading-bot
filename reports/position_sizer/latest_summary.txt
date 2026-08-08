@@ -1,0 +1,21 @@
+INTELLIGENT POSITION SIZER V1
+======================================
+Generated at: 2026-08-08T10:31:37.416784-04:00
+Starting capital: $2000.00
+Proposal count: 1
+Sized positions: 1
+Zero-size positions: 0
+
+SIZING DECISIONS
+------------------------
+AMZN LONG | SIZE_CALCULATED | $361.53 (18.08%)
+  Multipliers: risk=1.00, regime=1.00, confidence=0.95, volatility=0.80, exposure=0.80, heat=0.85
+  - Position size adjusted using risk, market regime, scanner confidence, volatility, exposure, and portfolio heat.
+
+SAFETY
+------------------------
+Research sizing only.
+Trade ledger modified: False
+Trading client created: False
+Market request made: False
+Order submitted: False

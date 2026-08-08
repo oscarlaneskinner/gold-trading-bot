@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-08-08T10:31:37.416784-04:00",
+  "starting_capital": 2000.0,
+  "proposal_count": 1,
+  "positive_size_count": 1,
+  "zero_size_count": 0,
+  "total_recommended_dollars": 361.53,
+  "total_recommended_percent": 18.0765,
+  "configuration": {
+    "min_position_percent": 2.5,
+    "max_position_percent": 35.0,
+    "max_account_risk_per_trade_percent": 2.5,
+    "max_total_exposure_percent": 80.0,
+    "max_portfolio_heat_percent": 8.0,
+    "min_scanner_score": 50.0
+  },
+  "decisions": [
+    {
+      "symbol": "AMZN",
+      "side": "LONG",
+      "role": "LONG",
+      "strategy_name": "MM-0013",
+      "scanner_score": 93.675,
+      "atr_percent": 3.4444,
+      "starting_capital": 2000.0,
+      "base_allocation_dollars": 700.0,
+      "base_allocation_percent": 35.0,
+      "risk_score": 15,
+      "risk_level": "LOW",
+      "market_regime": "BULL",
+      "risk_multiplier": 1.0,
+      "regime_multiplier": 1.0,
+      "confidence_multiplier": 0.9494,
+      "volatility_multiplier": 0.8,
+      "exposure_multiplier": 0.8,
+      "heat_multiplier": 0.85,
+      "raw_recommended_dollars": 361.53,
+      "stop_risk_limited_dollars": 725.81,
+      "final_recommended_dollars": 361.53,
+      "final_recommended_percent": 18.0766,
+      "estimated_shares": 1.2656894,
+      "entry_reference_price": 285.64,
+      "suggested_stop": 265.9626,
+      "suggested_target": 315.1561,
+      "estimated_stop_risk_dollars": 24.91,
+      "estimated_stop_risk_percent_of_account": 1.2453,
+      "decision": "SIZE_CALCULATED",
+      "reasons": [
+        "Position size adjusted using risk, market regime, scanner confidence, volatility, exposure, and portfolio heat."
+      ],
+      "shadow_only": true
+    }
+  ],
+  "shadow_mode": true,
+  "research_only": true,
+  "trade_ledger_modified": false,
+  "trading_client_created": false,
+  "market_request_made": false,
+  "order_submitted": false
+}
