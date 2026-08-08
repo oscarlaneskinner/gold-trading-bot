@@ -1,6 +1,6 @@
 SHADOW POSITION VALUATION V1
 ================================
-Generated at: 2026-08-04T09:36:28.274808-04:00
+Generated at: 2026-08-08T10:08:32.291926-04:00
 Open positions: 1
 Closed positions: 0
 Realized P/L: $0.00

@@ -1,0 +1,43 @@
+MASTER CONTROLLER V1
+================================
+Run timestamp: 2026-08-08T10:08:21.476631-04:00
+Overall status: PASSED
+Required steps passed: 11/11
+Failed steps: 0
+
+PLATFORM SNAPSHOT
+------------------------
+Market regime: BULL
+Hall of Fame strategies: 60
+Shadow proposals: 1
+Open positions: 1
+Closed positions: 0
+Unrealized P/L: $1.94
+Estimated equity: $2001.94
+Risk score: 15
+Risk level: LOW
+Risk trade status: SHADOW_RESEARCH_ALLOWED
+Execution approved: 0
+Execution rejected: 1
+
+SAFETY
+------------------------
+Shadow mode: True
+Position Manager apply used: False
+Trading client created: False
+Order submitted: False
+
+STEP RESULTS
+------------------------
+SKIPPED | Download market research data | 0.000s
+PASSED | Market Regime Lab | 1.271s
+PASSED | Strategy Hall of Fame | 1.625s
+PASSED | Portfolio Commander | 1.405s
+PASSED | Championship Market Scanner | 1.935s
+PASSED | Two-Bot Shadow Controller | 1.274s
+PASSED | Shadow Performance Tracker | 1.184s
+PASSED | Position Manager v2 Preview | 0.973s
+PASSED | Shadow Position Valuation | 1.244s
+PASSED | Performance Analytics v1 | 0.983s
+PASSED | Risk Manager v2 | 1.319s
+PASSED | Trade Execution Manager v1 Preview | 1.627s

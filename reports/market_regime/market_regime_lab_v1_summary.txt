@@ -2,8 +2,8 @@ MARKET REGIME LAB V1
 ====================
 Benchmark: SPY
 Regime: BULL
-Close: 757.72
-ATR %: 1.2119
+Close: 755.25
+ATR %: 1.1885
 
 Permissions:
 GLD bot: True

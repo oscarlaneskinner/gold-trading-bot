@@ -1,2 +1,2 @@
 proposal_index,symbol,side,role,strategy_name,proposed_dollars,proposed_percent_of_capital,scanner_score,suggested_stop,suggested_target,approved,decision,reasons,risk_score,risk_level,risk_acceptance_status,duplicate_open_position,allocation_available,allocation_limit_dollars,allocation_limit_percent,shadow_only
-1,AMZN,LONG,LONG,MM-0013,700.0,35.0,95.8487,264.4476,313.6411,False,REJECTED,An open position already exists for this symbol and side.,15,LOW,SHADOW_RESEARCH_ALLOWED,True,True,700.0,35.0,True
+1,AMZN,LONG,LONG,MM-0013,700.0,35.0,93.675,265.9626,315.1561,False,REJECTED,An open position already exists for this symbol and side.,15,LOW,SHADOW_RESEARCH_ALLOWED,True,True,700.0,35.0,True
