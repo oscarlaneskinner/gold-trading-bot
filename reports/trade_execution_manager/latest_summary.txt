@@ -1,0 +1,22 @@
+TRADE EXECUTION MANAGER V1
+====================================
+Generated at: 2026-08-07T11:27:59.723128-04:00
+Proposal count: 1
+Approved count: 0
+Rejected count: 1
+Risk score: 15
+Risk level: LOW
+Risk acceptance: SHADOW_RESEARCH_ALLOWED
+
+DECISIONS
+--------------------
+REJECTED | AMZN | LONG | MM-0013 | $700.00
+  - An open position already exists for this symbol and side.
+
+SAFETY
+--------------------
+Research preview only.
+Trade ledger modified: False
+Trading client created: False
+Market request made: False
+Order submitted: False

@@ -1,0 +1,77 @@
+{
+  "generated_at": "2026-08-07T11:27:59.723128-04:00",
+  "starting_capital": 2000.0,
+  "proposal_count": 1,
+  "approved_count": 0,
+  "rejected_count": 1,
+  "risk_score": 15,
+  "risk_level": "LOW",
+  "risk_acceptance_status": "SHADOW_RESEARCH_ALLOWED",
+  "open_position_keys": [
+    {
+      "symbol": "AMZN",
+      "side": "LONG"
+    }
+  ],
+  "decisions": [
+    {
+      "proposal_index": 1,
+      "symbol": "AMZN",
+      "side": "LONG",
+      "role": "LONG",
+      "strategy_name": "MM-0013",
+      "proposed_dollars": 700.0,
+      "proposed_percent_of_capital": 35.0,
+      "scanner_score": 95.8487,
+      "suggested_stop": 264.4476,
+      "suggested_target": 313.6411,
+      "approved": false,
+      "decision": "REJECTED",
+      "reasons": [
+        "An open position already exists for this symbol and side."
+      ],
+      "risk_score": 15,
+      "risk_level": "LOW",
+      "risk_acceptance_status": "SHADOW_RESEARCH_ALLOWED",
+      "duplicate_open_position": true,
+      "allocation_available": true,
+      "allocation_limit_dollars": 700.0,
+      "allocation_limit_percent": 35.0,
+      "shadow_only": true
+    }
+  ],
+  "approved_proposals": [],
+  "rejected_proposals": [
+    {
+      "proposal_index": 1,
+      "symbol": "AMZN",
+      "side": "LONG",
+      "role": "LONG",
+      "strategy_name": "MM-0013",
+      "proposed_dollars": 700.0,
+      "proposed_percent_of_capital": 35.0,
+      "scanner_score": 95.8487,
+      "suggested_stop": 264.4476,
+      "suggested_target": 313.6411,
+      "approved": false,
+      "decision": "REJECTED",
+      "reasons": [
+        "An open position already exists for this symbol and side."
+      ],
+      "risk_score": 15,
+      "risk_level": "LOW",
+      "risk_acceptance_status": "SHADOW_RESEARCH_ALLOWED",
+      "duplicate_open_position": true,
+      "allocation_available": true,
+      "allocation_limit_dollars": 700.0,
+      "allocation_limit_percent": 35.0,
+      "shadow_only": true
+    }
+  ],
+  "shadow_mode": true,
+  "preview_only": true,
+  "trade_ledger_modified": false,
+  "trading_client_created": false,
+  "market_request_made": false,
+  "order_submitted": false
+}
