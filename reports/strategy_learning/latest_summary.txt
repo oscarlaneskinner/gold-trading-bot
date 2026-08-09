@@ -1,0 +1,37 @@
+STRATEGY LEARNING ENGINE V1
+======================================
+Generated at: 2026-08-09T11:43:26.995457-04:00
+System status: WAITING_FOR_CLOSED_TRADES
+Closed trades available: 0
+Strategies evaluated: 53
+Promote recommendations: 0
+Hold recommendations: 53
+Reduce recommendations: 0
+Retirement candidates: 0
+
+SYSTEM MESSAGE
+------------------------
+No shadow trades have closed yet. Strategy rankings remain research priors and allocation multipliers remain neutral.
+
+TOP STRATEGIES
+------------------------
+MM-0013 | score=76.76 | HOLD | multiplier=1.00 | live trades=0
+MM-0007 | score=75.32 | HOLD | multiplier=1.00 | live trades=0
+MM-0015 | score=74.93 | HOLD | multiplier=1.00 | live trades=0
+MM-0017 | score=74.87 | HOLD | multiplier=1.00 | live trades=0
+MM-0121 | score=72.88 | HOLD | multiplier=1.00 | live trades=0
+MM-0009 | score=72.79 | HOLD | multiplier=1.00 | live trades=0
+MM-0011 | score=72.74 | HOLD | multiplier=1.00 | live trades=0
+ARENA-0036 | score=72.07 | HOLD | multiplier=1.00 | live trades=0
+ARENA-0033 | score=71.82 | HOLD | multiplier=1.00 | live trades=0
+ARENA-0031 | score=71.62 | HOLD | multiplier=1.00 | live trades=0
+
+SAFETY
+------------------------
+Research learning only.
+Portfolio Commander modified: False
+Production strategy changed: False
+Trade ledger modified: False
+Trading client created: False
+Market request made: False
+Order submitted: False
