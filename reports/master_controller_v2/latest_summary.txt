@@ -1,0 +1,73 @@
+MASTER CONTROLLER V2
+====================================
+Run timestamp: 2026-08-09T12:04:38.617672-04:00
+Overall status: PASSED
+Required steps passed: 13/13
+Failed steps: 0
+
+INTELLIGENCE
+------------------------
+Learning status: WAITING_FOR_CLOSED_TRADES
+Top learned strategy: MM-0013
+Top learning score: 76.76
+Promote: 0
+Hold: 53
+Reduce: 0
+Retire: 0
+
+POSITION SIZING
+------------------------
+Sizing proposals: 1
+Positive sizes: 1
+Recommended dollars: $361.53
+Recommended percent: 18.08%
+
+PORTFOLIO
+------------------------
+Market regime: BULL
+Hall of Fame strategies: 53
+Scanner records excluded from Hall of Fame: True
+Shadow proposals: 1
+Open positions: 1
+Closed positions: 0
+Realized P/L: $0.00
+Unrealized P/L: $1.94
+Estimated equity: $2001.94
+
+RISK
+------------------------
+Risk score: 15
+Risk level: LOW
+Risk trade status: SHADOW_RESEARCH_ALLOWED
+
+EXECUTION PREVIEW
+------------------------
+Proposals: 1
+Approved: 0
+Rejected: 1
+
+SAFETY
+------------------------
+Shadow mode: True
+Position Manager mode: PREVIEW_ONLY
+Position Manager apply used: False
+Trading client created: False
+Order submitted: False
+Safety passed: True
+
+STEP RESULTS
+------------------------
+SKIPPED | Download Market Research Data | 0.000s
+PASSED | Market Regime Lab | 2.281s
+PASSED | Strategy Hall of Fame | 1.015s
+PASSED | Championship Market Scanner | 1.247s
+PASSED | Two-Bot Shadow Controller | 2.380s
+PASSED | Strategy Learning Engine v1 | 1.373s
+PASSED | Portfolio Commander | 1.625s
+PASSED | Intelligent Position Sizer v1 | 1.785s
+PASSED | Shadow Performance Tracker | 1.220s
+PASSED | Position Manager v2 Preview | 1.151s
+PASSED | Shadow Position Valuation | 1.434s
+PASSED | Performance Analytics v1 | 1.289s
+PASSED | Risk Manager v2 | 1.550s
+PASSED | Trade Execution Manager v1 Preview | 0.898s
