@@ -1,0 +1,76 @@
+name: Create New Bot
+
+on:
+  workflow_dispatch:
+    inputs:
+      symbol:
+        description: "Stock/ETF ticker symbol (e.g. MSFT, SLV, SPY)"
+        required: true
+        default: "GLD"
+      stop_loss_pct:
+        description: "Stop-loss percent (validated default: 10)"
+        required: true
+        default: "10"
+      take_profit_pct:
+        description: "Take-profit percent (validated default: 20)"
+        required: true
+        default: "20"
+      hold_days:
+        description: "Max hold days (validated default: 20)"
+        required: true
+        default: "20"
+      model_type:
+        description: "Model type"
+        required: true
+        default: "random_forest"
+        type: choice
+        options:
+          - random_forest
+          - lightgbm
+          - xgboost
+
+permissions:
+  contents: write
+
+jobs:
+  create-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Test new bot configuration
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          BOT_SYMBOL: ${{ github.event.inputs.symbol }}
+          BOT_STOP_LOSS_PCT: ${{ github.event.inputs.stop_loss_pct }}
+          BOT_TAKE_PROFIT_PCT: ${{ github.event.inputs.take_profit_pct }}
+          BOT_HOLD_DAYS: ${{ github.event.inputs.hold_days }}
+          BOT_MODEL_TYPE: ${{ github.event.inputs.model_type }}
+        run: python create_bot.py
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "Test new bot: ${{ github.event.inputs.symbol }} (${{ github.event.inputs.model_type }})"
+            git push
+          fi

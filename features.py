@@ -1,11 +1,11 @@
 """Feature engineering shared by training, backtesting, and daily inference.
 
 NOTE: This file was reverted to the 13 features actually validated via
-walk-forward testing. The original v3 version added macd_pct,
-macd_signal_pct, and bollinger_position (16 features total) - when tested,
-this produced a candidate model with 30.7% accuracy and 0.41 ROC-AUC
-(worse than random guessing), which correctly failed train_model.py's
-promotion gate. Reverting to the validated 13-feature set below.
+walk-forward testing. An earlier version added macd_pct, macd_signal_pct,
+and bollinger_position (16 features total) - when tested, this produced a
+candidate model with 30.7% accuracy and 0.41 ROC-AUC (worse than random
+guessing), which correctly failed the training script's promotion gate.
+Reverted to the validated 13-feature set below.
 """
 
 from __future__ import annotations

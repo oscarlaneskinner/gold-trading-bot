@@ -1,6 +1,6 @@
 RISK MANAGER V2
 ============================
-Generated at: 2026-08-08T10:08:34.581055-04:00
+Generated at: 2026-08-09T12:04:56.861848-04:00
 Risk score: 15/100
 Risk level: LOW
 Trade acceptance status: SHADOW_RESEARCH_ALLOWED

@@ -1,6 +1,6 @@
 INTELLIGENT POSITION SIZER V1
 ======================================
-Generated at: 2026-08-08T10:31:37.416784-04:00
+Generated at: 2026-08-09T12:04:50.176668-04:00
 Starting capital: $2000.00
 Proposal count: 1
 Sized positions: 1

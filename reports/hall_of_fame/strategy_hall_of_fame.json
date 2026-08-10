@@ -854,8 +854,8 @@
   "database_path": "C:\\GitHub\\gold-trading-bot\\data\\strategy_hall_of_fame.sqlite3",
   "scanner_records_excluded": true,
   "legacy_cleanup": {
-    "legacy_scanner_records_removed": 7,
-    "unknown_strategy_records_removed": 7
+    "legacy_scanner_records_removed": 0,
+    "unknown_strategy_records_removed": 0
   },
   "production_strategy_changed": false,
   "market_request_made": false,

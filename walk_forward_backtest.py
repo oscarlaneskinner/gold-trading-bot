@@ -2,8 +2,8 @@
 Proper walk-forward backtest: trains on data BEFORE each split date, tests only
 on data AFTER it (never seen during training). Matches the actual live exit
 logic in risk_manager.py (stop-loss, take-profit, trailing stop if enabled,
-max hold days), unlike the original backtest.py which tested in-sample and
-ignored the risk-manager exits entirely.
+max hold days), unlike an earlier version of this file which tested in-sample
+and ignored the risk-manager exits entirely.
 
 Run this any time you change config.py, features.py, or strategy.py, BEFORE
 deploying the change to the live bot. Compare against previous runs' output
@@ -13,6 +13,7 @@ deploying the change to the live bot. Compare against previous runs' output
 from __future__ import annotations
 import json
 import numpy as np
+import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
 from config import (
