@@ -3,13 +3,13 @@ POSITION MANAGER V2
 Report date: 2026-08-04
 Mode: PREVIEW_ONLY
 Open positions: 1
-Closed positions: 0
-Created today: 0
-Closed today: 0
-Duplicate proposals skipped: 1
-Realized P/L: $0.00
-Unrealized P/L: $-43.08
-Estimated equity: $1956.92
+Closed positions: 1
+Created today: 1
+Closed today: 1
+Duplicate proposals skipped: 0
+Realized P/L: $-48.36
+Unrealized P/L: $0.00
+Estimated equity: $1951.64
 
 Research shadow mode only.
 Ledger modified: False
