@@ -1,6 +1,6 @@
 {
-  "average_buy_hold_return_pct": 161.9,
-  "average_strategy_return_pct": 99.9,
+  "average_buy_hold_return_pct": 176.2,
+  "average_strategy_return_pct": 110.7,
   "config_snapshot": {
     "enable_trailing_stop": false,
     "hold_days": 20,
@@ -14,7 +14,7 @@
   },
   "per_split": [
     {
-      "buy_hold_return_pct": 230.9,
+      "buy_hold_return_pct": 248.9,
       "exit_reasons": {
         "max_hold_days": 80,
         "stop_loss": 4,
@@ -22,35 +22,35 @@
         "trailing_stop": 0
       },
       "split_date": "2019-01-01",
-      "strategy_return_pct": 148.5,
+      "strategy_return_pct": 162.0,
       "trades": 85,
       "win_rate_pct": 60.0
     },
     {
-      "buy_hold_return_pct": 120.2,
+      "buy_hold_return_pct": 132.2,
       "exit_reasons": {
-        "max_hold_days": 57,
+        "max_hold_days": 58,
         "stop_loss": 1,
         "take_profit": 0,
         "trailing_stop": 0
       },
       "split_date": "2021-01-01",
-      "strategy_return_pct": 89.9,
-      "trades": 58,
-      "win_rate_pct": 62.1
+      "strategy_return_pct": 100.1,
+      "trades": 59,
+      "win_rate_pct": 62.7
     },
     {
-      "buy_hold_return_pct": 134.7,
+      "buy_hold_return_pct": 147.5,
       "exit_reasons": {
-        "max_hold_days": 32,
+        "max_hold_days": 33,
         "stop_loss": 1,
         "take_profit": 0,
         "trailing_stop": 0
       },
       "split_date": "2023-01-01",
-      "strategy_return_pct": 61.3,
-      "trades": 33,
-      "win_rate_pct": 63.6
+      "strategy_return_pct": 69.9,
+      "trades": 34,
+      "win_rate_pct": 64.7
     }
   ]
 }
