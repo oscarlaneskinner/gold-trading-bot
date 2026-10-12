@@ -65,3 +65,4 @@ timestamp_utc,symbol,model_path,prediction,probability_up,hypothetical_action,pr
 2026-10-07T19:57:35.938024+00:00,GLD,models/model_old.pkl,UP,0.588263,BUY,375.99
 2026-10-08T19:54:23.400038+00:00,GLD,models/model_old.pkl,UP,0.592252,BUY,378.3897
 2026-10-09T19:31:17.912431+00:00,GLD,models/model_old.pkl,UP,0.571263,BUY,384.56
+2026-10-12T22:07:27.949090+00:00,GLD,models/model_old.pkl,UP,0.568182,BUY,382.15
