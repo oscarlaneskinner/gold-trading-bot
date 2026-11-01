@@ -1,12 +1,12 @@
 {
   "candidate_metrics": {
-    "accuracy": 0.3302238805970149,
-    "f1": 0.31094049904030713,
-    "precision": 0.45251396648044695,
-    "recall": 0.23684210526315788,
-    "roc_auc": 0.415046421896666
+    "accuracy": 0.32774674115456237,
+    "f1": 0.3044315992292871,
+    "precision": 0.43646408839779005,
+    "recall": 0.23372781065088757,
+    "roc_auc": 0.39002705836876694
   },
-  "created_at_utc": "2026-10-25T17:28:51.177934+00:00",
+  "created_at_utc": "2026-11-01T18:47:13.771852+00:00",
   "current_metrics": null,
   "features": [
     "return_1d",
@@ -27,10 +27,10 @@
   "scikit_learn_version": "1.9.0",
   "status": "rejected",
   "symbol": "GLD",
-  "testing_rows": 536,
+  "testing_rows": 537,
   "thresholds": {
     "minimum_accuracy": 0.52,
     "minimum_roc_auc": 0.52
   },
-  "training_rows": 2142
+  "training_rows": 2146
 }
