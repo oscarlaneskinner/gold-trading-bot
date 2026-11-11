@@ -8,8 +8,8 @@ Created today: 0
 Closed today: 0
 Duplicate proposals skipped: 1
 Realized P/L: $0.00
-Unrealized P/L: $-44.04
-Estimated equity: $1955.96
+Unrealized P/L: $-34.28
+Estimated equity: $1965.72
 
 Research shadow mode only.
 Ledger modified: False
